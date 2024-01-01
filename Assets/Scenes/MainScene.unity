@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.4465775, g: 0.49641246, b: 0.57481915, a: 1}
+  m_IndirectSpecularColor: {r: 0.44402295, g: 0.4931627, b: 0.5722325, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -186,7 +186,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 55225685}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b548c0ce393086247aac3baf9723657a, type: 3}
+  m_Script: {fileID: 11500000, guid: dc47a1bbb4025eb41981d72cc37c175b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &55225689
@@ -248,7 +248,6 @@ MonoBehaviour:
   _treesTile: {fileID: 3202582487521064602, guid: d50c9ed70326c9a47939cf1539623b9e, type: 3}
   _desertTile: {fileID: 8706329026578284017, guid: fc9eb7854517e1d449a63b950712b60e, type: 3}
   _caveTile: {fileID: 2758082140818558022, guid: 03c4ad2224bbae44e835b1be8327c163, type: 3}
-  _delta: {fileID: 2100000, guid: cf96460760ec5eb468136871abfc1df3, type: 2}
   swipeThreshold: 50
   cameraMoveSpeed: 1
 --- !u!114 &55225693
