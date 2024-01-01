@@ -4,7 +4,7 @@ namespace Assets.Scripts.ScreenStates
 {
     public class TemplateState : ScreenBaseState
     {
-        public TemplateState(FlowController _flowController)
+        public TemplateState(HexalemController _flowController)
             : base(_flowController) { }
 
         public override void EnterState()

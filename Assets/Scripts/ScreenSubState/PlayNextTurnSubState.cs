@@ -14,7 +14,7 @@ namespace Assets.Scripts
         private Label _lblActionInfo;
         private Label _lblActionTitle;
 
-        public PlayNextTurnSubState(FlowController flowController, ScreenBaseState parent)
+        public PlayNextTurnSubState(HexalemController flowController, ScreenBaseState parent)
             : base(flowController, parent) { }
 
         public override void EnterState()
@@ -68,7 +68,7 @@ namespace Assets.Scripts
 
         private void OnYourTurnClicked(ClickEvent evt)
         {
-            FlowController.ChangeScreenSubState(ScreenState.PlayScreen, ScreenSubState.PlaySelect);
+            FlowController.ChangeScreenSubState(HexalemScreen.PlayScreen, HexalemSubScreen.PlaySelect);
         }
     }
 }

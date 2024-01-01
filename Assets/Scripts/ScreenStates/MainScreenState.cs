@@ -17,7 +17,7 @@ namespace Assets.Scripts.ScreenStates
         private Label _lblConnection;
         private Label _lblBlockNumber;
 
-        public MainScreenState(FlowController _flowController)
+        public MainScreenState(HexalemController _flowController)
             : base(_flowController) { }
 
         public override void EnterState()
@@ -49,7 +49,7 @@ namespace Assets.Scripts.ScreenStates
             FlowController.VelContainer.Add(instance);
 
             // load initial sub state
-            FlowController.ChangeScreenSubState(ScreenState.MainScreen, ScreenSubState.MainChoose);
+            FlowController.ChangeScreenSubState(HexalemScreen.MainScreen, HexalemSubScreen.MainChoose);
 
 
 

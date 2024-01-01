@@ -21,7 +21,7 @@ namespace Assets.Scripts
 
         private Label _lblActionInfo;
 
-        public PlayRankingSubState(FlowController flowController, ScreenBaseState parent)
+        public PlayRankingSubState(HexalemController flowController, ScreenBaseState parent)
             : base(flowController, parent)
         {
             _playerScoreElement = Resources.Load<VisualTreeAsset>($"UI/Elements/PlayerScoreElement");
@@ -76,7 +76,7 @@ namespace Assets.Scripts
 
         private void OnCancelClicked(ClickEvent evt)
         {
-            FlowController.ChangeScreenSubState(ScreenState.PlayScreen, ScreenSubState.PlaySelect);
+            FlowController.ChangeScreenSubState(HexalemScreen.PlayScreen, HexalemSubScreen.PlaySelect);
         }
 
         private void OnStorageUpdated(uint blocknumber)

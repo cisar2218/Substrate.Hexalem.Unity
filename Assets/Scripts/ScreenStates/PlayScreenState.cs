@@ -60,7 +60,7 @@ namespace Assets.Scripts.ScreenStates
         private List<string> _subscriptionOrder;
         private Dictionary<string, ExtrinsicInfo> _subscriptionDict;
 
-        public PlayScreenState(FlowController _flowController)
+        public PlayScreenState(HexalemController _flowController)
             : base(_flowController)
         {
             // load assets here
@@ -153,7 +153,7 @@ namespace Assets.Scripts.ScreenStates
             FlowController.VelContainer.Add(instance);
 
             // load initial sub state
-            FlowController.ChangeScreenSubState(ScreenState.PlayScreen, ScreenSubState.PlaySelect);
+            FlowController.ChangeScreenSubState(HexalemScreen.PlayScreen, HexalemSubScreen.PlaySelect);
 
             // initial update
             _lblRoundValue.text = $"R:{Storage.HexaGame.PlayerTurn} T:{Storage.HexaGame.HexBoardRound}";
@@ -324,12 +324,12 @@ namespace Assets.Scripts.ScreenStates
 
         private void OnRankingClicked(ClickEvent evt)
         {
-            FlowController.ChangeScreenSubState(ScreenState.PlayScreen, ScreenSubState.PlayRanking);
+            FlowController.ChangeScreenSubState(HexalemScreen.PlayScreen, HexalemSubScreen.PlayRanking);
         }
 
         private void OnTargetClicked(ClickEvent evt)
         {
-            FlowController.ChangeScreenSubState(ScreenState.PlayScreen, ScreenSubState.PlayTarget);
+            FlowController.ChangeScreenSubState(HexalemScreen.PlayScreen, HexalemSubScreen.PlayTarget);
         }
 
         private async void OnEndTurnClicked(ClickEvent evt)
@@ -359,7 +359,7 @@ namespace Assets.Scripts.ScreenStates
                 }
 
                 Debug.Log($"Extrinsic[PlayAsync] submited: {subscriptionId}");
-                FlowController.ChangeScreenSubState(ScreenState.PlayScreen, ScreenSubState.PlayWaiting);
+                FlowController.ChangeScreenSubState(HexalemScreen.PlayScreen, HexalemSubScreen.PlayWaiting);
             }
         }
 
@@ -400,7 +400,7 @@ namespace Assets.Scripts.ScreenStates
             Debug.Log($"New board state {boardState}");
             if (boardState == HexBoardState.Finish)
             {
-                FlowController.ChangeScreenSubState(ScreenState.PlayScreen, ScreenSubState.PlayFinish);
+                FlowController.ChangeScreenSubState(HexalemScreen.PlayScreen, HexalemSubScreen.PlayFinish);
             }
         }
     }

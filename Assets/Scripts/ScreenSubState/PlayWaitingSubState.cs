@@ -14,7 +14,7 @@ namespace Assets.Scripts
 
         private Label _lblActionInfo;
 
-        public PlayWaitingSubState(FlowController flowController, ScreenBaseState parent)
+        public PlayWaitingSubState(HexalemController flowController, ScreenBaseState parent)
             : base(flowController, parent) { }
 
         public override void EnterState()
@@ -68,7 +68,7 @@ namespace Assets.Scripts
                 return;
             }
 
-            FlowController.ChangeScreenSubState(ScreenState.PlayScreen, ScreenSubState.PlaySelect);
+            FlowController.ChangeScreenSubState(HexalemScreen.PlayScreen, HexalemSubScreen.PlaySelect);
         }
 
         private void OnNextPlayerTurn(byte playerTurn)
@@ -85,7 +85,7 @@ namespace Assets.Scripts
                 return;
             }
 
-            FlowController.ChangeScreenSubState(ScreenState.PlayScreen, ScreenSubState.PlaySelect);
+            FlowController.ChangeScreenSubState(HexalemScreen.PlayScreen, HexalemSubScreen.PlaySelect);
         }
     }
 }

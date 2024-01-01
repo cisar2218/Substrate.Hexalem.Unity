@@ -25,7 +25,7 @@ namespace Assets.Scripts.ScreenStates
 
         private string _subscriptionId;
 
-        public MainChooseSubState(FlowController flowController, ScreenBaseState parent)
+        public MainChooseSubState(HexalemController flowController, ScreenBaseState parent)
             : base(flowController, parent) { }
 
         public override void EnterState()
@@ -178,7 +178,7 @@ namespace Assets.Scripts.ScreenStates
 
             Storage.SetTrainGame(hexaGame, 0);
 
-            FlowController.ChangeScreenState(ScreenState.PlayScreen);
+            FlowController.ChangeScreenState(HexalemScreen.PlayScreen);
         }
 
         private async void OnBtnPlayClicked(ClickEvent evt)
@@ -187,7 +187,7 @@ namespace Assets.Scripts.ScreenStates
 
             if (Storage.HexaGame != null)
             {
-                FlowController.ChangeScreenState(ScreenState.PlayScreen);
+                FlowController.ChangeScreenState(HexalemScreen.PlayScreen);
             }
             else if (!Network.Client.ExtrinsicManager.Running.Any())
             {

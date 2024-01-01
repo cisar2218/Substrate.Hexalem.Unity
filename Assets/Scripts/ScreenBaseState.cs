@@ -3,7 +3,7 @@ using UnityEngine.UIElements;
 
 namespace Assets.Scripts
 {
-    public abstract class ScreenBaseState
+    public abstract class ScreenBaseState : IScreenState
     {
         public enum StepState
         {
@@ -12,7 +12,7 @@ namespace Assets.Scripts
             Done
         }
 
-        protected FlowController FlowController { get; private set; }
+        protected HexalemController FlowController { get; private set; }
 
         protected ScreenBaseState ParentState { get; private set; }
 
@@ -22,7 +22,7 @@ namespace Assets.Scripts
 
         protected GridManager Grid => GridManager.GetInstance();
 
-        protected ScreenBaseState(FlowController flowController, ScreenBaseState parentState = null)
+        protected ScreenBaseState(HexalemController flowController, ScreenBaseState parentState = null)
         {
             FlowController = flowController;
             ParentState = parentState;
@@ -31,6 +31,11 @@ namespace Assets.Scripts
         public abstract void EnterState();
 
         public abstract void ExitState();
+
+        public void UpdateState()
+        {
+            Debug.Log("Not implemented Updated currently ... ");
+        }
 
         internal TemplateContainer ElementInstance(string elementPath, int widthPerc = 100, int heightPerc = 100)
         {

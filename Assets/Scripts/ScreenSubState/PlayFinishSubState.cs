@@ -14,7 +14,7 @@ namespace Assets.Scripts
         private Label _lblActionInfo;
         private Label _lblActionTitle;
 
-        public PlayFinishSubState(FlowController flowController, ScreenBaseState parent)
+        public PlayFinishSubState(HexalemController flowController, ScreenBaseState parent)
             : base(flowController, parent) { }
 
         public override void EnterState()
@@ -66,7 +66,7 @@ namespace Assets.Scripts
 
         private void OnBackClicked(ClickEvent evt)
         {
-            FlowController.ChangeScreenSubState(ScreenState.MainScreen, ScreenSubState.MainChoose);
+            FlowController.ChangeScreenSubState(HexalemScreen.MainScreen, HexalemSubScreen.MainChoose);
         }
     }
 }

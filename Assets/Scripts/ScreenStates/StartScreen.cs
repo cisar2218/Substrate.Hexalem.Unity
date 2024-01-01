@@ -15,7 +15,7 @@ namespace Assets.Scripts.ScreenStates
         private Label _lblPlayerName;
         private Label _lblNodeType;
 
-        public StartScreen(FlowController _flowController)
+        public StartScreen(HexalemController _flowController)
             : base(_flowController) 
         {
             _portraitAlice = Resources.Load<Texture2D>($"Images/alice_portrait");
@@ -119,7 +119,7 @@ namespace Assets.Scripts.ScreenStates
         {
             Debug.Log("Clicked enter button!");
 
-            FlowController.ChangeScreenState(ScreenState.MainScreen);
+            FlowController.ChangeScreenState(HexalemScreen.MainScreen);
         }
 
         private void OnNodeTypeClicked(ClickEvent evt)

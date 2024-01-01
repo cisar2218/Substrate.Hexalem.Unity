@@ -53,9 +53,6 @@ namespace Assets.Scripts
         [SerializeField]
         private GameObject _caveTile;
 
-        [SerializeField]
-        private Material _delta;
-
         private Vector2 touchStart;
 
         private Vector2 touchEnd;

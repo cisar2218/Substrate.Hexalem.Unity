@@ -14,7 +14,7 @@ namespace Assets.Scripts
         private ScrollView _scvSelection;
         private Label _lblActionInfo;
 
-        public PlaySelectSubState(FlowController flowController, ScreenBaseState parent)
+        public PlaySelectSubState(HexalemController flowController, ScreenBaseState parent)
             : base(flowController, parent) { }
 
         public override void EnterState()
@@ -63,7 +63,7 @@ namespace Assets.Scripts
 
             PlayScreenState.SelectedGridIndex = index;
 
-            FlowController.ChangeScreenSubState(ScreenState.PlayScreen, ScreenSubState.PlayTileUpgrade);
+            FlowController.ChangeScreenSubState(HexalemScreen.PlayScreen, HexalemSubScreen.PlayTileUpgrade);
         }
 
         private void OnNextPlayerTurn(byte playerTurn)
@@ -137,7 +137,7 @@ namespace Assets.Scripts
             Debug.Log($"OnTileCardClicked: index {index}");
             PlayScreenState.SelectedCardIndex = index;
 
-            FlowController.ChangeScreenSubState(ScreenState.PlayScreen, ScreenSubState.PlayTileSelect);
+            FlowController.ChangeScreenSubState(HexalemScreen.PlayScreen, HexalemSubScreen.PlayTileSelect);
         }
     }
 }

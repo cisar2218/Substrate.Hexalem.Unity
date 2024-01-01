@@ -8,7 +8,7 @@ namespace Assets.Scripts
     {
         public MainScreenState PlayScreenState => ParentState as MainScreenState;
 
-        public MainPlaySubState(FlowController flowController, ScreenBaseState parent)
+        public MainPlaySubState(HexalemController flowController, ScreenBaseState parent)
             : base(flowController, parent) { }
 
         public override void EnterState()

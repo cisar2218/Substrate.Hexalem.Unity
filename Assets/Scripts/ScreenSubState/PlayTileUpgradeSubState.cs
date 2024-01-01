@@ -18,7 +18,7 @@ namespace Assets.Scripts
 
         private Label _lblTileDescription;
 
-        public PlayTileUpgradeSubState(FlowController flowController, ScreenBaseState parent)
+        public PlayTileUpgradeSubState(HexalemController flowController, ScreenBaseState parent)
             : base(flowController, parent) { }
 
         public override void EnterState()
@@ -59,7 +59,7 @@ namespace Assets.Scripts
         {
             PlayScreenState.SelectedGridIndex = -1;
 
-            FlowController.ChangeScreenSubState(ScreenState.PlayScreen, ScreenSubState.PlaySelect);
+            FlowController.ChangeScreenSubState(HexalemScreen.PlayScreen, HexalemSubScreen.PlaySelect);
         }
 
         private void UpdateTileSelection()
@@ -136,7 +136,7 @@ namespace Assets.Scripts
                 }
 
                 Debug.Log($"Extrinsic[UpgradeAsync] submited: {subscriptionId}");
-                FlowController.ChangeScreenSubState(ScreenState.PlayScreen, ScreenSubState.PlayWaiting);
+                FlowController.ChangeScreenSubState(HexalemScreen.PlayScreen, HexalemSubScreen.PlayWaiting);
             }
         }
     }

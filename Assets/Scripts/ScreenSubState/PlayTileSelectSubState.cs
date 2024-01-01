@@ -23,7 +23,7 @@ namespace Assets.Scripts
         private Button _btnActionTitle;
         private Button _btnActionCancel;
 
-        public PlayTileSelectSubState(FlowController flowController, ScreenBaseState parent)
+        public PlayTileSelectSubState(HexalemController flowController, ScreenBaseState parent)
             : base(flowController, parent)
         {
             _emptyMat = Resources.Load<Material>("Materials/empty");
@@ -141,7 +141,7 @@ namespace Assets.Scripts
                 }
 
                 Debug.Log($"Extrinsic[PlayAsync] submited: {subscriptionId}");
-                FlowController.ChangeScreenSubState(ScreenState.PlayScreen, ScreenSubState.PlayWaiting);
+                FlowController.ChangeScreenSubState(HexalemScreen.PlayScreen, HexalemSubScreen.PlayWaiting);
             }
         }
 
@@ -165,12 +165,12 @@ namespace Assets.Scripts
             }
             PlayScreenState.SelectedCardIndex = -1;
 
-            FlowController.ChangeScreenSubState(ScreenState.PlayScreen, ScreenSubState.PlaySelect);
+            FlowController.ChangeScreenSubState(HexalemScreen.PlayScreen, HexalemSubScreen.PlaySelect);
         }
 
         private void OnChangedHexaSelection(List<byte> hexaSelection)
         {
-            FlowController.ChangeScreenSubState(ScreenState.PlayScreen, ScreenSubState.PlaySelect);
+            FlowController.ChangeScreenSubState(HexalemScreen.PlayScreen, HexalemSubScreen.PlaySelect);
         }
 
         private void UpdateTileSelection()
