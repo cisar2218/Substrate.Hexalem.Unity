@@ -9,6 +9,7 @@ using System.Collections.Generic;
 using System.Data;
 using System.IO;
 using System.Linq;
+using UnityEditor.PackageManager;
 using UnityEngine;
 
 namespace Assets.Scripts
@@ -115,7 +116,7 @@ namespace Assets.Scripts
             ExtrinsicCheck?.Invoke();
         }
 
-        public bool SetAccount(AccountType accountType)
+        public bool SetAccount(AccountType accountType, string name = null)
         {
             CurrentAccountType = accountType;
 
@@ -135,6 +136,20 @@ namespace Assets.Scripts
 
                 case AccountType.Dave:
                     Client.Account = Dave;
+                    break;
+
+                case AccountType.Custom:
+                    if (string.IsNullOrEmpty(name)) {
+                        // No derivation => return Alice
+                        Client.Account = Alice;
+                    }
+                    
+                    string derivation = name.ToLower();
+                    var aliceMnemonic = string.Join(" ", Mnemonic.MnemonicFromEntropy(Alice.Bytes, Mnemonic.BIP39Wordlist.English));
+                    var customAccountDerived = Mnemonic.GetAccountFromMnemonic(aliceMnemonic, derivation, Alice.KeyType);
+
+                    Debug.Log($"Custom account (Alice derived with {derivation} public key : {Utils.GetAddressFrom(customAccountDerived.Bytes)}");
+                    Client.Account = customAccountDerived;
                     break;
 
                 default:

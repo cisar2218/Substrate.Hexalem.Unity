@@ -13,6 +13,8 @@ namespace Assets.Scripts.ScreenStates
         private readonly Texture2D _portraitDave;
         private readonly Texture2D _portraitCustom;
 
+        private Button _btnEnter;
+
         private List<PlayableAccount> _playableAccounts =>
             new()
             {
@@ -25,6 +27,7 @@ namespace Assets.Scripts.ScreenStates
 
         private VisualElement _velPortrait;
         private VisualElement _playerNameContainer;
+        private TextField _playerNameInput;
 
 
         private Label _lblPlayerName;
@@ -37,7 +40,7 @@ namespace Assets.Scripts.ScreenStates
             _portraitBob = Resources.Load<Texture2D>($"Images/bob_portrait");
             _portraitCharlie = Resources.Load<Texture2D>($"Images/charlie_portrait");
             _portraitDave = Resources.Load<Texture2D>($"Images/dave_portrait");
-            _portraitCustom = Resources.Load<Texture2D>($"Images/bob_portrait");
+            _portraitCustom = Resources.Load<Texture2D>($"Images/custom_account_portrait");
         }
 
         public override void EnterState()
@@ -52,13 +55,15 @@ namespace Assets.Scripts.ScreenStates
             _velPortrait = instance.Q<VisualElement>("VelPortrait");
            _lblPlayerName = instance.Q<Label>("LblPlayerName");
 
-            var btnEnter = instance.Q<Button>("BtnEnter");
-            btnEnter.RegisterCallback<ClickEvent>(OnEnterClicked);
+            _btnEnter = instance.Q<Button>("BtnEnter");
+            _btnEnter.RegisterCallback<ClickEvent>(OnEnterClicked);
 
             _lblNodeType = instance.Q<Label>("LblNodeType");
             _lblNodeType.RegisterCallback<ClickEvent>(OnNodeTypeClicked);
 
             _playerNameContainer = instance.Q<VisualElement>("PlayerNameContainer");
+            _playerNameInput = instance.Q<TextField>("FieldPlayerCustomName");
+            _playerNameInput.RegisterValueChangedCallback(OnCustomNameChanged);
 
             // initially select alice
             Network.SetAccount(AccountType.Alice);
@@ -94,11 +99,13 @@ namespace Assets.Scripts.ScreenStates
 
             if(selectedAccount != null)
             {
-                Network.SetAccount(selectedAccount.Value.accountType);
                 if (selectedAccount.Value.isCustom)
                 {
                     _playerNameContainer.style.display = DisplayStyle.Flex;
                     _lblPlayerName.style.display = DisplayStyle.None;
+
+                    Network.SetAccount(AccountType.Custom, _playerNameInput.text);
+                    _btnEnter.SetEnabled(AccountManager.GetInstance().IsAccountNameValid(_playerNameInput.text));
                 }
                 else
                 {
@@ -106,6 +113,9 @@ namespace Assets.Scripts.ScreenStates
                     _lblPlayerName.style.display = DisplayStyle.Flex;
 
                     _lblPlayerName.text = selectedAccount.Value.name;
+                    _btnEnter.SetEnabled(true);
+
+                    Network.SetAccount(selectedAccount.Value.accountType);
                 }
 
                 _velPortrait.style.backgroundImage = selectedAccount.Value.portrait;
@@ -130,7 +140,7 @@ namespace Assets.Scripts.ScreenStates
 
         private void OnEnterClicked(ClickEvent evt)
         {
-            Debug.Log("Clicked enter button!");
+            Debug.Log("Clicked enter button!"); 
 
             FlowController.ChangeScreenState(HexalemScreen.MainScreen);
         }
@@ -139,6 +149,21 @@ namespace Assets.Scripts.ScreenStates
         {
             Network.ToggleNodeType();
             _lblNodeType.text = Network.CurrentNodeType.ToString();
+        }
+
+        private void OnCustomNameChanged(ChangeEvent<string> evt)
+        {
+            Debug.Log($"New custom player account name = {evt.newValue}");
+
+            if (Network.CurrentAccountType != AccountType.Custom) return;
+
+            bool isNameValid = AccountManager.GetInstance().IsAccountNameValid(_playerNameInput.text);
+            _btnEnter.SetEnabled(isNameValid);
+            
+            if(isNameValid)
+            {
+                Network.SetAccount(Network.CurrentAccountType, _playerNameInput.text);
+            }
         }
     }
 
