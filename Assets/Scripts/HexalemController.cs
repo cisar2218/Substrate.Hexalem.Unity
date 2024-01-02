@@ -1,4 +1,5 @@
 using Assets.Scripts.ScreenStates;
+using Assets.Scripts.ScreenSubState;
 using System.Collections.Generic;
 using System.Security.Cryptography;
 using UnityEngine;
@@ -16,6 +17,7 @@ namespace Assets.Scripts
     public enum HexalemSubScreen
     {
         MainChoose,
+        MainOnChainMode,
         Play,
         PlaySelect,
         PlayTileSelect,
@@ -64,6 +66,7 @@ namespace Assets.Scripts
             var mainScreenSubStates = new Dictionary<HexalemSubScreen, IScreenState>
             {
                 { HexalemSubScreen.MainChoose, new MainChooseSubState(this, mainScreen) },
+                { HexalemSubScreen.MainOnChainMode, new MainSelectOnChainModeSubState(this, mainScreen) },
                 { HexalemSubScreen.Play, new MainPlaySubState(this, mainScreen) },
             };
             _subStateDictionary.Add(HexalemScreen.MainScreen, mainScreenSubStates);

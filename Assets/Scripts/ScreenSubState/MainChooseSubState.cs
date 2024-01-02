@@ -64,7 +64,7 @@ namespace Assets.Scripts.ScreenStates
             // subscribe to connection changes
             Network.ConnectionStateChanged += OnConnectionStateChanged;
             Storage.OnStorageUpdated += OnStorageUpdated;
-            Network.Client.ExtrinsicManager.ExtrinsicUpdated += OnExtrinsicUpdated;
+            //Network.Client.ExtrinsicManager.ExtrinsicUpdated += OnExtrinsicUpdated;
             Network.ExtrinsicCheck += OnExtrinsicCheck;
 
             OnConnectionStateChanged(Network.Client.IsConnected);
@@ -77,7 +77,7 @@ namespace Assets.Scripts.ScreenStates
             // unsubscribe from event
             Network.ConnectionStateChanged -= OnConnectionStateChanged;
             Storage.OnStorageUpdated -= OnStorageUpdated;
-            Network.Client.ExtrinsicManager.ExtrinsicUpdated -= OnExtrinsicUpdated;
+            //Network.Client.ExtrinsicManager.ExtrinsicUpdated -= OnExtrinsicUpdated;
             Network.ExtrinsicCheck -= OnExtrinsicCheck;
         }
 
@@ -100,7 +100,7 @@ namespace Assets.Scripts.ScreenStates
 
             if (Storage.HexaGame == null)
             {
-                _btnPlay.text = "CREATE";
+                _btnPlay.text = "PLAY";
                 _lblExtriniscUpdate.text = "\"No pvp game to join, bro!\"";
             }
             else
@@ -117,50 +117,50 @@ namespace Assets.Scripts.ScreenStates
         {
         }
 
-        private void OnExtrinsicUpdated(string subscriptionId, ExtrinsicInfo extrinsicInfo)
-        {
-            if (_subscriptionId == null || _subscriptionId != subscriptionId)
-            {
-                return;
-            }
-            UnityMainThreadDispatcher.Instance().Enqueue(() =>
-            {
-                switch (extrinsicInfo.TransactionEvent)
-                {
-                    case Substrate.NetApi.Model.Rpc.TransactionEvent.Validated:
-                        _lblExtriniscUpdate.text = $"\"Oh bro, need to check what you sent me.\"";
-                        break;
+        //private void OnExtrinsicUpdated(string subscriptionId, ExtrinsicInfo extrinsicInfo)
+        //{
+        //    if (_subscriptionId == null || _subscriptionId != subscriptionId)
+        //    {
+        //        return;
+        //    }
+        //    UnityMainThreadDispatcher.Instance().Enqueue(() =>
+        //    {
+        //        switch (extrinsicInfo.TransactionEvent)
+        //        {
+        //            case Substrate.NetApi.Model.Rpc.TransactionEvent.Validated:
+        //                _lblExtriniscUpdate.text = $"\"Oh bro, need to check what you sent me.\"";
+        //                break;
 
-                    case Substrate.NetApi.Model.Rpc.TransactionEvent.Broadcasted:
-                        _lblExtriniscUpdate.text = $"\"Pump the jam, let's shuffle the dices, gang.\"";
-                        break;
+        //            case Substrate.NetApi.Model.Rpc.TransactionEvent.Broadcasted:
+        //                _lblExtriniscUpdate.text = $"\"Pump the jam, let's shuffle the dices, gang.\"";
+        //                break;
 
-                    case Substrate.NetApi.Model.Rpc.TransactionEvent.BestChainBlockIncluded:
-                        _lblExtriniscUpdate.text = $"\"Besti, bro!\"";
-                        break;
+        //            case Substrate.NetApi.Model.Rpc.TransactionEvent.BestChainBlockIncluded:
+        //                _lblExtriniscUpdate.text = $"\"Besti, bro!\"";
+        //                break;
 
-                    case Substrate.NetApi.Model.Rpc.TransactionEvent.Finalized:
-                        _lblExtriniscUpdate.text = $"\"We got a stamp!\"";
-                        break;
+        //            case Substrate.NetApi.Model.Rpc.TransactionEvent.Finalized:
+        //                _lblExtriniscUpdate.text = $"\"We got a stamp!\"";
+        //                break;
 
-                    case Substrate.NetApi.Model.Rpc.TransactionEvent.Error:
-                        _lblExtriniscUpdate.text = $"\"That doesn't work, bro!\"";
-                        break;
+        //            case Substrate.NetApi.Model.Rpc.TransactionEvent.Error:
+        //                _lblExtriniscUpdate.text = $"\"That doesn't work, bro!\"";
+        //                break;
 
-                    case Substrate.NetApi.Model.Rpc.TransactionEvent.Invalid:
-                        _lblExtriniscUpdate.text = $"\"Invalid, bro, your invalid!\"";
-                        break;
+        //            case Substrate.NetApi.Model.Rpc.TransactionEvent.Invalid:
+        //                _lblExtriniscUpdate.text = $"\"Invalid, bro, your invalid!\"";
+        //                break;
 
-                    case Substrate.NetApi.Model.Rpc.TransactionEvent.Dropped:
-                        _lblExtriniscUpdate.text = $"\"Gonna, drop this, bro.\"";
-                        break;
+        //            case Substrate.NetApi.Model.Rpc.TransactionEvent.Dropped:
+        //                _lblExtriniscUpdate.text = $"\"Gonna, drop this, bro.\"";
+        //                break;
 
-                    default:
-                        _lblExtriniscUpdate.text = $"\"No blue, funk soul bro!\"";
-                        break;
-                }
-            });
-        }
+        //            default:
+        //                _lblExtriniscUpdate.text = $"\"No blue, funk soul bro!\"";
+        //                break;
+        //        }
+        //    });
+        //}
 
         private void OnBtnTrainClicked(ClickEvent evt)
         {
@@ -183,29 +183,31 @@ namespace Assets.Scripts.ScreenStates
 
         private async void OnBtnPlayClicked(ClickEvent evt)
         {
-            Storage.UpdateHexalem = true;
+            FlowController.ChangeScreenSubState(HexalemScreen.MainScreen, HexalemSubScreen.MainOnChainMode);
 
-            if (Storage.HexaGame != null)
-            {
-                FlowController.ChangeScreenState(HexalemScreen.PlayScreen);
-            }
-            else if (!Network.Client.ExtrinsicManager.Running.Any())
-            {
-                _btnTrain.SetEnabled(false);
-                _btnPlay.SetEnabled(false);
-                _btnPlay.text = "WAIT";
-                var subscriptionId = await Network.Client.CreateGameAsync(Network.Client.Account, new List<Account>() { Network.Client.Account }, 25, 1, CancellationToken.None);
-                if (subscriptionId == null)
-                {
-                    _btnTrain.SetEnabled(true);
-                    _btnPlay.SetEnabled(true);
-                    return;
-                }
+            //Storage.UpdateHexalem = true;
 
-                Debug.Log($"Extrinsic[CreateGameAsync] submited: {subscriptionId}");
+            //if (Storage.HexaGame != null)
+            //{
+            //    FlowController.ChangeScreenSubState(HexalemScreen.MainScreen, HexalemSubScreen.MainOnChainMode);
+            //}
+            //else if (!Network.Client.ExtrinsicManager.Running.Any())
+            //{
+            //    _btnTrain.SetEnabled(false);
+            //    _btnPlay.SetEnabled(false);
+            //    _btnPlay.text = "WAIT";
+            //    var subscriptionId = await Network.Client.CreateGameAsync(Network.Client.Account, new List<Account>() { Network.Client.Account }, 25, 1, CancellationToken.None);
+            //    if (subscriptionId == null)
+            //    {
+            //        _btnTrain.SetEnabled(true);
+            //        _btnPlay.SetEnabled(true);
+            //        return;
+            //    }
 
-                _subscriptionId = subscriptionId;
-            }
+            //    Debug.Log($"Extrinsic[CreateGameAsync] submited: {subscriptionId}");
+
+            //    _subscriptionId = subscriptionId;
+            //}
         }
 
         private async void OnBtnResetClicked(ClickEvent evt)

@@ -65,6 +65,7 @@ namespace Assets.Scripts
         private readonly NetworkType _networkType = NetworkType.Live;
 
         public AccountType CurrentAccountType { get; private set; }
+        public string CurrentAccountName { get; private set; }
 
         public NodeType CurrentNodeType { get; private set; }
 
@@ -78,6 +79,7 @@ namespace Assets.Scripts
             base.Awake();
             //Your code goes here
             CurrentAccountType = AccountType.Alice;
+            CurrentAccountName = CurrentAccountType.ToString();
             CurrentNodeType = NodeType.Local;
             Sudo = Alice;
             _nodeUrl = "ws://127.0.0.1:9944";
@@ -119,45 +121,36 @@ namespace Assets.Scripts
         public bool SetAccount(AccountType accountType, string name = null)
         {
             CurrentAccountType = accountType;
+            CurrentAccountName = name ?? accountType.ToString();
+            Client.Account = GetAccount(accountType, name);
+            return true;
+        }
 
+        public Account? GetAccount(AccountType accountType, string name = null)
+        {
             switch (accountType)
             {
-                case AccountType.Alice:
-                    Client.Account = Alice;
-                    break;
-
-                case AccountType.Bob:
-                    Client.Account = Bob;
-                    break;
-
-                case AccountType.Charlie:
-                    Client.Account = Charlie;
-                    break;
-
-                case AccountType.Dave:
-                    Client.Account = Dave;
-                    break;
-
+                case AccountType.Alice: return Alice;
+                case AccountType.Bob: return Bob;
+                case AccountType.Charlie: return Charlie;
+                case AccountType.Dave: return Dave;
                 case AccountType.Custom:
-                    if (string.IsNullOrEmpty(name)) {
+                    if (string.IsNullOrEmpty(name))
+                    {
                         // No derivation => return Alice
-                        Client.Account = Alice;
+                        return Alice;
                     }
-                    
+
                     string derivation = name.ToLower();
                     var aliceMnemonic = string.Join(" ", Mnemonic.MnemonicFromEntropy(Alice.Bytes, Mnemonic.BIP39Wordlist.English));
                     var customAccountDerived = Mnemonic.GetAccountFromMnemonic(aliceMnemonic, derivation, Alice.KeyType);
 
                     Debug.Log($"Custom account (Alice derived with {derivation} public key : {Utils.GetAddressFrom(customAccountDerived.Bytes)}");
-                    Client.Account = customAccountDerived;
-                    break;
+                    return customAccountDerived;
 
                 default:
-                    Client.Account = Alice;
-                    break;
+                    return Alice;
             }
-
-            return true;
         }
 
         public bool ToggleNodeType()
