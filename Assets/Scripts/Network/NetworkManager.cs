@@ -18,7 +18,8 @@ namespace Assets.Scripts
         Alice,
         Bob,
         Charlie,
-        Dave
+        Dave,
+        Custom
     }
 
     public enum NodeType
