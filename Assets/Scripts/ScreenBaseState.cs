@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using Assets.Scripts.Network;
+using UnityEngine;
 using UnityEngine.UIElements;
 
 namespace Assets.Scripts
@@ -16,6 +17,7 @@ namespace Assets.Scripts
 
         protected ScreenBaseState ParentState { get; private set; }
 
+        protected FaucetManager Faucet => FaucetManager.GetInstance();
         protected NetworkManager Network => NetworkManager.GetInstance();
 
         protected StorageManager Storage => StorageManager.GetInstance();

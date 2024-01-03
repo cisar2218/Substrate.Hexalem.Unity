@@ -1,5 +1,7 @@
 using Schnorrkel.Keys;
+using Substrate.Hexalem.NET.NetApiExt.Generated.Model.frame_system;
 using Substrate.Integration;
+using Substrate.Integration.Client;
 using Substrate.Integration.Helper;
 using Substrate.NET.Wallet;
 using Substrate.NetApi;
@@ -9,6 +11,9 @@ using System.Collections.Generic;
 using System.Data;
 using System.IO;
 using System.Linq;
+using System.Numerics;
+using System.Threading;
+using System.Threading.Tasks;
 using UnityEditor.PackageManager;
 using UnityEngine;
 
@@ -123,6 +128,7 @@ namespace Assets.Scripts
             CurrentAccountType = accountType;
             CurrentAccountName = name ?? accountType.ToString();
             Client.Account = GetAccount(accountType, name);
+
             return true;
         }
 
@@ -141,11 +147,9 @@ namespace Assets.Scripts
                         return Alice;
                     }
 
-                    string derivation = name.ToLower();
-                    var aliceMnemonic = string.Join(" ", Mnemonic.MnemonicFromEntropy(Alice.Bytes, Mnemonic.BIP39Wordlist.English));
-                    var customAccountDerived = Mnemonic.GetAccountFromMnemonic(aliceMnemonic, derivation, Alice.KeyType);
+                    var customAccountDerived = BaseClient.DeriveAccount(Alice, name.ToLower());
 
-                    Debug.Log($"Custom account (Alice derived with {derivation} public key : {Utils.GetAddressFrom(customAccountDerived.Bytes)}");
+                    Debug.Log($"Custom account (Alice derived with {name.ToLower()} public key : {Utils.GetAddressFrom(customAccountDerived.Bytes)}");
                     return customAccountDerived;
 
                 default:

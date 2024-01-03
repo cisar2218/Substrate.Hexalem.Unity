@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Threading;
 using UnityEngine;
 using UnityEngine.UIElements;
 
@@ -105,7 +106,7 @@ namespace Assets.Scripts.ScreenStates
 
         private void OnEnterClicked(ClickEvent evt)
         {
-            Debug.Log("Clicked enter button!"); 
+            Debug.Log("Clicked enter button!");
 
             FlowController.ChangeScreenState(HexalemScreen.MainScreen);
         }

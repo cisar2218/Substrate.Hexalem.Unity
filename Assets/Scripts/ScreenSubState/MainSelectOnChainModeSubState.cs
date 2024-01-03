@@ -25,7 +25,6 @@ namespace Assets.Scripts.ScreenSubState
         private VisualElement _playerNameContainer;
         private TextField _playerNameInput;
         PlayableAccount _currentFriendselectedAccount;
-        private Account _invitedFriendAccount;
 
         private string _subscriptionId;
         private Label _lblExtriniscUpdate;
@@ -142,7 +141,8 @@ namespace Assets.Scripts.ScreenSubState
 
             if (!Network.Client.ExtrinsicManager.Running.Any())
             {
-                await CreateNewOnChainGameAsync(new List<Account>() { Network.Client.Account, _invitedFriendAccount });
+                var invitedFriendAccount = Network.GetAccount(_currentFriendselectedAccount.accountType, _playerNameInput.text);
+                await CreateNewOnChainGameAsync(new List<Account>() { Network.Client.Account, invitedFriendAccount });
             }
         }
 
@@ -183,8 +183,6 @@ namespace Assets.Scripts.ScreenSubState
                 _lblPlayerName.style.display = DisplayStyle.None;
 
                 _btnValidateInviteFriend.SetEnabled(AccountManager.GetInstance().IsAccountNameValid(_playerNameInput.text));
-
-                _invitedFriendAccount = Network.GetAccount(selectedAccount.Value.accountType, _playerNameInput.text);
             }
             else
             {
@@ -193,8 +191,6 @@ namespace Assets.Scripts.ScreenSubState
 
                 _lblPlayerName.text = selectedAccount.Value.name;
                 _btnValidateInviteFriend.SetEnabled(true);
-
-                _invitedFriendAccount = Network.GetAccount(selectedAccount.Value.accountType);
             }
 
             _velPortraitFriend.style.backgroundImage = selectedAccount.Value.portrait;
