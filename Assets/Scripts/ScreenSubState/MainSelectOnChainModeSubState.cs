@@ -1,4 +1,5 @@
 ﻿using Assets.Scripts.ScreenStates;
+using Newtonsoft.Json.Linq;
 using Substrate.Integration.Client;
 using Substrate.NetApi.Model.Types;
 using System.Collections.Generic;
@@ -23,6 +24,7 @@ namespace Assets.Scripts.ScreenSubState
         private Label _lblPlayerName;
         private VisualElement _playerNameContainer;
         private TextField _playerNameInput;
+        PlayableAccount _currentFriendselectedAccount;
         private Account _invitedFriendAccount;
 
         private string _subscriptionId;
@@ -31,7 +33,7 @@ namespace Assets.Scripts.ScreenSubState
         public MainSelectOnChainModeSubState(HexalemController flowController, ScreenBaseState parent)
             : base(flowController, parent) { }
 
-        public override void EnterState()
+        public async override void EnterState()
         {
             Debug.Log($"[{this.GetType().Name}][SUB] EnterState");
 
@@ -61,11 +63,11 @@ namespace Assets.Scripts.ScreenSubState
             _velInviteFriend = elementInstance.Q<VisualElement>("VelInviteFriend");
 
             _velPortraitFriend = elementInstance.Q<VisualElement>("VelPortrait");
-            _velPortraitFriend.style.backgroundImage = AccountManager.GetInstance().GetPortrait(AccountManager.DefaultAccountType);
 
             _lblPlayerName = elementInstance.Q<Label>("LblPlayerName");
             _playerNameContainer = elementInstance.Q<VisualElement>("PlayerNameContainer");
             _playerNameInput = elementInstance.Q<TextField>("FieldPlayerCustomName");
+            _playerNameInput.RegisterValueChangedCallback(OnCustomNameChanged);
 
             _lblExtriniscUpdate = elementInstance.Q<Label>("LblExtriniscUpdate");
 
@@ -78,6 +80,9 @@ namespace Assets.Scripts.ScreenSubState
 
             Storage.OnStorageUpdated += OnStorageUpdated;
             Network.Client.ExtrinsicManager.ExtrinsicUpdated += OnExtrinsicUpdated;
+
+            _currentFriendselectedAccount = AccountManager.GetInstance().PlayableAccounts.Last();
+            DisplayAccount(_currentFriendselectedAccount);
         }
 
         public override void ExitState()
@@ -85,6 +90,8 @@ namespace Assets.Scripts.ScreenSubState
             Debug.Log($"[{this.GetType().Name}][SUB] ExitState");
 
             Storage.OnStorageUpdated -= OnStorageUpdated;
+
+            AccountManager.GetInstance().ClearAvailableAccounts();
         }
 
         private void OnBtnMenuClicked(ClickEvent _)
@@ -97,6 +104,9 @@ namespace Assets.Scripts.ScreenSubState
             _btnInviteFriend.SetEnabled(false);
             _btnPlay.SetEnabled(false);
             _btnPlay.text = "WAIT";
+
+            Debug.Log($"[{nameof(MainSelectOnChainModeSubState)} | {nameof(CreateNewOnChainGameAsync)}] with players {string.Join(", ", players.Select(x => Substrate.NetApi.Utils.GetAddressFrom(x.Bytes)))}");
+
             var subscriptionId = await Network.Client.CreateGameAsync(Network.Client.Account, players, 25, 1, CancellationToken.None);
             if (subscriptionId == null)
             {
@@ -105,7 +115,7 @@ namespace Assets.Scripts.ScreenSubState
                 return;
             }
 
-            Debug.Log($"Extrinsic[CreateGameAsync] submited: {subscriptionId}");
+            Debug.Log($"Extrinsic[{nameof(CreateNewOnChainGameAsync)}] submited: {subscriptionId}");
 
             _subscriptionId = subscriptionId;
         }
@@ -120,23 +130,27 @@ namespace Assets.Scripts.ScreenSubState
             }
             else if (!Network.Client.ExtrinsicManager.Running.Any())
             {
-                await CreateNewOnChainGameAsync(new List<Account>() { Network.Client.Account, _invitedFriendAccount });
+                await CreateNewOnChainGameAsync(new List<Account>() { Network.Client.Account });
             }
         }
 
         private async void OnBtnValidateInviteFriendClicked(ClickEvent evt)
         {
             _velInviteFriend.style.display = DisplayStyle.None;
+            _btnInviteFriend.style.display = DisplayStyle.Flex;
+            _btnPlay.style.display = DisplayStyle.Flex;
 
             if (!Network.Client.ExtrinsicManager.Running.Any())
             {
-                await CreateNewOnChainGameAsync(new List<Account>() { Network.Client.Account });
+                await CreateNewOnChainGameAsync(new List<Account>() { Network.Client.Account, _invitedFriendAccount });
             }
         }
 
         private void OnBtnInviteFriendClicked(ClickEvent evt)
         {
             _velInviteFriend.style.display = DisplayStyle.Flex;
+
+            _btnPlay.style.display = DisplayStyle.None;
             _btnInviteFriend.style.display = DisplayStyle.None;
         }
 
@@ -144,48 +158,49 @@ namespace Assets.Scripts.ScreenSubState
         {
             _velInviteFriend.style.display = DisplayStyle.None;
             _btnInviteFriend.style.display = DisplayStyle.Flex;
+            _btnPlay.style.display = DisplayStyle.Flex;
         }
 
-        private void OnSwipeEvent(Vector3 direction)
+        private async void OnSwipeEvent(Vector3 direction)
         {
-            PlayableAccount? selectedAccount = null;
-
             if (direction == Vector3.left)
             {
-                selectedAccount = AccountManager.GetInstance().findNext(Network.CurrentAccountType);
+                _currentFriendselectedAccount = await AccountManager.GetInstance().findNextAvailableAccountAsync(_currentFriendselectedAccount.accountType, CancellationToken.None);
             }
             else if (direction == Vector3.right)
             {
-                selectedAccount = AccountManager.GetInstance().findPrevious(Network.CurrentAccountType);
+                _currentFriendselectedAccount = await AccountManager.GetInstance().findPreviousAvailableAccountAsync(_currentFriendselectedAccount.accountType, CancellationToken.None);
             }
 
-            if (selectedAccount != null)
-            {
-                if (selectedAccount.Value.isCustom)
-                {
-                    _playerNameContainer.style.display = DisplayStyle.Flex;
-                    _lblPlayerName.style.display = DisplayStyle.None;
-
-                    _btnValidateInviteFriend.SetEnabled(AccountManager.GetInstance().IsAccountNameValid(_playerNameInput.text));
-
-                    _invitedFriendAccount = Network.GetAccount(selectedAccount.Value.accountType, _playerNameInput.text);
-                }
-                else
-                {
-                    _playerNameContainer.style.display = DisplayStyle.None;
-                    _lblPlayerName.style.display = DisplayStyle.Flex;
-
-                    _lblPlayerName.text = selectedAccount.Value.name;
-                    _btnValidateInviteFriend.SetEnabled(true);
-
-                    Network.SetAccount(selectedAccount.Value.accountType);
-                }
-
-                _velPortraitFriend.style.backgroundImage = selectedAccount.Value.portrait;
-            }
+            DisplayAccount(_currentFriendselectedAccount);
         }
 
-        private void OnStorageUpdated(uint blocknumber)
+        private void DisplayAccount(PlayableAccount? selectedAccount)
+        {
+            if (selectedAccount.Value.isCustom)
+            {
+                _playerNameContainer.style.display = DisplayStyle.Flex;
+                _lblPlayerName.style.display = DisplayStyle.None;
+
+                _btnValidateInviteFriend.SetEnabled(AccountManager.GetInstance().IsAccountNameValid(_playerNameInput.text));
+
+                _invitedFriendAccount = Network.GetAccount(selectedAccount.Value.accountType, _playerNameInput.text);
+            }
+            else
+            {
+                _playerNameContainer.style.display = DisplayStyle.None;
+                _lblPlayerName.style.display = DisplayStyle.Flex;
+
+                _lblPlayerName.text = selectedAccount.Value.name;
+                _btnValidateInviteFriend.SetEnabled(true);
+
+                _invitedFriendAccount = Network.GetAccount(selectedAccount.Value.accountType);
+            }
+
+            _velPortraitFriend.style.backgroundImage = selectedAccount.Value.portrait;
+        }
+
+        private async void OnStorageUpdated(uint blocknumber)
         {
             if (Network.Client.ExtrinsicManager.Running.Any())
             {
@@ -204,8 +219,20 @@ namespace Assets.Scripts.ScreenSubState
             }
             else
             {
-                _btnPlay.text = "JOIN";
-                _lblExtriniscUpdate.text = $"\"Hey bro, {Storage.HexaGame.PlayersCount} buddies, waiting!\"";
+                // You can now only join game where you are in players list
+                var currentPlayerAddress = Substrate.NetApi.Utils.GetAddressFrom(Network.Client.Account.Bytes);
+                var boardInstance = await NetworkManager.GetInstance().Client.GetBoardAsync(currentPlayerAddress, CancellationToken.None);
+                var gameInstance = await NetworkManager.GetInstance().Client.GetGameAsync(boardInstance.GameId, CancellationToken.None);
+
+                var playerIdx = gameInstance.Players.ToList().IndexOf(currentPlayerAddress);
+                if (playerIdx >= 0)
+                {
+                    // If you are the game creator => JOIN
+                    _btnPlay.text = playerIdx == 0 ? "JOIN" : "ACCEPT";
+                    
+                    _lblExtriniscUpdate.text = $"\"Hey bro, {Storage.HexaGame.PlayersCount} buddies, waiting!\"";
+                }
+                
             }
 
             _btnPlay.SetEnabled(true);
@@ -254,6 +281,12 @@ namespace Assets.Scripts.ScreenSubState
                         break;
                 }
             });
+        }
+
+        private void OnCustomNameChanged(ChangeEvent<string> evt)
+        {
+            bool isNameValid = AccountManager.GetInstance().IsAccountNameValid(_playerNameInput.text);
+            _btnValidateInviteFriend.SetEnabled(isNameValid);
         }
     }
 }

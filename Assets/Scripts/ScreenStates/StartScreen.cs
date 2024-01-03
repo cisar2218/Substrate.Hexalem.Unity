@@ -69,11 +69,11 @@ namespace Assets.Scripts.ScreenStates
 
             if (direction == Vector3.left)
             {
-                selectedAccount = AccountManager.GetInstance().findNext(Network.CurrentAccountType);
+                selectedAccount = AccountManager.GetInstance().findNextPlayableAccount(Network.CurrentAccountType);
             }
             else if (direction == Vector3.right)
             {
-                selectedAccount = AccountManager.GetInstance().findPrevious(Network.CurrentAccountType);
+                selectedAccount = AccountManager.GetInstance().findPreviousPlayableAccount(Network.CurrentAccountType);
             }
 
             if(selectedAccount != null)
