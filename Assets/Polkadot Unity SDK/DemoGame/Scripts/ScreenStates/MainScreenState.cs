@@ -1,4 +1,6 @@
 ﻿using Substrate.Integration;
+using Substrate.Integration.Helper;
+using System;
 using System.Numerics;
 using System.Threading;
 using UnityEngine;
@@ -42,6 +44,7 @@ namespace Assets.Scripts.ScreenStates
             _lblToken = topBound.Query<Label>("LblToken");
 
             _btnFaucet = topBound.Query<Button>("BtnFaucet");
+            _btnFaucet.RegisterCallback<ClickEvent>(OnFaucetClicked);
             _btnFaucet.SetEnabled(false);
 
             _lblNodeUrl = topBound.Query<Label>("LblNodeUrl");
@@ -121,6 +124,28 @@ namespace Assets.Scripts.ScreenStates
             {
                 _btnFaucet.SetEnabled(true);
             }
+        }
+
+        private async void OnFaucetClicked(ClickEvent evt)
+        {
+            _btnFaucet.SetEnabled(false);
+
+            var sender = Network.Sudo;
+            var target = Network.Client.Account;
+
+            var amountToTransfer = new BigInteger(1000 * SubstrateNetwork.DECIMALS);
+
+            Debug.Log($"[{nameof(NetworkManager)})] Send {amountToTransfer} from {sender.ToAccountId32().ToAddress()} to {target.ToAccountId32().ToAddress()}");
+            
+            var subscriptionId = await Network.Client.TransferKeepAliveAsync(sender, target.ToAccountId32(), amountToTransfer, 1, CancellationToken.None);
+            if (subscriptionId == null)
+            {
+                Debug.LogError($"[{nameof(NetworkManager)}] Transfer failed");
+                _btnFaucet.SetEnabled(true);
+                return;
+            }
+
+            Debug.Log($"[{nameof(NetworkManager)}] Transfer executed!");
         }
     }
 }
