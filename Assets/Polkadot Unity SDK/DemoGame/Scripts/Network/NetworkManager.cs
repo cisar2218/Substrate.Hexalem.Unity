@@ -124,16 +124,8 @@ namespace Assets.Scripts
                     break;
 
                 case AccountType.Custom:
-                    if (string.IsNullOrEmpty(custom) || custom.Length < 3)
-                    {
-                        name = accountType.ToString();
-                        result = BaseClient.RandomAccount(GameConstant.AccountSeed, accountType.ToString(), KeyType.Sr25519);
-                    } 
-                    else
-                    {
-                        name = custom;
-                        result = BaseClient.RandomAccount(GameConstant.AccountSeed, custom, KeyType.Sr25519);
-                    }
+                    name = custom.ToUpper();
+                    result = BaseClient.RandomAccount(GameConstant.AccountSeed, custom, KeyType.Sr25519);
                     break;
 
                 default:
@@ -145,11 +137,16 @@ namespace Assets.Scripts
             return (result, name);
         }
 
-        public bool SetAccount(AccountType accountType, string name = null)
+        public bool SetAccount(AccountType accountType, string custom = null)
         {
+            if (accountType == AccountType.Custom && (string.IsNullOrEmpty(custom) || custom.Length < 3))
+            {
+                return false;
+            }
+
             CurrentAccountType = accountType;
 
-            var tuple = GetAccount(accountType, name);
+            var tuple = GetAccount(accountType, custom);
 
             Client.Account = tuple.Item1;
             CurrentAccountName = tuple.Item2;
@@ -209,7 +206,7 @@ namespace Assets.Scripts
         public void InitializeClient()
         {
             _client = new SubstrateNetwork(null, _networkType, _nodeUrl);
-            SetAccount(CurrentAccountType, "");
+            SetAccount(CurrentAccountType, CurrentAccountName);
         }
     }
 }

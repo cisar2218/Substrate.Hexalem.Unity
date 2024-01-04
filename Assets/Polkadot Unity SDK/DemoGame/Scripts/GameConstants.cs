@@ -40,9 +40,6 @@ namespace Assets.Scripts
         public static StyleColor ColorExtrinsicFailed => new StyleColor(new Color32(219, 100, 100, 255));
         public static StyleColor ColorExtrinsicFailedDark => new StyleColor(new Color32(120, 45, 45, 255));
 
-        public static StyleColor FontLight => new StyleColor(new Color32(255, 255, 255, 255));
-        public static StyleColor FontGreenish => new StyleColor(new Color32(225, 255, 225, 255));
-
         public static StyleColor FontDark => new StyleColor(new Color32(51, 51, 51, 255));
 
         public static string BalanceFormatter(BigInteger bigInteger)

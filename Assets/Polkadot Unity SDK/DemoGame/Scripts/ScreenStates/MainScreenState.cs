@@ -101,7 +101,7 @@ namespace Assets.Scripts.ScreenStates
 
             _btnFaucet.SetEnabled(false);
 
-            _lblAccount.text = Network.CurrentAccountType.ToString();
+            _lblAccount.text = Network.CurrentAccountName;
             Debug.Log(Network.Client.Account.Value);
             var address = Network.Client.Account.Value;
             _lblAddress.text = address.Substring(0, 6) + " ... " + address.Substring(20, 6);
