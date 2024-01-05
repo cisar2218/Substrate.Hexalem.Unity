@@ -119,6 +119,10 @@ namespace Assets.Scripts.ScreenStates
                 case AccountType.Dave:
                     velPortrait.style.backgroundImage = new StyleBackground(PortraitDave);
                     break;
+
+                case AccountType.Custom:
+                    velPortrait.style.backgroundImage = new StyleBackground(PortraitCustom);
+                    break;
             }
 
             // Portrait is also use to zoom in / zoom out

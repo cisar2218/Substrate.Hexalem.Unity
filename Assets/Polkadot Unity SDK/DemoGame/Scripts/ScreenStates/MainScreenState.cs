@@ -1,6 +1,7 @@
 ﻿using Substrate.Integration;
 using Substrate.Integration.Helper;
 using System;
+using System.Linq;
 using System.Numerics;
 using System.Threading;
 using UnityEngine;
@@ -118,11 +119,11 @@ namespace Assets.Scripts.ScreenStates
                 _lblNodeVersion.text = specName.Length > 20 ? $"{specName[..17]}..." : specName;
 
                 // only enable if
-                _btnFaucet.SetEnabled(GameConstant.FaucetThreshold < 100);
+                _btnFaucet.SetEnabled(!Network.Client.ExtrinsicManager.Running.Any() && GameConstant.FaucetThreshold < 100);
             }
             else
             {
-                _btnFaucet.SetEnabled(true);
+                _btnFaucet.SetEnabled(!Network.Client.ExtrinsicManager.Running.Any());
             }
         }
 

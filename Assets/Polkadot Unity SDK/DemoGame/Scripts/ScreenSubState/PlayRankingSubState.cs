@@ -96,6 +96,7 @@ namespace Assets.Scripts
                 playerScoreInstance.Q<Label>("LblPlayerIndex").text = (i + 1).ToString();
                 playerScoreInstance.Q<Label>("LblTurn").text = i == Storage.HexaGame.PlayerTurn ? "TURN" : "";
                 var velPortrait = playerScoreInstance.Q<VisualElement>("VelPlayerPort");
+
                 if (player.Id.SequenceEqual(Network.GetAccount(AccountType.Alice).Item1.Bytes))
                 {
                     velPortrait.style.backgroundImage = new StyleBackground(PlayScreenState.PortraitAlice);
