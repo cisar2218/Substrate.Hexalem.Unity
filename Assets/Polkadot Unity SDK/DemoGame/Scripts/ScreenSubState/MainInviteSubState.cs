@@ -196,7 +196,7 @@ namespace Assets.Scripts.ScreenStates
         private void PlayerSetInvite(AccountType invitePlayer)
         {
             var index = _players.IndexOf(invitePlayer.ToString());
-            Debug.Log($"Index is {index}");
+
             if (index == -1 && _players.Count < 4)
             {
                 _btnInvite.style.backgroundColor = GameConstant.AddPlayer;
@@ -290,15 +290,12 @@ namespace Assets.Scripts.ScreenStates
             });
         }
 
-        private async void OnBtnChangeClicked(ClickEvent evt, int value)
+        private void OnBtnChangeClicked(ClickEvent evt, int value)
         {
-            Debug.Log("Inside OnBtnChangeClicked");
-
             var values = Enum.GetValues(typeof(AccountType)).Length;
             _invitePlayer = (AccountType)((((int)_invitePlayer) + values + value) % values);
 
             PlayerSetInvite(_invitePlayer);
-
         }
 
         private async void OnBtnCreateClicked(ClickEvent evt)
