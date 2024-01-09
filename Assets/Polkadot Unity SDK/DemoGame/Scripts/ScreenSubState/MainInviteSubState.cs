@@ -1,13 +1,10 @@
-﻿using Substrate.Hexalem.Engine;
-using Substrate.Integration.Client;
-using Substrate.NetApi.Model.Types;
+﻿using Substrate.Integration.Client;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
 using UnityEngine;
 using UnityEngine.UIElements;
-using static UnityEditor.Experimental.GraphView.GraphView;
 
 namespace Assets.Scripts.ScreenStates
 {
@@ -83,7 +80,7 @@ namespace Assets.Scripts.ScreenStates
             _lblPlayerCount = elementInstance.Q<Label>("LblPlayerCount");
 
             _lblExtriniscUpdate = elementInstance.Q<Label>("LblExtriniscUpdate");
-            
+
             PlayerParty(PartyAction.Add, Network.CurrentAccountName);
 
             PlayerSetInvite(_invitePlayer);
@@ -95,7 +92,6 @@ namespace Assets.Scripts.ScreenStates
             Storage.OnStorageUpdated += OnStorageUpdated;
             Network.Client.ExtrinsicManager.ExtrinsicUpdated += OnExtrinsicUpdated;
             Network.ExtrinsicCheck += OnExtrinsicCheck;
-
         }
 
         public override void ExitState()
@@ -193,17 +189,27 @@ namespace Assets.Scripts.ScreenStates
             }
         }
 
-        private void PlayerSetInvite(AccountType invitePlayer)
+        private void PlayerSetInvite(AccountType player)
         {
-            var index = _players.IndexOf(invitePlayer.ToString());
+            _btnInvite.text = player.ToString().ToUpper();
+
+            if (Network.Client.ExtrinsicManager.Running.Any())
+            {
+                _btnInvite.style.backgroundColor = GameConstant.PastelBlue;
+                _btnInvite.SetEnabled(false);
+                _inviteAction = PartyAction.Non;
+                return;
+            }
+
+            var index = _players.IndexOf(player.ToString());
 
             if (index == -1 && _players.Count < 4)
             {
                 _btnInvite.style.backgroundColor = GameConstant.AddPlayer;
                 _btnInvite.SetEnabled(true);
                 _inviteAction = PartyAction.Add;
-            } 
-            else if (index > -1 && invitePlayer.ToString() != _players[0])  
+            }
+            else if (index > -1 && player.ToString() != _players[0])
             {
                 _btnInvite.style.backgroundColor = GameConstant.RemPlayer;
                 _btnInvite.SetEnabled(true);
@@ -215,8 +221,6 @@ namespace Assets.Scripts.ScreenStates
                 _btnInvite.SetEnabled(false);
                 _inviteAction = PartyAction.Non;
             }
-
-            _btnInvite.text = invitePlayer.ToString().ToUpper();
         }
 
         private void OnStorageUpdated(uint blocknumber)
@@ -236,9 +240,13 @@ namespace Assets.Scripts.ScreenStates
             {
                 _btnCreate.text = "JOIN";
                 _lblExtriniscUpdate.text = $"\"Hey bro, {Storage.HexaGame.PlayersCount} buddies, waiting!\"";
+                FlowController.ChangeScreenSubState(DemoGameScreen.MainScreen, DemoGameSubScreen.MainChoose);
             }
 
             _btnCreate.SetEnabled(true);
+
+            // updated invite button here
+            PlayerSetInvite(_invitePlayer);
         }
 
         private void OnExtrinsicCheck()
@@ -309,11 +317,24 @@ namespace Assets.Scripts.ScreenStates
             else if (!Network.Client.ExtrinsicManager.Running.Any())
             {
                 _btnCreate.SetEnabled(false);
+                _btnInvite.SetEnabled(false);
+
+                // get accounts to create game ...
+                var playerAccounts = _players.Select(p =>
+                {
+                    if (!Enum.TryParse(p, out AccountType accountType))
+                    {
+                        accountType = AccountType.Custom;
+                    }
+                    return Network.GetAccount(accountType, p).Item1;
+                }).ToList();
+
                 _btnCreate.text = "WAIT";
-                var subscriptionId = await Network.Client.CreateGameAsync(Network.Client.Account, new List<Account>() { Network.Client.Account }, 25, 1, CancellationToken.None);
+                var subscriptionId = await Network.Client.CreateGameAsync(Network.Client.Account, playerAccounts, 25, 1, CancellationToken.None);
                 if (subscriptionId == null)
                 {
                     _btnCreate.SetEnabled(true);
+                    _btnInvite.SetEnabled(true);
                     return;
                 }
 
@@ -325,7 +346,7 @@ namespace Assets.Scripts.ScreenStates
 
         private async void OnBtnTogglePlayerClicked(ClickEvent evt)
         {
-            if(_inviteAction == PartyAction.Non)
+            if (_inviteAction == PartyAction.Non)
             {
                 return;
             }

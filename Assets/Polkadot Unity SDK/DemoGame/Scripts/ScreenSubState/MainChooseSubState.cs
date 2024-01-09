@@ -181,7 +181,14 @@ namespace Assets.Scripts.ScreenStates
 
         private async void OnBtnPlayClicked(ClickEvent evt)
         {
-            FlowController.ChangeScreenSubState(DemoGameScreen.MainScreen, DemoGameSubScreen.MainInvite);
+            if (Storage.HexaGame != null)
+            {
+                FlowController.ChangeScreenState(DemoGameScreen.PlayScreen);
+            }
+            else
+            {
+                FlowController.ChangeScreenSubState(DemoGameScreen.MainScreen, DemoGameSubScreen.MainInvite);
+            }
         }
 
         private async void OnBtnResetClicked(ClickEvent evt)
