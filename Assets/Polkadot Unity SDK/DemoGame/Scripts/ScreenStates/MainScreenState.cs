@@ -22,8 +22,21 @@ namespace Assets.Scripts.ScreenStates
         private Label _lblConnection;
         private Label _lblBlockNumber;
 
+        public Texture2D PortraitAlice { get; }
+        public Texture2D PortraitBob { get; }
+        public Texture2D PortraitCharlie { get; }
+        public Texture2D PortraitDave { get; }
+        public Texture2D PortraitCustom { get; }
+
         public MainScreenState(DemoGameController _flowController)
-            : base(_flowController) { }
+            : base(_flowController) {
+
+            PortraitAlice = Resources.Load<Texture2D>($"DemoGame/Images/alice_portrait");
+            PortraitBob = Resources.Load<Texture2D>($"DemoGame/Images/bob_portrait");
+            PortraitCharlie = Resources.Load<Texture2D>($"DemoGame/Images/charlie_portrait");
+            PortraitDave = Resources.Load<Texture2D>($"DemoGame/Images/dave_portrait");
+            PortraitCustom = Resources.Load<Texture2D>($"DemoGame/Images/custom_portrait");
+        }
 
         public override void EnterState()
         {
