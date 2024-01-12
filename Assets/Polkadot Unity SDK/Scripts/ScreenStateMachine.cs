@@ -76,12 +76,5 @@ namespace Assets.Scripts
             }
         }
 
-        /// <summary>
-        /// Update the current state
-        /// </summary>
-        internal void Update()
-        {
-            _currentState?.UpdateState();
-        }
     }
 }
