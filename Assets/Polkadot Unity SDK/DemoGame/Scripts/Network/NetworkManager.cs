@@ -1,8 +1,9 @@
-using Schnorrkel.Keys;
 using Substrate.Integration;
 using Substrate.Integration.Client;
 using Substrate.Integration.Helper;
+using Substrate.NET.Schnorrkel.Keys;
 using Substrate.NET.Wallet;
+using Substrate.NET.Wallet.Keyring;
 using Substrate.NetApi;
 using Substrate.NetApi.Model.Rpc;
 using Substrate.NetApi.Model.Types;
@@ -43,10 +44,10 @@ namespace Assets.Scripts
         public event ExtrinsicCheckHandler ExtrinsicCheck;
 
         public MiniSecret MiniSecretAlice => new MiniSecret(Utils.HexToByteArray("0xe5be9a5092b81bca64be81d212e7f2f9eba183bb7a90954f7b76361f6edb5c0a"), ExpandMode.Ed25519);
-        public Account SudoAlice => Account.Build(KeyType.Sr25519, MiniSecretAlice.ExpandToSecret().ToBytes(), MiniSecretAlice.GetPair().Public.Key);
+        public Account SudoAlice => Account.Build(KeyType.Sr25519, MiniSecretAlice.ExpandToSecret().ToEd25519Bytes(), MiniSecretAlice.GetPair().Public.Key);
 
         public MiniSecret MiniSecretSudo => new MiniSecret(Utils.HexToByteArray(""), ExpandMode.Ed25519);
-        public Account SudoHexalem => Account.Build(KeyType.Sr25519, MiniSecretSudo.ExpandToSecret().ToBytes(), MiniSecretSudo.GetPair().Public.Key);
+        public Account SudoHexalem => Account.Build(KeyType.Sr25519, MiniSecretSudo.ExpandToSecret().ToEd25519Bytes(), MiniSecretSudo.GetPair().Public.Key);
 
         // Sudo account if needed
         public Account Sudo { get; private set; }
@@ -65,6 +66,16 @@ namespace Assets.Scripts
         public SubstrateNetwork Client => _client;
 
         private bool? _lastConnectionState = null;
+
+        /// <summary>
+        /// Keep track of player wallet
+        /// </summary>
+        public Keyring Keyring { get; private set; } = new Keyring();
+
+        /// <summary>
+        /// The current player wallet
+        /// </summary>
+        public Wallet Wallet { get; private set; }
 
         protected override void Awake()
         {
@@ -181,12 +192,34 @@ namespace Assets.Scripts
             return true;
         }
 
+        #region Wallet
+        public bool ChangeWallet(Wallet wallet)
+        {
+            if (wallet == null)
+            {
+                return false;
+            }
+
+            Debug.Log($"Loading {wallet.FileName} wallet with account {wallet.Account}");
+
+            Wallet = wallet;
+
+            // save if we change wallet to a new one
+            if (PlayerPrefs.GetString("NetworkManager.WalletRef") != wallet.FileName)
+            {
+                PlayerPrefs.SetString("NetworkManager.WalletRef", Wallet.FileName);
+                PlayerPrefs.Save();
+            }
+
+            return true;
+        }
+
         public List<Wallet> StoredWallets()
         {
             var result = new List<Wallet>();
             foreach (var w in WalletFiles())
             {
-                if (!Wallet.Load(w, out Wallet wallet))
+                if (!Wallet.TryLoad(w, out Wallet wallet))
                 {
                     Debug.Log($"Failed to load wallet {w}");
                 }
@@ -201,6 +234,7 @@ namespace Assets.Scripts
             var d = new DirectoryInfo(CachingManager.GetInstance().PersistentPath);
             return d.GetFiles(Wallet.ConcatWalletFileType("*")).Select(p => Path.GetFileNameWithoutExtension(p.Name));
         }
+        #endregion
 
         // Start is called before the first frame update
         public void InitializeClient()

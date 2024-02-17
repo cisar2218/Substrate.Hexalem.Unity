@@ -1,4 +1,6 @@
 using Assets.Scripts.ScreenStates;
+using Substrate.NET.Wallet.Keyring;
+using Substrate.NetApi.Model.Types;
 using System.Collections.Generic;
 using System.Security.Cryptography;
 using UnityEngine;
@@ -11,6 +13,15 @@ namespace Assets.Scripts
         StartScreen,
         MainScreen,
         PlayScreen,
+        OnBoarding,
+        UnlockWallet,
+        SetPassword,
+        CreateWallet,
+        ImportJson,
+        ImportSeed,
+        VerifyPassword,
+        LoadScreen,
+        AccountSelection,
     }
 
     public enum DemoGameSubScreen
@@ -34,6 +45,14 @@ namespace Assets.Scripts
         internal StorageManager Storage => StorageManager.GetInstance();
 
         internal readonly RandomNumberGenerator Random = RandomNumberGenerator.Create();
+
+        #region Wallet
+        internal Account TempAccount { get; set; }
+        internal WalletFile TempFileStore { get; set; }
+        internal string TempAccountName { get; set; }
+        internal string TempAccountPassword { get; set; }
+        internal string TempMnemonic { get; set; }
+        #endregion
 
         public Vector2 ScrollOffset { get; set; }
 
