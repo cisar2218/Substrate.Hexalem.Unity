@@ -1,13 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using static UnityEngine.UIElements.VisualElement;
+﻿using System.Linq;
 using UnityEngine.UIElements;
 using UnityEngine;
 
-namespace Assets.Polkadot_Unity_SDK.DemoGame.Scripts
+namespace Assets.Scripts
 {
     public class HexalemTextField : VisualElement
     {
@@ -53,7 +48,7 @@ namespace Assets.Polkadot_Unity_SDK.DemoGame.Scripts
 
         public HexalemTextField()
         {
-            styleSheets.Add(Resources.Load<StyleSheet>($"Assets/Polkadot Unity SDK/DemoGame/{styleResource}"));
+            //styleSheets.Add(Resources.Load<StyleSheet>($"DemoGame/{styleResource}"));
 
             VisualElement mainVe = new();
             mainVe.style.width = Length.Percent(100);

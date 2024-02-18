@@ -1,5 +1,4 @@
-﻿using Assets.Polkadot_Unity_SDK.DemoGame.Scripts;
-using Substrate.NET.Wallet;
+﻿using Substrate.NET.Wallet;
 using UnityEngine;
 using UnityEngine.UIElements;
 

@@ -1,10 +1,8 @@
-﻿using Assets.Polkadot_Unity_SDK.DemoGame.Scripts;
-using Substrate.NET.Wallet;
+﻿using Substrate.NET.Wallet;
 using Substrate.NET.Wallet.Keyring;
 using Substrate.NetApi.Model.Types;
 using UnityEngine;
 using UnityEngine.UIElements;
-using static Substrate.NetApi.Mnemonic;
 
 namespace Assets.Scripts.ScreenStates
 {

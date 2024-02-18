@@ -150,11 +150,7 @@
     border-bottom-color: rgb(135, 135, 135);
 }
 
-.font-nexa {
-    -unity-font-definition: resource('Fonts & Materials/NexaBlack SDF');
-}
-
-.font-aeonik {
+.font-comic {
     -unity-font-definition: resource('Fonts & Materials/Aeonik-Regular SDF');
 }
 

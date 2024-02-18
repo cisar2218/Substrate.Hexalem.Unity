@@ -1,5 +1,4 @@
-﻿using Assets.Polkadot_Unity_SDK.DemoGame.Scripts;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UIElements;
 
 namespace Assets.Scripts.ScreenStates
