@@ -3,11 +3,11 @@
     <Style src="project://database/Assets/Polkadot%20Unity%20SDK/DemoGame/UIStylesheet.uss?fileID=7433441132597879392&amp;guid=7b9a8bdc89bd4444c8329e09faba0d7c&amp;type=3#UIStylesheet" />
     <ui:VisualElement name="CreateWalletBox" style="flex-grow: 1;">
         <ui:VisualElement name="AccountInfoBox" style="flex-grow: 1;">
-            <ui:Label tabindex="-1" text="Imported Account" parse-escape-sequences="true" display-tooltip-when-elided="true" name="AccountInfo" />
+            <ui:Label tabindex="-1" text="New Account generated&#x9;" parse-escape-sequences="true" display-tooltip-when-elided="true" name="AccountInfo" class="font-comic" style="-unity-text-align: upper-center; font-size: 20px; align-items: auto; justify-content: flex-start; align-self: auto;" />
         </ui:VisualElement>
         <ui:Instance template="AccountFullElement" name="AccountFullElement" />
         <ui:VisualElement name="PasswordInfoBox" style="flex-grow: 1;">
-            <ui:Label tabindex="-1" text="Enter a name for your account" parse-escape-sequences="true" display-tooltip-when-elided="true" name="LoginPasswordInfo" />
+            <ui:Label tabindex="-1" text="Enter a name for your account" parse-escape-sequences="true" display-tooltip-when-elided="true" name="LoginPasswordInfo" class="font-comic" style="font-size: 30px;" />
         </ui:VisualElement>
         <ui:VisualElement name="PasswordBox" style="flex-grow: 1;">
             <ui:VisualElement name="PasswordInputBox" style="flex-grow: 1;">
@@ -16,7 +16,7 @@
         </ui:VisualElement>
         <ui:VisualElement name="CreateWalletBox" style="flex-grow: 1;">
             <ui:VisualElement name="CreateWalletButtonBox" style="flex-grow: 1;">
-                <ui:Button text="SET ACCOUNT NAME" parse-escape-sequences="true" display-tooltip-when-elided="true" class="button-basic" />
+                <ui:Button text="SET ACCOUNT NAME" parse-escape-sequences="true" display-tooltip-when-elided="true" name="BtnCreateWallet" class="button-basic" />
             </ui:VisualElement>
         </ui:VisualElement>
         <ui:VisualElement name="Filler" style="flex-grow: 1;" />

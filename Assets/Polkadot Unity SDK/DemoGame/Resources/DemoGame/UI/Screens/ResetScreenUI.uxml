@@ -1,8 +1,8 @@
 <ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
     <ui:Template name="HeaderBoxElement" src="project://database/Assets/Polkadot%20Unity%20SDK/DemoGame/Resources/DemoGame/UI/Boxes/HeaderBoxElement.uxml?fileID=9197481963319205126&amp;guid=93636438f421bbb4698baadc6e80b366&amp;type=3#HeaderBoxElement" />
     <ui:Template name="AccountFullElement" src="project://database/Assets/Polkadot%20Unity%20SDK/DemoGame/Resources/DemoGame/UI/Elements/AccountFullElement.uxml?fileID=9197481963319205126&amp;guid=7725ea560ac3ee140b72cfb8311fa014&amp;type=3#AccountFullElement" />
-    <Style src="project://database/Assets/Polkadot Unity SDK/DemoGame/UIStylesheet.uss?fileID=7433441132597879392&amp;guid=f0c0984091307004087f5db030d4e506&amp;type=3#UIStylesheet" />
-    <ui:VisualElement name="ResetScreen" style="flex-grow: 1; height: 100%; width: 100%; flex-shrink: 1; min-width: auto; min-height: auto; flex-basis: auto; justify-content: flex-start; align-items: auto;">
+    <Style src="project://database/Assets/Polkadot%20Unity%20SDK/DemoGame/UIStylesheet.uss?fileID=7433441132597879392&amp;guid=7b9a8bdc89bd4444c8329e09faba0d7c&amp;type=3#UIStylesheet" />
+    <ui:VisualElement name="ResetScreen" style="flex-grow: 1; height: 100%; width: 100%; flex-shrink: 1; min-width: auto; min-height: auto; flex-basis: auto; justify-content: flex-start; align-items: auto; background-image: url(&apos;project://database/Assets/Polkadot%20Unity%20SDK/DemoGame/Images/background.png?fileID=2800000&amp;guid=7205e18bc5be0dc498b154981540627e&amp;type=3#background&apos;);">
         <ui:VisualElement name="TopBound" style="flex-grow: 0; flex-shrink: 0; height: 350px; width: 100%; justify-content: flex-start; align-items: auto;">
             <ui:Instance template="HeaderBoxElement" name="HeaderBoxElement" style="height: 100%; width: 100%;" />
         </ui:VisualElement>

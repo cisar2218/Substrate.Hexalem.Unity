@@ -100,7 +100,7 @@ namespace Assets.Scripts.ScreenStates
             }
 
             Debug.Log($"Create {FlowController.TempAccountName} wallet successful!");
-            FlowController.ChangeScreenState(DemoGameScreen.LoadScreen);
+            FlowController.ChangeScreenState(DemoGameScreen.MainScreen);
         }
 
         private void OnChangeEventVerifyPassword(ChangeEvent<string> evt)

@@ -17,8 +17,8 @@ namespace Assets.Scripts.ScreenStates
         {
             Debug.Log($"[{this.GetType().Name}] EnterState");
 
-            var bottomBound = FlowController.VelContainer.Q<VisualElement>("BottomBound");
-            bottomBound.Clear();
+            var floatBody = FlowController.VelContainer.Q<VisualElement>("FloatBody");
+            floatBody.Clear();
 
             var visualTreeAsset = Resources.Load<VisualTreeAsset>($"DemoGame/UI/Elements/CreateWalletElement");
             var instance = visualTreeAsset.Instantiate();
@@ -38,14 +38,14 @@ namespace Assets.Scripts.ScreenStates
             txfAccountName.TextField.RegisterValueChangedCallback(OnChangeEventAccountName);
 
             // add element
-            bottomBound.Add(instance);
+            floatBody.Add(instance);
 
             // set stuff on the container
             SetStepInfos(FlowController.VelContainer, StepState.Done, StepState.Current, StepState.None);
 
-            var velLogo = FlowController.VelContainer.Q<VisualElement>("VelLogo");
-            var imgLogo = Resources.Load<Texture2D>($"DemoGame/Icons/IconOnboardAccount");
-            velLogo.style.backgroundImage = imgLogo;
+            //var velLogo = FlowController.VelContainer.Q<VisualElement>("VelLogo");
+            //var imgLogo = Resources.Load<Texture2D>($"DemoGame/Icons/IconOnboardAccount");
+            //velLogo.style.backgroundImage = imgLogo;
         }
 
         public override void ExitState()

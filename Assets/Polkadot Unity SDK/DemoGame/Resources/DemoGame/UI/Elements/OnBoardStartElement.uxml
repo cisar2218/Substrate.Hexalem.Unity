@@ -1,27 +1,39 @@
 <ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
     <Style src="project://database/Assets/Polkadot%20Unity%20SDK/DemoGame/UIStylesheet.uss?fileID=7433441132597879392&amp;guid=7b9a8bdc89bd4444c8329e09faba0d7c&amp;type=3#UIStylesheet" />
     <ui:VisualElement name="OnBoardStartBox" style="flex-grow: 1; height: 100%;">
-        <ui:VisualElement name="Filler" style="flex-grow: 1; height: 40%;" />
-        <ui:VisualElement name="CreateWalletBox" style="flex-grow: 1;">
-            <ui:VisualElement name="CreateWalletButtonBox" style="flex-grow: 1;">
-                <ui:Button text="CREATE A NEW WALLET" parse-escape-sequences="true" display-tooltip-when-elided="true" name="BtnCreateWallet" class="button-basic" />
+        <ui:VisualElement name="Filler" style="flex-grow: 1; height: 10%;" />
+        <ui:VisualElement name="CreateWalletBox" style="flex-grow: 1; justify-content: flex-start; align-items: stretch; padding-top: 10px; padding-bottom: 10px;">
+            <ui:VisualElement name="CreateWalletButtonBox" style="flex-grow: 1; height: auto; flex-direction: row;">
+                <ui:VisualElement name="BoxIconNewWallet" class="button-basic" style="flex-grow: 1; background-image: none; padding-top: 10px; padding-right: 10px; padding-bottom: 10px; padding-left: 10px;">
+                    <ui:VisualElement name="IconNewWallet" style="flex-grow: 0; flex-shrink: 0; height: 100%; background-image: resource(&apos;DemoGame/Images/import_wallet&apos;);" />
+                </ui:VisualElement>
+                <ui:Button text="CREATE A NEW WALLET" parse-escape-sequences="true" display-tooltip-when-elided="true" name="BtnCreateWallet" class="button-basic" style="flex-shrink: 1; flex-grow: 1; font-size: 50px; height: auto; width: 70%;" />
             </ui:VisualElement>
         </ui:VisualElement>
-        <ui:VisualElement name="ImportJsonBox" style="flex-grow: 1;">
-            <ui:VisualElement name="ImportJsonButtonBox" style="flex-grow: 1;">
-                <ui:Button text="IMPORT A WALLET JSON" parse-escape-sequences="true" display-tooltip-when-elided="true" name="BtnImportJson" class="button-basic" />
+        <ui:VisualElement name="ImportJsonBox" style="flex-grow: 1; padding-top: 10px; padding-bottom: 20px; flex-direction: row;">
+            <ui:VisualElement name="BoxIconJsonWallet" class="button-basic" style="flex-grow: 1; background-image: none;">
+                <ui:VisualElement name="IconJsonWallet" style="flex-grow: 1; padding-top: 0; background-image: resource(&apos;DemoGame/Images/import_account_portability&apos;);" />
+            </ui:VisualElement>
+            <ui:VisualElement name="ImportJsonButtonBox" style="flex-grow: 1; width: 70%;">
+                <ui:Button text="IMPORT A WALLET JSON" parse-escape-sequences="true" display-tooltip-when-elided="true" name="BtnImportJson" class="button-basic" style="flex-shrink: 1; flex-grow: 1; font-size: 50px;" />
             </ui:VisualElement>
         </ui:VisualElement>
-        <ui:VisualElement name="ImportSeedBox" style="flex-grow: 1;">
-            <ui:VisualElement name="ImportSeedButtonBox" style="flex-grow: 1; flex-shrink: 1; width: auto; height: auto;">
-                <ui:Button text="IMPORT A SEED PHRASE" parse-escape-sequences="true" display-tooltip-when-elided="true" name="BtnImportSeed" class="button-basic" />
+        <ui:VisualElement name="ImportSeedBox" style="flex-grow: 1; padding-top: 10px; padding-bottom: 20px; flex-direction: row;">
+            <ui:VisualElement class="button-basic" style="flex-grow: 1; background-image: none; padding-top: 10px; padding-right: 10px; padding-bottom: 10px; padding-left: 10px;">
+                <ui:VisualElement style="flex-grow: 1; background-image: resource(&apos;DemoGame/Images/import_seed_phrase&apos;);" />
+            </ui:VisualElement>
+            <ui:VisualElement name="ImportSeedButtonBox" style="flex-grow: 1; flex-shrink: 1; width: 70%; height: auto;">
+                <ui:Button text="IMPORT A SEED PHRASE" parse-escape-sequences="true" display-tooltip-when-elided="true" name="BtnImportSeed" class="button-basic" style="flex-shrink: 1; flex-grow: 1; font-size: 50px;" />
             </ui:VisualElement>
         </ui:VisualElement>
-        <ui:VisualElement name="ConnectWithPlutoWallet" style="flex-grow: 1;">
-            <ui:VisualElement name="PlutoWalletButtonBox" style="flex-grow: 1;">
-                <ui:Button text="Connect with PlutoWallet&#x9;" parse-escape-sequences="true" display-tooltip-when-elided="true" name="BtnConnectPlutoWallet" class="button-basic" />
+        <ui:VisualElement name="ConnectWithPlutoWallet" style="flex-grow: 1; padding-top: 10px; padding-bottom: 10px; flex-direction: row;">
+            <ui:VisualElement class="button-basic" style="flex-grow: 1; background-image: none; padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0;">
+                <ui:VisualElement style="flex-grow: 1; background-image: resource(&apos;DemoGame/Images/plutowalleticonwhite&apos;); padding-top: 10px; padding-right: 10px; padding-bottom: 10px; padding-left: 10px;" />
+            </ui:VisualElement>
+            <ui:VisualElement name="PlutoWalletButtonBox" style="flex-grow: 1; width: 70%;">
+                <ui:Button text="PLUTOWALLET&#x9;" parse-escape-sequences="true" display-tooltip-when-elided="true" name="BtnConnectPlutoWallet" class="button-basic" style="flex-shrink: 1; flex-grow: 1; font-size: 50px;" />
             </ui:VisualElement>
         </ui:VisualElement>
-        <ui:VisualElement name="Filler" style="flex-grow: 1; height: auto;" />
+        <ui:VisualElement name="Filler" style="flex-grow: 1; height: 10%;" />
     </ui:VisualElement>
 </ui:UXML>

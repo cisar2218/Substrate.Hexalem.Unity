@@ -92,6 +92,26 @@ namespace Assets.Scripts
         {
             _stateDictionary.Add(DemoGameScreen.StartScreen, new StartScreen(this));
 
+            // Wallet screen (TODO Romain : move it into subscreen ?)
+            /*
+             UnlockWallet,
+        SetPassword,
+        CreateWallet,
+        ImportJson,
+        ImportSeed,
+        VerifyPassword,
+        LoadScreen,
+        AccountSelection,
+            */
+            _stateDictionary.Add(DemoGameScreen.OnBoarding, new OnBoardingState(this));
+            _stateDictionary.Add(DemoGameScreen.UnlockWallet, new UnlockWalletState(this)); // TODO remove
+            _stateDictionary.Add(DemoGameScreen.SetPassword, new SetPasswordState(this));
+            _stateDictionary.Add(DemoGameScreen.CreateWallet, new CreateWalletState(this));
+            _stateDictionary.Add(DemoGameScreen.ImportJson, new ImportJsonState(this));
+            _stateDictionary.Add(DemoGameScreen.ImportSeed, new ImportSeedState(this));
+            _stateDictionary.Add(DemoGameScreen.VerifyPassword, new VerifyPasswordState(this));
+            _stateDictionary.Add(DemoGameScreen.AccountSelection, new AccountSelectionState(this));
+
             var mainScreen = new MainScreenState(this);
             _stateDictionary.Add(DemoGameScreen.MainScreen, mainScreen);
 
