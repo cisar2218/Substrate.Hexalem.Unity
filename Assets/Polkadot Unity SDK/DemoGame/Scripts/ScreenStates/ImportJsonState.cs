@@ -20,7 +20,7 @@ namespace Assets.Scripts.ScreenStates
         {
             Debug.Log($"[{this.GetType().Name}] EnterState");
 
-            var bottomBound = FlowController.VelContainer.Q<VisualElement>("BottomBound");
+            var bottomBound = FlowController.VelContainer.Q<VisualElement>("FloatBody");
             bottomBound.Clear();
 
             var visualTreeAsset = Resources.Load<VisualTreeAsset>($"DemoGame/UI/Elements/ImportJsonElement");
@@ -41,16 +41,16 @@ namespace Assets.Scripts.ScreenStates
             // set stuff on the container
             SetStepInfos(FlowController.VelContainer, StepState.Current, StepState.None, StepState.None);
 
-            var velLogo = FlowController.VelContainer.Q<VisualElement>("VelLogo");
-            var imgLogo = Resources.Load<Texture2D>($"DemoGame/Icons/IconImportJson");
-            velLogo.style.backgroundImage = imgLogo;
+            //var velLogo = FlowController.VelContainer.Q<VisualElement>("VelLogo");
+            //var imgLogo = Resources.Load<Texture2D>($"DemoGame/Icons/IconImportJson");
+            //velLogo.style.backgroundImage = imgLogo;
         }
 
         public override void ExitState()
         {
             Debug.Log($"[{this.GetType().Name}] ExitState [currentState={FlowController.CurrentState}]");
 
-            if (FlowController.CurrentState == DemoGameScreen.UnlockWallet)
+            if (FlowController.CurrentState == DemoGameScreen.StartScreen)
             {
                 FlowController.VelContainer.RemoveAt(1);
             }
@@ -71,7 +71,7 @@ namespace Assets.Scripts.ScreenStates
 
             Network.ChangeWallet(wallet);
             Debug.Log($"Changing to json wallet {FlowController.TempAccountName}");
-            FlowController.ChangeScreenState(DemoGameScreen.UnlockWallet);
+            FlowController.ChangeScreenState(DemoGameScreen.StartScreen);
         }
 
         private void OnChangeEventJsonContent(ChangeEvent<string> evt)

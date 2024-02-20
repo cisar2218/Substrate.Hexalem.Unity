@@ -48,37 +48,15 @@ namespace Assets.Scripts
 
         public HexalemTextField()
         {
-            //styleSheets.Add(Resources.Load<StyleSheet>($"DemoGame/{styleResource}"));
-
             VisualElement mainVe = new();
             mainVe.style.width = Length.Percent(100);
             mainVe.style.height = Length.Percent(100);
 
-            //TextField = new("Test");
             TextField = new("Test", -1, true, false, '*');
             TextField.AddToClassList(ussHexalemTextField);
             TextField.style.width = Length.Percent(100);
             TextField.style.height = Length.Percent(100);
             mainVe.Add(TextField);
-
-            //var textFieldborderColor = Color.black;
-            //var textFieldborderWidth = 4;
-            //var textFieldborderRadius = 30;
-
-            //textField.style.borderLeftColor = textFieldborderColor;
-            //textField.style.borderRightColor = textFieldborderColor;
-            //textField.style.borderTopColor = textFieldborderColor;
-            //textField.style.borderBottomColor = textFieldborderColor;
-
-            //textField.style.borderTopWidth = textFieldborderWidth;
-            //textField.style.borderBottomWidth = textFieldborderWidth;
-            //textField.style.borderLeftWidth = textFieldborderWidth;
-            //textField.style.borderRightWidth = textFieldborderWidth;
-
-            //textField.style.borderTopRightRadius = textFieldborderRadius;
-            //textField.style.borderBottomRightRadius = textFieldborderRadius;
-            //textField.style.borderTopLeftRadius = textFieldborderRadius;
-            //textField.style.borderBottomLeftRadius = textFieldborderRadius;
 
             _label = (Label)TextField.Children().ElementAt(0);
             _label.AddToClassList(ussHexalemTextFieldLabel);

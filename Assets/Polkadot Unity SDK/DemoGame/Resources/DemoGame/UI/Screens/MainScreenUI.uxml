@@ -12,7 +12,7 @@
                         <ui:Label tabindex="-1" parse-escape-sequences="true" display-tooltip-when-elided="true" name="LblToken" class="font-color font-chicken" style="margin-top: 0; margin-right: 0; margin-bottom: 0; margin-left: 0; padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0; width: auto; height: 100%; -unity-text-align: middle-right; font-size: 24px; -unity-font-style: bold; color: rgb(255, 255, 255); flex-grow: 1;" />
                     </ui:VisualElement>
                     <ui:VisualElement name="VelFaucetBox" style="flex-grow: 0; flex-shrink: 0; width: 100%; height: 50%; align-items: center; justify-content: center;">
-                        <ui:Button text="FAUCET" parse-escape-sequences="true" display-tooltip-when-elided="true" name="BtnFaucet" class="button-basic font-comic" style="width: 80%; height: 80%; font-size: 35px;" />
+                        <ui:Button text="FAUCET" parse-escape-sequences="true" display-tooltip-when-elided="true" name="BtnFaucet" class="button-main font-comic" style="width: 80%; height: 80%; font-size: 35px;" />
                     </ui:VisualElement>
                 </ui:VisualElement>
                 <ui:VisualElement style="flex-grow: 0; flex-shrink: 0; width: 40%; height: 100%;">

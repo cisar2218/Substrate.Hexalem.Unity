@@ -63,7 +63,7 @@ namespace Assets.Scripts.ScreenStates
 
         private void OnClickReturn(EventBase evt)
         {
-            FlowController.ChangeScreenState(DemoGameScreen.UnlockWallet);
+            FlowController.ChangeScreenState(DemoGameScreen.StartScreen);
         }
 
         private void OnClickVelSelectAccount(ClickEvent evt, Wallet wallet)
@@ -71,7 +71,7 @@ namespace Assets.Scripts.ScreenStates
             Debug.Log($"Loading the following {wallet.FileName} wallet");
             Network.ChangeWallet(wallet);
 
-            FlowController.ChangeScreenState(DemoGameScreen.UnlockWallet);
+            FlowController.ChangeScreenState(DemoGameScreen.StartScreen);
         }
     }
 }

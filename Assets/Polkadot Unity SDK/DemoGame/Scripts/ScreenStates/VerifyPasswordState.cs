@@ -56,18 +56,14 @@ namespace Assets.Scripts.ScreenStates
             Wallet wallet;
             try
             {
-                Debug.Log($"[{nameof(VerifyPasswordState)}] - Mnemonic = {FlowController.TempMnemonic} - Wallet name = {FlowController.TempAccountName}");
-
                 wallet = Network.Keyring.AddFromUri(
                     FlowController.TempMnemonic, new 
                     Meta() { Name = FlowController.TempAccountName }, 
                     KeyType.Sr25519);
 
-                Debug.Log($"[{nameof(VerifyPasswordState)}] - Wallet = {wallet} | IsLocked = {wallet.IsLocked} | IsStored = {wallet.IsStored}");
-
                 var unlockSucceed = wallet.Unlock(FlowController.TempAccountPassword);
 
-                Debug.Log($"[{nameof(VerifyPasswordState)}] - Wallet = {wallet} | Unlock succeed = {unlockSucceed} | IsLocked = {wallet.IsLocked} | IsStored = {wallet.IsStored}");
+                Debug.Log($"[{nameof(VerifyPasswordState)}] - Wallet address = {wallet.Address} | Unlock succeed = {unlockSucceed} | IsLocked = {wallet.IsLocked} | IsStored = {wallet.IsStored}");
 
                 if (!unlockSucceed)
                 {
@@ -77,6 +73,7 @@ namespace Assets.Scripts.ScreenStates
 
                 if(!wallet.IsStored)
                 {
+                    Debug.Log($"Try to save wallet");
                     wallet.Save(FlowController.TempAccountName, FlowController.TempAccountPassword);
                 }
 
@@ -86,20 +83,13 @@ namespace Assets.Scripts.ScreenStates
                 return;
             }
 
-            
-            //if (!Wallet.CreateFromMnemonic(FlowController.TempAccountPassword, FlowController.TempMnemonic, KeyType.Sr25519, BIP39Wordlist.English, FlowController.TempAccountName, out Wallet wallet))
-            //{
-            //    Debug.Log($"Failed to create {FlowController.TempAccountName} wallet!");
-            //    return;
-            //}
-            //else 
             if (!Network.ChangeWallet(wallet))
             {
                 Debug.Log($"Couldn't change to {FlowController.TempAccountName} wallet!");
                 return;
             }
 
-            Debug.Log($"Create {FlowController.TempAccountName} wallet successful!");
+            Debug.Log($"Create wallet {FlowController.TempAccountName} with address {wallet.Address} successful!");
             FlowController.ChangeScreenState(DemoGameScreen.MainScreen);
         }
 

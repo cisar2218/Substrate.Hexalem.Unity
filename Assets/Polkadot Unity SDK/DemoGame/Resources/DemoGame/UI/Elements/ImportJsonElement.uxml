@@ -3,17 +3,17 @@
     <ui:VisualElement name="ImportSeedBox" style="flex-grow: 1;">
         <ui:VisualElement name="Filler" style="flex-grow: 1;" />
         <ui:VisualElement name="SeedInfoBox" style="flex-grow: 1;">
-            <ui:Label tabindex="-1" text="Enter the json content&#x9;" parse-escape-sequences="true" display-tooltip-when-elided="true" name="SeedInfo" />
+            <ui:Label tabindex="-1" text="Enter the json content&#x9;" parse-escape-sequences="true" display-tooltip-when-elided="true" name="SeedInfo" class="font-comic" style="font-size: 30px;" />
             <ui:VisualElement name="FillRandomBox" style="flex-grow: 1;" />
         </ui:VisualElement>
         <ui:VisualElement name="PasswordBox" style="flex-grow: 1;">
             <ui:VisualElement name="PasswordInputBox" style="flex-grow: 1;">
-                <Assets.Scripts.HexalemTextField name="TxfJsonContent" />
+                <Assets.Scripts.HexalemTextField name="TxfJsonContent" label_text="JSON" />
             </ui:VisualElement>
         </ui:VisualElement>
         <ui:VisualElement name="CreateWalletBox" style="flex-grow: 1;">
             <ui:VisualElement name="CreateWalletButtonBox" style="flex-grow: 1;">
-                <ui:Button text="Button" parse-escape-sequences="true" display-tooltip-when-elided="true" name="BtnCreateWalletJson" class="button-basic" />
+                <ui:Button text="Button" parse-escape-sequences="true" display-tooltip-when-elided="true" name="BtnCreateWalletJson" class="button-main" />
             </ui:VisualElement>
         </ui:VisualElement>
         <ui:VisualElement name="Filler" style="flex-grow: 1;" />
