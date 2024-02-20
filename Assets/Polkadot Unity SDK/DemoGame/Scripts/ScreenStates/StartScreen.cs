@@ -18,7 +18,7 @@ namespace Assets.Scripts.ScreenStates
         //private Label _lblPlayerName;
         private Label _lblNodeType;
 
-        private TextField _txfCustomName;
+        private TextField _txfTextField;
 
         private Button _btnEnter;
 
@@ -45,9 +45,9 @@ namespace Assets.Scripts.ScreenStates
             //_lblPlayerName = instance.Q<Label>("LblPlayerName");
             //_lblPlayerName.style.display = DisplayStyle.Flex;
 
-            //_txfCustomName = instance.Q<TextField>("TxfCustomName");
-            //_txfCustomName.style.display = DisplayStyle.None;
-            //_txfCustomName.RegisterValueChangedCallback(OnCustomNameChanged);
+            //_txfTextField = instance.Q<TextField>("TxfPassword");
+            //_txfTextField.style.display = DisplayStyle.None;
+            //_txfTextField.RegisterValueChangedCallback(OnCustomNameChanged);
 
             var velAccountBox = instance.Q<VisualElement>("VelAccountBox");
             var velAccountSelector = instance.Q<VisualElement>("VelAccountSelector");
@@ -60,15 +60,15 @@ namespace Assets.Scripts.ScreenStates
 
             var txfPasswordInput = instance.Q<HexalemTextField>("TxfPasswordInput");
 
-            if (Network.Wallet != null && Network.Wallet.IsStored)
-            {
-                lblAccountName.text = FlowController.Network.Wallet.FileName;
-                lblAccountAddress.text = FlowController.Network.Wallet.Account.Value;
-            }
-            else
-            {
-                txfPasswordInput.SetEnabled(false);
-            }
+            //if (Network.Wallet != null && Network.Wallet.IsStored)
+            //{
+            //    lblAccountName.text = FlowController.Network.Wallet.FileName;
+            //    lblAccountAddress.text = FlowController.Network.Wallet.Account.Value;
+            //}
+            //else
+            //{
+            //    txfPasswordInput.SetEnabled(false);
+            //}
             txfPasswordInput.TextField.RegisterValueChangedCallback(OnChangeEventPasswordInput);
 
             _btnEnter = instance.Q<Button>("BtnUnlockWallet");
@@ -190,7 +190,7 @@ namespace Assets.Scripts.ScreenStates
         //        return;
         //    }
 
-        //    Network.SetAccount(AccountType.Custom, evt.newValue);
+        //    //Network.SetAccount(AccountType.Custom, evt.newValue);
 
         //    _btnEnter.SetEnabled(true);
         //}
@@ -227,7 +227,7 @@ namespace Assets.Scripts.ScreenStates
         {
             var accountPassword = evt.newValue;
 
-            if (!Wallet.IsValidPassword(accountPassword) || !Network.Wallet.IsStored)
+            if (!Wallet.IsValidPassword(accountPassword) || Network.Wallet == null || !Network.Wallet.IsStored)
             {
                 FlowController.TempAccountPassword = null;
                 _btnEnter.SetEnabled(false);

@@ -17,7 +17,7 @@ namespace Assets.Scripts.ScreenStates
         {
             Debug.Log($"[{this.GetType().Name}] EnterState");
 
-            var bottomBound = FlowController.VelContainer.Q<VisualElement>("BottomBound");
+            var bottomBound = FlowController.VelContainer.Q<VisualElement>("FloatBody");
             bottomBound.Clear();
 
             var visualTreeAsset = Resources.Load<VisualTreeAsset>($"DemoGame/UI/Elements/VerifyPasswordElement");
@@ -39,9 +39,9 @@ namespace Assets.Scripts.ScreenStates
             // set stuff on the container
             SetStepInfos(FlowController.VelContainer, StepState.Done, StepState.Done, StepState.Current);
 
-            var velLogo = FlowController.VelContainer.Q<VisualElement>("VelLogo");
-            var imgLogo = Resources.Load<Texture2D>($"DemoGame/Icons/IconOnboardVerify");
-            velLogo.style.backgroundImage = imgLogo;
+            //var velLogo = FlowController.VelContainer.Q<VisualElement>("VelLogo");
+            //var imgLogo = Resources.Load<Texture2D>($"DemoGame/Icons/IconOnboardVerify");
+            //velLogo.style.backgroundImage = imgLogo;
         }
 
         public override void ExitState()

@@ -10,10 +10,10 @@
                 <ui:Instance template="AccountSelectorElement" name="AccountSelectorElement" style="flex-shrink: 0; width: 100%; height: 340px;" />
                 <ui:VisualElement name="PasswordBox" style="flex-grow: 0; height: 250px; padding-top: 0; padding-right: 65px; padding-bottom: 40px; padding-left: 65px; flex-shrink: 0; width: 100%;">
                     <ui:VisualElement name="PasswordInfoBox" style="flex-grow: 0; flex-shrink: 0; width: 100%; height: 30%;">
-                        <ui:Label tabindex="-1" text="Enter your password to login" parse-escape-sequences="true" display-tooltip-when-elided="true" name="PasswordInfo" class="font-dark-color" style="width: 100%; height: 100%; margin-top: 0; margin-right: 0; margin-bottom: 0; margin-left: 0; padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0; font-size: 35px;" />
+                        <ui:Label tabindex="-1" text="Enter your password to login&#x9;" parse-escape-sequences="true" display-tooltip-when-elided="true" name="PasswordInfo" class="font-dark-color" style="width: 100%; height: 100%; margin-top: 0; margin-right: 0; margin-bottom: 0; margin-left: 0; padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0; font-size: 35px;" />
                     </ui:VisualElement>
                     <ui:VisualElement name="PasswordInputBox" style="flex-grow: 0; flex-shrink: 0; width: 100%; height: 70%;">
-                        <Assets.Scripts.HexalemTextField name="TxfPasswordInput" label_text="ENTER PASSWORD" class="border-color-drk custom-text-field" style="height: 100%; width: 100%; border-top-width: 4px; border-right-width: 4px; border-bottom-width: 4px; border-left-width: 4px;" />
+                        <Assets.Scripts.HexalemTextField name="TxfPasswordInput" label_text="ENTER PASSWORD" class="hexalem-text-field border-color-drk" style="height: 100%; width: 100%; border-top-width: 0; border-right-width: 0; border-bottom-width: 0; border-left-width: 0; display: flex; -unity-font: url(&apos;project://database/Assets/Polkadot%20Unity%20SDK/DemoGame/Fonts/Hey%20Comic.ttf?fileID=12800000&amp;guid=4174102ac3175b3418182b34e4242389&amp;type=3#Hey Comic&apos;); -unity-font-definition: resource(&apos;DemoGame/Fonts &amp; Materials/Hey Comic SDF&apos;);" />
                     </ui:VisualElement>
                 </ui:VisualElement>
                 <ui:VisualElement name="UnlockBox" style="flex-grow: 0; height: 210px; flex-shrink: 0; width: 100%; padding-right: 65px; padding-bottom: 0; padding-left: 65px; padding-top: 40px;">

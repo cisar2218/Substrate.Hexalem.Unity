@@ -11,12 +11,12 @@
         </ui:VisualElement>
         <ui:VisualElement name="PasswordBox" style="flex-grow: 1;">
             <ui:VisualElement name="PasswordInputBox" style="flex-grow: 1;">
-                <Assets.Scripts.HexalemTextField name="TxfAccountName" />
+                <Assets.Scripts.HexalemTextField name="TxfAccountName" class="hexalem-text-field" style="-unity-font: url(&apos;project://database/Assets/Polkadot%20Unity%20SDK/DemoGame/Fonts/Hey%20Comic.ttf?fileID=12800000&amp;guid=4174102ac3175b3418182b34e4242389&amp;type=3#Hey Comic&apos;); border-top-width: 0; border-right-width: 0; border-bottom-width: 0; border-left-width: 0; display: flex;" />
             </ui:VisualElement>
         </ui:VisualElement>
         <ui:VisualElement name="CreateWalletBox" style="flex-grow: 1;">
             <ui:VisualElement name="CreateWalletButtonBox" style="flex-grow: 1;">
-                <ui:Button text="SET ACCOUNT NAME" parse-escape-sequences="true" display-tooltip-when-elided="true" name="BtnCreateWallet" class="button-basic" />
+                <ui:Button text="SET ACCOUNT NAME" parse-escape-sequences="true" display-tooltip-when-elided="true" name="BtnCreateWallet" class="button-basic" style="font-size: 40px;" />
             </ui:VisualElement>
         </ui:VisualElement>
         <ui:VisualElement name="Filler" style="flex-grow: 1;" />
