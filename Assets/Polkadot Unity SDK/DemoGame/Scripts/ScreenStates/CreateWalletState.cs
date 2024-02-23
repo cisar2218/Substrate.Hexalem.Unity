@@ -32,7 +32,7 @@ namespace Assets.Scripts.ScreenStates
 
             _lblAccountName = instance.Q<Label>("LblAccountName");
             var lblAccountAddress = instance.Q<Label>("LblAccountAddress");
-            lblAccountAddress.text = FlowController.TempAccount != null ? FlowController.TempAccount.Value : "unkown";
+            lblAccountAddress.text = HelperUI.DisplayAddress(FlowController.TempAccount != null ? FlowController.TempAccount.Value : "unkown");
 
             var txfAccountName = instance.Q<HexalemTextField>("TxfAccountName");
             txfAccountName.TextField.RegisterValueChangedCallback(OnChangeEventAccountName);

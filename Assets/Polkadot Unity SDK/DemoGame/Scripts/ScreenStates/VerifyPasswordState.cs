@@ -73,7 +73,10 @@ namespace Assets.Scripts.ScreenStates
 
                 if(!wallet.IsStored)
                 {
-                    Debug.Log($"Try to save wallet");
+                    //var walletFile = wallet.ToWalletFile(FlowController.TempAccountName, FlowController.TempAccountPassword);
+
+                    //Debug.Log($"Try to save wallet | {FlowController.TempAccountName} - {FlowController.TempAccountPassword} | {wallet.AccountNamePolicy} | {wallet.PasswordPolicy} | {SystemInteraction.Persist} | Wallet File = {walletFile.ToJson()}");
+                    
                     wallet.Save(FlowController.TempAccountName, FlowController.TempAccountPassword);
                 }
 

@@ -14,7 +14,6 @@ namespace Assets.Scripts
         MainScreen,
         PlayScreen,
         OnBoarding,
-        UnlockWallet,
         SetPassword,
         CreateWallet,
         ImportJson,
@@ -84,6 +83,12 @@ namespace Assets.Scripts
                 return;
             }
 
+            // load the initial wallet
+            if (!Network.LoadWallet())
+            {
+                Debug.Log("Failed to load initial wallet");
+            }
+
             // call insital flow state
             ChangeScreenState(DemoGameScreen.StartScreen);
         }
@@ -104,7 +109,7 @@ namespace Assets.Scripts
         AccountSelection,
             */
             _stateDictionary.Add(DemoGameScreen.OnBoarding, new OnBoardingState(this));
-            _stateDictionary.Add(DemoGameScreen.UnlockWallet, new UnlockWalletState(this)); // TODO remove
+            /*_stateDictionary.Add(DemoGameScreen.UnlockWallet, new UnlockWalletState(this));*/ // TODO remove
             _stateDictionary.Add(DemoGameScreen.SetPassword, new SetPasswordState(this));
             _stateDictionary.Add(DemoGameScreen.CreateWallet, new CreateWalletState(this));
             _stateDictionary.Add(DemoGameScreen.ImportJson, new ImportJsonState(this));

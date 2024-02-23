@@ -1,4 +1,5 @@
 ﻿using Substrate.NET.Wallet;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.UIElements;
 
@@ -26,7 +27,11 @@ namespace Assets.Scripts.ScreenStates
             lblSubTitle.text = "Select an account";
             var scvAccounts = instance.Q<VisualElement>("VelAccountsBox");
 
-            foreach (var wallet in Network.StoredWallets())
+            Debug.Log($"CachingManager.GetInstance().PersistentPath = {CachingManager.GetInstance().PersistentPath}");
+
+            var walletStored = Network.StoredWallets();
+
+            foreach (var wallet in walletStored)
             {
                 var walletVisualTree = Resources.Load<VisualTreeAsset>("DemoGame/UI/Elements/AccountFullElement");
                 var walletInstance = walletVisualTree.Instantiate();
@@ -37,7 +42,7 @@ namespace Assets.Scripts.ScreenStates
                 var velContentBox = walletInstance.Q<VisualElement>("VelContentBox");
                 velContentBox.RegisterCallback<ClickEvent>((evt) => OnClickVelSelectAccount(evt, wallet));
                 lblAccountName.text = wallet.FileName;
-                lblAccountAddress.text = wallet.Account.Value;
+                lblAccountAddress.text = HelperUI.DisplayAddress(wallet.Account.Value);
                 scvAccounts.Add(walletInstance);
             }
 
@@ -47,6 +52,12 @@ namespace Assets.Scripts.ScreenStates
 
             // add container
             FlowController.VelContainer.Add(instance);
+
+            // No wallet stored => directly go add account
+            if (!walletStored.Any())
+            {
+                FlowController.ChangeScreenState(DemoGameScreen.OnBoarding);
+            }
         }
 
         public override void ExitState()

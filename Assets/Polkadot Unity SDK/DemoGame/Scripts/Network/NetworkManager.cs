@@ -193,6 +193,46 @@ namespace Assets.Scripts
         }
 
         #region Wallet
+        public bool LoadWallet(string walletName = null)
+        {
+            if (walletName == null && Wallet != null && Wallet.IsStored)
+            {
+                Debug.Log($"No wallet name, but we have an active walet loaded.");
+                return false;
+            }
+
+            var walletNames = WalletFiles().Where(p => Wallet.IsValidWalletName(p));
+
+            if (!walletNames.Any() || (walletName != null && !walletNames.Contains(walletName)))
+            {
+                return false;
+            }
+
+            if (walletName == null)
+            {
+                walletName = walletNames.ElementAt(0);
+
+                if (PlayerPrefs.HasKey("NetworkManager.WalletRef"))
+                {
+                    var playerPrefsWallet = PlayerPrefs.GetString("NetworkManager.WalletRef");
+                    if (walletNames.Contains(playerPrefsWallet))
+                    {
+                        walletName = playerPrefsWallet;
+                    }
+                }
+            }
+
+            if (!Wallet.TryLoad(walletName, out Wallet wallet))
+            {
+                Debug.Log($"Couldn't load wallet {walletName}");
+                return false;
+            }
+
+            ChangeWallet(wallet);
+
+            return true;
+        }
+
         public bool ChangeWallet(Wallet wallet)
         {
             if (wallet == null)

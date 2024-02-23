@@ -26,7 +26,7 @@ namespace Assets.Scripts.ScreenStates
             var lblAccountName = instance.Q<Label>("LblAccountName");
             var lblAccountAddress = instance.Q<Label>("LblAccountAddress");
             lblAccountName.text = Network.Wallet.FileName;
-            lblAccountAddress.text = Network.Wallet.Account.Value;
+            lblAccountAddress.text = HelperUI.DisplayAddress(Network.Wallet.Account.Value);
 
             // add manipulators
             velReturnBox.RegisterCallback<ClickEvent>(OnClickReturn);
@@ -49,7 +49,7 @@ namespace Assets.Scripts.ScreenStates
 
         private void OnClickReturn(ClickEvent evt)
         {
-            FlowController.ChangeScreenState(DemoGameScreen.UnlockWallet);
+            FlowController.ChangeScreenState(DemoGameScreen.StartScreen);
         }
 
         private void OnClickBtnDeleteWallet(ClickEvent evt)

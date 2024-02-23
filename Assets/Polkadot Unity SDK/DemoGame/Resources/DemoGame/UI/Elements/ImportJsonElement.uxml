@@ -2,17 +2,16 @@
     <Style src="project://database/Assets/Polkadot%20Unity%20SDK/DemoGame/UIStylesheet.uss?fileID=7433441132597879392&amp;guid=7b9a8bdc89bd4444c8329e09faba0d7c&amp;type=3#UIStylesheet" />
     <ui:VisualElement name="ImportSeedBox" style="flex-grow: 1;">
         <ui:VisualElement name="Filler" style="flex-grow: 1;" />
-        <ui:VisualElement name="SeedInfoBox" style="flex-grow: 1;">
-            <ui:Label tabindex="-1" text="Enter the json content&#x9;" parse-escape-sequences="true" display-tooltip-when-elided="true" name="SeedInfo" class="font-comic" style="font-size: 30px;" />
-            <ui:VisualElement name="FillRandomBox" style="flex-grow: 1;" />
+        <ui:VisualElement name="SeedInfoBox" style="flex-grow: 1; align-self: auto; align-items: stretch; justify-content: flex-end;">
+            <ui:Label tabindex="-1" text="Enter the json content&#x9;" parse-escape-sequences="true" display-tooltip-when-elided="true" name="SeedInfo" class="font-main" style="font-size: 30px;" />
         </ui:VisualElement>
         <ui:VisualElement name="PasswordBox" style="flex-grow: 1;">
             <ui:VisualElement name="PasswordInputBox" style="flex-grow: 1;">
-                <Assets.Scripts.HexalemTextField name="TxfJsonContent" label_text="JSON" />
+                <Assets.Scripts.HexalemTextField name="TxfJsonContent" label_text="JSON" style="flex-grow: 1;" />
             </ui:VisualElement>
         </ui:VisualElement>
-        <ui:VisualElement name="CreateWalletBox" style="flex-grow: 1;">
-            <ui:VisualElement name="CreateWalletButtonBox" style="flex-grow: 1;">
+        <ui:VisualElement name="CreateWalletBox" style="flex-grow: 1; align-items: stretch; justify-content: flex-start; align-self: auto;">
+            <ui:VisualElement name="CreateWalletButtonBox" style="flex-grow: 1; justify-content: center;">
                 <ui:Button text="Button" parse-escape-sequences="true" display-tooltip-when-elided="true" name="BtnCreateWalletJson" class="button-main" />
             </ui:VisualElement>
         </ui:VisualElement>

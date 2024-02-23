@@ -7,7 +7,7 @@
             <ui:VisualElement name="VelUnusedBox" style="flex-grow: 0; flex-shrink: 0; height: 100%; width: 100px;" />
         </ui:VisualElement>
         <ui:VisualElement style="flex-grow: 1; height: 80px; width: 100%; align-items: auto; justify-content: flex-start; -unity-text-align: upper-left; flex-shrink: 1; padding-bottom: 40px;">
-            <ui:Label tabindex="-1" parse-escape-sequences="true" display-tooltip-when-elided="true" name="LblSubTitle" text="..." class="font-comic font-dark-color" style="font-size: 48px; height: 100%; -unity-text-align: lower-center; width: 100%; align-items: auto; -unity-font-style: normal; margin-top: 0; margin-right: 0; margin-bottom: 0; margin-left: 0; padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0;" />
+            <ui:Label tabindex="-1" parse-escape-sequences="true" display-tooltip-when-elided="true" name="LblSubTitle" text="..." class="font-main font-dark-color" style="font-size: 48px; height: 100%; -unity-text-align: lower-center; width: 100%; align-items: auto; -unity-font-style: normal; margin-top: 0; margin-right: 0; margin-bottom: 0; margin-left: 0; padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0;" />
         </ui:VisualElement>
     </ui:VisualElement>
 </ui:UXML>

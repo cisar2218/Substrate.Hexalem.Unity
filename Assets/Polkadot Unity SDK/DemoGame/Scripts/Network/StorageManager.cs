@@ -100,7 +100,7 @@ namespace Assets.Scripts
 
             if (!Network.Client.IsConnected)
             {
-                Debug.Log($"[StorageManager] Client is not connected");
+                //Debug.Log($"[StorageManager] Client is not connected");
                 return false;
             }
 

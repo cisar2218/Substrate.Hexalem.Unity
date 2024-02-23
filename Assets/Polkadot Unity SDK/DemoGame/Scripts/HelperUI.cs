@@ -1,5 +1,6 @@
 ﻿using Substrate.Hexalem.Engine;
 using Substrate.Hexalem.NET.NetApiExt.Generated.Storage;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.UIElements;
 
@@ -172,6 +173,14 @@ namespace Assets.Scripts
                     return "<sprite=\"icon_res_gold\" index=0>";
             }
             return "";
+        }
+
+        public static string DisplayAddress(string address)
+        {
+            if (string.IsNullOrEmpty(address))
+                return string.Empty;
+
+            return address.Substring(0, 30);
         }
     }
 }

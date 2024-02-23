@@ -3,18 +3,18 @@
     <ui:VisualElement name="ImportSeedBox" style="flex-grow: 1;">
         <ui:VisualElement name="Filler" style="flex-grow: 1;" />
         <ui:VisualElement name="SeedInfoBox" style="flex-grow: 0; flex-shrink: 0; flex-direction: row; align-items: stretch;">
-            <ui:Label tabindex="-1" text="Enter your seed phrase" parse-escape-sequences="true" display-tooltip-when-elided="true" name="SeedInfo" class="font-comic" style="font-size: 30px;" />
+            <ui:Label tabindex="-1" text="Enter your seed phrase" parse-escape-sequences="true" display-tooltip-when-elided="true" name="SeedInfo" class="font-main" style="font-size: 30px;" />
             <ui:VisualElement name="FillRandomBox" style="flex-grow: 1;">
-                <ui:Label tabindex="-1" text="Fill Random" parse-escape-sequences="true" display-tooltip-when-elided="true" name="LblFillRandom" class="font-comic" style="-unity-text-align: upper-right; font-size: 30px;" />
+                <ui:Label tabindex="-1" text="Fill Random" parse-escape-sequences="true" display-tooltip-when-elided="true" name="LblFillRandom" class="font-main" style="-unity-text-align: upper-right; font-size: 30px;" />
             </ui:VisualElement>
         </ui:VisualElement>
         <ui:VisualElement name="PasswordBox" style="flex-grow: 1;">
             <ui:VisualElement name="PasswordInputBox" style="flex-grow: 1;">
-                <Assets.Scripts.HexalemTextField name="TxfSeedPhrase" class="border-color-drk hexalem-text-field" style="border-top-width: 0; border-right-width: 0; border-bottom-width: 0; border-left-width: 0;" />
+                <Assets.Scripts.HexalemTextField name="TxfSeedPhrase" class="border-color-drk hexalem-text-field" style="border-top-width: 0; border-right-width: 0; border-bottom-width: 0; border-left-width: 0; flex-grow: 1;" />
             </ui:VisualElement>
         </ui:VisualElement>
-        <ui:VisualElement name="CreateWalletBox" style="flex-grow: 0;">
-            <ui:VisualElement name="CreateWalletButtonBox" style="flex-grow: 1;">
+        <ui:VisualElement name="CreateWalletBox" style="flex-grow: 1;">
+            <ui:VisualElement name="CreateWalletButtonBox" style="flex-grow: 1; align-self: auto; justify-content: center;">
                 <ui:Button text="IMPORT SEED PHRASE" parse-escape-sequences="true" display-tooltip-when-elided="true" name="BtnCreateWalletSeed" class="button-main" />
             </ui:VisualElement>
         </ui:VisualElement>

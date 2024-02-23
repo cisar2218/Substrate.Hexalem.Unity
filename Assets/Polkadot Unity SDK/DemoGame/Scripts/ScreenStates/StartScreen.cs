@@ -60,15 +60,15 @@ namespace Assets.Scripts.ScreenStates
 
             var txfPasswordInput = instance.Q<HexalemTextField>("TxfPasswordInput");
 
-            //if (Network.Wallet != null && Network.Wallet.IsStored)
-            //{
-            //    lblAccountName.text = FlowController.Network.Wallet.FileName;
-            //    lblAccountAddress.text = FlowController.Network.Wallet.Account.Value;
-            //}
-            //else
-            //{
-            //    txfPasswordInput.SetEnabled(false);
-            //}
+            if (Network.Wallet != null && Network.Wallet.IsStored)
+            {
+                lblAccountName.text = FlowController.Network.Wallet.FileName;
+                lblAccountAddress.text = FlowController.Network.Wallet.Account.Value;
+            }
+            else
+            {
+                txfPasswordInput.SetEnabled(false);
+            }
             txfPasswordInput.TextField.RegisterValueChangedCallback(OnChangeEventPasswordInput);
 
             _btnEnter = instance.Q<Button>("BtnUnlockWallet");

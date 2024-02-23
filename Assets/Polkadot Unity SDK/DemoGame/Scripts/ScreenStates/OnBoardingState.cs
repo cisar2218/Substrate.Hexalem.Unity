@@ -56,7 +56,7 @@ namespace Assets.Scripts.ScreenStates
         {
             Debug.Log($"[{this.GetType().Name}] ExitState [currentState={FlowController.CurrentState}]");
 
-            if (FlowController.CurrentState == DemoGameScreen.UnlockWallet)
+            if (FlowController.CurrentState == DemoGameScreen.StartScreen)
             {
                 FlowController.VelContainer.RemoveAt(1);
             }
@@ -64,7 +64,7 @@ namespace Assets.Scripts.ScreenStates
 
         private void OnClickReturn(ClickEvent evt)
         {
-            FlowController.ChangeScreenState(DemoGameScreen.UnlockWallet);
+            FlowController.ChangeScreenState(DemoGameScreen.StartScreen);
         }
 
         private void OnClickBtnCreateWallet(ClickEvent evt)

@@ -21,7 +21,7 @@ namespace Assets.Scripts
             SystemInteraction.ReadPersistent = f => File.ReadAllText(Path.Combine(_persistentPath, f));
             SystemInteraction.Persist = (f, c) => File.WriteAllText(Path.Combine(_persistentPath, f), c);
 
-            Debug.Log(_persistentPath);
+            Debug.Log($"PersistentPath = {_persistentPath}");
         }
     }
 }
