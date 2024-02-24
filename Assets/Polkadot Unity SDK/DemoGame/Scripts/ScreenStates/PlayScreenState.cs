@@ -100,25 +100,25 @@ namespace Assets.Scripts.ScreenStates
             var topBound = instance.Q<VisualElement>("TopBound");
 
             var velPortrait = instance.Q<VisualElement>("VelPortrait");
-            switch (Network.CurrentAccountType)
+            switch (Network.CurrentAccountName)
             {
-                case AccountType.Alice:
+                case "Alice":
                     velPortrait.style.backgroundImage = new StyleBackground(PortraitAlice);
                     break;
 
-                case AccountType.Bob:
+                case "Bob":
                     velPortrait.style.backgroundImage = new StyleBackground(PortraitBob);
                     break;
 
-                case AccountType.Charlie:
+                case "Charlie":
                     velPortrait.style.backgroundImage = new StyleBackground(PortraitCharlie);
                     break;
 
-                case AccountType.Dave:
+                case "Dave":
                     velPortrait.style.backgroundImage = new StyleBackground(PortraitDave);
                     break;
 
-                case AccountType.Custom:
+                default:
                     velPortrait.style.backgroundImage = new StyleBackground(PortraitCustom);
                     break;
             }

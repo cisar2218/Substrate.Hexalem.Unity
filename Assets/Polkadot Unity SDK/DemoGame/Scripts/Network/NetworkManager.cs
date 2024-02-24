@@ -1,8 +1,9 @@
-using Schnorrkel.Keys;
 using Substrate.Integration;
 using Substrate.Integration.Client;
 using Substrate.Integration.Helper;
+using Substrate.NET.Schnorrkel.Keys;
 using Substrate.NET.Wallet;
+using Substrate.NET.Wallet.Keyring;
 using Substrate.NetApi;
 using Substrate.NetApi.Model.Rpc;
 using Substrate.NetApi.Model.Types;
@@ -43,10 +44,10 @@ namespace Assets.Scripts
         public event ExtrinsicCheckHandler ExtrinsicCheck;
 
         public MiniSecret MiniSecretAlice => new MiniSecret(Utils.HexToByteArray("0xe5be9a5092b81bca64be81d212e7f2f9eba183bb7a90954f7b76361f6edb5c0a"), ExpandMode.Ed25519);
-        public Account SudoAlice => Account.Build(KeyType.Sr25519, MiniSecretAlice.ExpandToSecret().ToBytes(), MiniSecretAlice.GetPair().Public.Key);
+        public Account SudoAlice => Account.Build(KeyType.Sr25519, MiniSecretAlice.ExpandToSecret().ToEd25519Bytes(), MiniSecretAlice.GetPair().Public.Key);
 
         public MiniSecret MiniSecretSudo => new MiniSecret(Utils.HexToByteArray(""), ExpandMode.Ed25519);
-        public Account SudoHexalem => Account.Build(KeyType.Sr25519, MiniSecretSudo.ExpandToSecret().ToBytes(), MiniSecretSudo.GetPair().Public.Key);
+        public Account SudoHexalem => Account.Build(KeyType.Sr25519, MiniSecretSudo.ExpandToSecret().ToEd25519Bytes(), MiniSecretSudo.GetPair().Public.Key);
 
         // Sudo account if needed
         public Account Sudo { get; private set; }
@@ -56,8 +57,9 @@ namespace Assets.Scripts
 
         private readonly NetworkType _networkType = NetworkType.Live;
 
-        public AccountType CurrentAccountType { get; private set; }
-        public string CurrentAccountName { get; private set; }
+        public Keyring Keyring { get; private set; }
+
+        public string CurrentAccountName =>  Wallet != null ? Wallet.Meta.Name : "Unknown";
 
         public NodeType CurrentNodeType { get; private set; }
 
@@ -66,15 +68,40 @@ namespace Assets.Scripts
 
         private bool? _lastConnectionState = null;
 
+        public Wallet Wallet { get; private set; }
+
+        public int _walletIndex;
+
         protected override void Awake()
         {
             base.Awake();
             //Your code goes here
-            CurrentAccountType = AccountType.Alice;
             CurrentNodeType = NodeType.Local;
             Sudo = SudoAlice;
             _nodeUrl = "ws://127.0.0.1:9944";
+
             InitializeClient();
+
+            Keyring = new Keyring();
+
+            Keyring.AddFromUri("//Alice", new Meta() { Name = "Alice" }, KeyType.Sr25519);
+            Keyring.AddFromUri("//Bob", new Meta() { Name = "Bob" }, KeyType.Sr25519);
+            Keyring.AddFromUri("//Charlie", new Meta() { Name = "Charlie" }, KeyType.Sr25519);
+            Keyring.AddFromUri("//Dave", new Meta() { Name = "Dave" }, KeyType.Sr25519);
+
+            var wallets = StoredWallets();
+            wallets.ForEach(p => Keyring.AddWallet(p));
+
+            _walletIndex = 0;
+            if (PlayerPrefs.HasKey("NetworkManager.WalletRef"))
+            {
+                var playerPrefsWallet = PlayerPrefs.GetString("NetworkManager.WalletRef");
+                _walletIndex = wallets.IndexOf(wallets.First(p => p.Meta.Name == playerPrefsWallet));
+            }
+
+            SetWallet(Keyring.Wallets[ _walletIndex]);
+
+
         }
 
         public void Start()
@@ -109,6 +136,27 @@ namespace Assets.Scripts
             ExtrinsicCheck?.Invoke();
         }
 
+        public bool NextWallet()
+        {
+            if (Keyring.Wallets.Count <= 0 || Keyring.Wallets.Count - 1 <= _walletIndex)
+            {
+                return false;
+            }
+
+            SetWallet(Keyring.Wallets[++_walletIndex]);
+            return true;
+        }
+
+        public void PrevWallet()
+        {
+            if (_walletIndex == 0)
+            {
+                return;
+            }
+
+            SetWallet(Keyring.Wallets[--_walletIndex]);
+        }
+
         public (Account, string) GetAccount(AccountType accountType, string custom = null)
         {
             Account result;
@@ -124,8 +172,8 @@ namespace Assets.Scripts
                     break;
 
                 case AccountType.Custom:
-                    name = custom.ToUpper();
-                    result = BaseClient.RandomAccount(GameConstant.AccountSeed, custom, KeyType.Sr25519);
+                    name = Wallet.Meta.Name.ToUpper();
+                    result = Wallet.Account;
                     break;
 
                 default:
@@ -137,22 +185,93 @@ namespace Assets.Scripts
             return (result, name);
         }
 
-        public bool SetAccount(AccountType accountType, string custom = null)
+        public void SetWallet(Wallet wallet)
         {
-            if (accountType == AccountType.Custom && (string.IsNullOrEmpty(custom) || custom.Length < 3))
+            Client.Account = wallet.Account;
+            Wallet = wallet;
+        }
+
+        #region Wallet
+
+        public bool LoadWallet(string walletName = null)
+        {
+            if (walletName == null && Wallet != null && Wallet.IsStored)
+            {
+                Debug.Log($"No wallet name, but we have an active walet loaded.");
+                return false;
+            }
+
+            var walletNames = WalletFiles().Where(p => Wallet.IsValidWalletName(p));
+
+            if (!walletNames.Any() || (walletName != null && !walletNames.Contains(walletName)))
             {
                 return false;
             }
 
-            CurrentAccountType = accountType;
+            if (walletName == null)
+            {
+                walletName = walletNames.ElementAt(0);
 
-            var tuple = GetAccount(accountType, custom);
+                if (PlayerPrefs.HasKey("NetworkManager.WalletRef"))
+                {
+                    var playerPrefsWallet = PlayerPrefs.GetString("NetworkManager.WalletRef");
+                    if (walletNames.Contains(playerPrefsWallet))
+                    {
+                        walletName = playerPrefsWallet;
+                    }
+                }
+            }
 
-            Client.Account = tuple.Item1;
-            CurrentAccountName = tuple.Item2;
+            if (!Wallet.TryLoad(walletName, out Wallet wallet))
+            {
+                Debug.Log($"Couldn't load wallet {walletName}");
+                return false;
+            }
+
+            ChangeWallet(wallet);
 
             return true;
         }
+
+        public bool ChangeWallet(Wallet wallet)
+        {
+            Debug.Log($"Loading {wallet.FileName} wallet with account {wallet.Account}");
+
+            SetWallet(wallet);
+
+            // save if we change wallet to a new one
+            if (PlayerPrefs.GetString("NetworkManager.WalletRef") != wallet.FileName)
+            {
+                PlayerPrefs.SetString("NetworkManager.WalletRef", Wallet.FileName);
+                PlayerPrefs.Save();
+            }
+
+            return true;
+        }
+
+        public List<Wallet> StoredWallets()
+        {
+            var result = new List<Wallet>();
+            foreach (var w in WalletFiles())
+            {
+                if (!Wallet.TryLoad(w, out Wallet wallet))
+                {
+                    Debug.Log($"Failed to load wallet {w}");
+                }
+
+                result.Add(wallet);
+            }
+            return result;
+        }
+
+        private IEnumerable<string> WalletFiles()
+        {
+            var d = new DirectoryInfo(CachingManager.GetInstance().PersistentPath);
+            return d.GetFiles(Wallet.ConcatWalletFileType("*")).Select(p => Path.GetFileNameWithoutExtension(p.Name));
+        }
+
+        #endregion
+
 
         public bool ToggleNodeType()
         {
@@ -181,32 +300,11 @@ namespace Assets.Scripts
             return true;
         }
 
-        public List<Wallet> StoredWallets()
-        {
-            var result = new List<Wallet>();
-            foreach (var w in WalletFiles())
-            {
-                if (!Wallet.Load(w, out Wallet wallet))
-                {
-                    Debug.Log($"Failed to load wallet {w}");
-                }
-
-                result.Add(wallet);
-            }
-            return result;
-        }
-
-        private IEnumerable<string> WalletFiles()
-        {
-            var d = new DirectoryInfo(CachingManager.GetInstance().PersistentPath);
-            return d.GetFiles(Wallet.ConcatWalletFileType("*")).Select(p => Path.GetFileNameWithoutExtension(p.Name));
-        }
-
         // Start is called before the first frame update
         public void InitializeClient()
         {
             _client = new SubstrateNetwork(null, _networkType, _nodeUrl);
-            SetAccount(CurrentAccountType, CurrentAccountName);
         }
+
     }
 }
