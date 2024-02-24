@@ -1,0 +1,11 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/Polkadot%20Unity%20SDK/DemoGame/UIStylesheet.uss?fileID=7433441132597879392&amp;guid=7b9a8bdc89bd4444c8329e09faba0d7c&amp;type=3#UIStylesheet" />
+    <ui:VisualElement name="FirstTimePlayBox" style="flex-grow: 1; padding-right: 30px; padding-top: 30px; padding-bottom: 30px; padding-left: 30px;">
+        <ui:VisualElement name="WelcomeBox" style="flex-grow: 1; align-items: center; align-self: auto; justify-content: center;">
+            <ui:Label tabindex="-1" text="Welcome to Hexalem ! &#10;To start let&apos;s create or import &#10;a new account" parse-escape-sequences="true" display-tooltip-when-elided="true" name="LblWelcome" class="font-main size-title" style="-unity-text-align: upper-center; font-size: 50px;" />
+        </ui:VisualElement>
+        <ui:VisualElement name="StartAccountBox" style="flex-grow: 1;">
+            <ui:Button text="Create / Load an account" parse-escape-sequences="true" display-tooltip-when-elided="true" name="BtnCreateOrLoadWallet" class="button-main font-main" style="font-size: 50px; -unity-text-align: middle-center;" />
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

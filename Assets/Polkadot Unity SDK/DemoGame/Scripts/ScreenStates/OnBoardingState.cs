@@ -46,10 +46,6 @@ namespace Assets.Scripts.ScreenStates
 
             // set stuff on the container
             SetStepInfos(FlowController.VelContainer, StepState.Current, StepState.None, StepState.None);
-
-            var velLogo = FlowController.VelContainer.Q<VisualElement>("VelLogo");
-            //var imgLogo = Resources.Load<Texture2D>("DemoGame/Icons/IconOnboardStart");
-            //velLogo.style.backgroundImage = imgLogo;
         }
 
         public override void ExitState()
