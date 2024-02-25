@@ -79,7 +79,6 @@ namespace Assets.Scripts
         private void Start()
         {
             InvokeRepeating(nameof(UpdatedBaseData), 1.0f, 2.0f);
-            //InvokeRepeating(nameof(UpdateHasPlayerBoards), 10.0f, 20.0f);
         }
 
         /// <summary>
@@ -105,22 +104,6 @@ namespace Assets.Scripts
             }
 
             return true;
-        }
-
-        private async void UpdateHasPlayerBoards()
-        {
-            if (!CanPollStorage())
-            {
-                return;
-            }
-
-            // todo replace by scraping all boards once in a while
-            foreach (AccountType player in Enum.GetValues(typeof(AccountType)))
-            {
-                var accountTuple = Network.GetAccount(player, "");
-                var accountBoard = await Network.Client.GetBoardAsync(accountTuple.Item1.Value, CancellationToken.None);
-                HasAccountBoard[(int)player] = accountBoard != null;
-            }
         }
 
         private async void UpdatedBaseData()
@@ -196,7 +179,7 @@ namespace Assets.Scripts
                 HexaGame = HexalemWrapper.GetHexaGame(playerGame, playerBoards.ToArray());
                 // check for the event
                 HexaGameDiff(oldGame, HexaGame, PlayerIndex(Network.Client.Account).Value);
-            }     
+            }
 
             OnStorageUpdated?.Invoke(blockNumber.Value);
 

@@ -1,10 +1,8 @@
-﻿using Substrate.Integration.Client;
-using Substrate.NET.Wallet;
+﻿using Substrate.NET.Wallet;
 using Substrate.NET.Wallet.Keyring;
 using Substrate.NetApi;
 using Substrate.NetApi.Model.Types;
 using System;
-using System.Linq;
 using UnityEngine;
 using UnityEngine.UIElements;
 using static Substrate.NetApi.Mnemonic;
@@ -123,7 +121,7 @@ namespace Assets.Scripts.ScreenStates
                 {
                     SetOptionState(++_optionIndex);
                 }
-                
+
                 _velPortrait.style.backgroundImage = GetPortraitByName(Network.CurrentAccountName);
                 _lblPlayerName.text = Network.CurrentAccountName;
 

@@ -38,6 +38,5 @@ namespace Assets.Scripts
             elementInstance.style.height = new Length(heightPerc, LengthUnit.Percent);
             return elementInstance;
         }
-
     }
 }

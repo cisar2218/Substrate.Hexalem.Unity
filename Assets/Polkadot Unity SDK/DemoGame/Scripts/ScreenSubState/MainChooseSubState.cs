@@ -192,7 +192,7 @@ namespace Assets.Scripts.ScreenStates
                 _btnPlay.text = "WAIT";
                 _btnReset.SetEnabled(false);
                 var call = Substrate.Integration.Call.PalletHexalem.HexalemRootDeleteGame(Storage.HexaGame.Id);
-                
+
                 // We use SUDO for this call
                 var subscriptionId = await Network.Client.SudoAsync(Network.Sudo, call, 1, CancellationToken.None);
                 if (subscriptionId == null)

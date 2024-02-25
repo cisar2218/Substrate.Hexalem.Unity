@@ -320,7 +320,6 @@ namespace Assets.Scripts.ScreenStates
                 // set the index to correctly after removing an element
                 _subscriptionIndex = _subscriptionOrder.IndexOf(holdSubscriptionId);
                 _subscriptionIndex = _subscriptionIndex == -1 ? 0 : _subscriptionIndex;
-
             }
         }
 

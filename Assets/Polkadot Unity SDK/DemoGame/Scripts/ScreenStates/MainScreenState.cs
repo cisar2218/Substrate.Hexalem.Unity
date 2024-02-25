@@ -1,6 +1,5 @@
 ﻿using Substrate.Integration;
 using Substrate.Integration.Helper;
-using System;
 using System.Linq;
 using System.Numerics;
 using System.Threading;
@@ -28,8 +27,8 @@ namespace Assets.Scripts.ScreenStates
         public Texture2D PortraitCustom { get; }
 
         public MainScreenState(DemoGameController _flowController)
-            : base(_flowController) {
-
+            : base(_flowController)
+        {
             PortraitAlice = Resources.Load<Texture2D>($"DemoGame/Images/alice_portrait");
             PortraitBob = Resources.Load<Texture2D>($"DemoGame/Images/bob_portrait");
             PortraitCharlie = Resources.Load<Texture2D>($"DemoGame/Images/charlie_portrait");
@@ -116,7 +115,7 @@ namespace Assets.Scripts.ScreenStates
             _btnFaucet.SetEnabled(false);
 
             _lblAccount.text = Network.CurrentAccountName;
-                       
+
             var address = Network.Client.Account.Value;
             _lblAddress.text = address.Substring(0, 6) + " ... " + address.Substring(20, 6);
 
@@ -147,7 +146,7 @@ namespace Assets.Scripts.ScreenStates
             var amountToTransfer = new BigInteger(1000 * SubstrateNetwork.DECIMALS);
 
             Debug.Log($"[{nameof(NetworkManager)})] Send {amountToTransfer} from {sender.ToAccountId32().ToAddress()} to {target.ToAccountId32().ToAddress()}");
-            
+
             var subscriptionId = await Network.Client.TransferKeepAliveAsync(sender, target.ToAccountId32(), amountToTransfer, 1, CancellationToken.None);
             if (subscriptionId == null)
             {

@@ -59,7 +59,7 @@ namespace Assets.Scripts
 
         public Keyring Keyring { get; private set; }
 
-        public string CurrentAccountName =>  Wallet != null ? Wallet.Meta.Name : "Unknown";
+        public string CurrentAccountName => Wallet != null ? Wallet.Meta.Name : "Unknown";
 
         public NodeType CurrentNodeType { get; private set; }
 
@@ -99,7 +99,7 @@ namespace Assets.Scripts
                 _walletIndex = wallets.IndexOf(wallets.First(p => p.Meta.Name == playerPrefsWallet));
             }
 
-            SetWallet(Keyring.Wallets[ _walletIndex]);
+            SetWallet(Keyring.Wallets[_walletIndex]);
         }
 
         public void Start()
@@ -176,7 +176,7 @@ namespace Assets.Scripts
 
                 default:
                     name = AccountType.Alice.ToString();
-                    result = BaseClient.RandomAccount(GameConstant.AccountSeed, AccountType.Alice.ToString(), KeyType.Sr25519); 
+                    result = BaseClient.RandomAccount(GameConstant.AccountSeed, AccountType.Alice.ToString(), KeyType.Sr25519);
                     break;
             }
 
@@ -228,8 +228,7 @@ namespace Assets.Scripts
             return d.GetFiles(Wallet.ConcatWalletFileType("*")).Select(p => Path.GetFileNameWithoutExtension(p.Name));
         }
 
-        #endregion
-
+        #endregion Wallet
 
         public bool ToggleNodeType()
         {
@@ -263,6 +262,5 @@ namespace Assets.Scripts
         {
             _client = new SubstrateNetwork(null, _networkType, _nodeUrl);
         }
-
     }
 }
