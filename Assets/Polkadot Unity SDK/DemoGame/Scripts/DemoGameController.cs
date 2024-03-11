@@ -1,3 +1,4 @@
+using Assets.Polkadot_Unity_SDK.DemoGame.Scripts.ScreenSubState;
 using Assets.Scripts.ScreenStates;
 using System.Collections.Generic;
 using System.Security.Cryptography;
@@ -26,6 +27,7 @@ namespace Assets.Scripts
         PlayWaiting,
         PlayRanking,
         PlayTarget,
+        PlayMatchmaking,
     }
 
     public class DemoGameController : ScreenStateMachine<DemoGameScreen, DemoGameSubScreen>
@@ -81,6 +83,7 @@ namespace Assets.Scripts
                 { DemoGameSubScreen.MainChoose, new MainChooseSubState(this, mainScreen) },
                 { DemoGameSubScreen.MainInvite, new MainInviteSubState(this, mainScreen) },
                 { DemoGameSubScreen.Play, new MainPlaySubState(this, mainScreen) },
+                { DemoGameSubScreen.PlayMatchmaking, new PlayMatchmakingSubState(this, mainScreen) },
             };
             _subStateDictionary.Add(DemoGameScreen.MainScreen, mainScreenSubStates);
 
@@ -96,7 +99,7 @@ namespace Assets.Scripts
                 { DemoGameSubScreen.PlayFinish, new PlayFinishSubState(this, playScreen) },
                 { DemoGameSubScreen.PlayWaiting, new PlayWaitingSubState(this, playScreen) },
                 { DemoGameSubScreen.PlayRanking, new PlayRankingSubState(this, playScreen) },
-                { DemoGameSubScreen.PlayTarget, new PlayTargetSubState(this, playScreen) },
+                { DemoGameSubScreen.PlayTarget, new PlayTargetSubState(this, playScreen) }
             };
             _subStateDictionary.Add(DemoGameScreen.PlayScreen, playScreenSubStates);
         }

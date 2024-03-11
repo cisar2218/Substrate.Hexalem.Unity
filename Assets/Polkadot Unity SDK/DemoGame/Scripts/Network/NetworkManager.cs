@@ -93,12 +93,14 @@ namespace Assets.Scripts
             Keyring.AddFromUri("//Dave", new Meta() { Name = "Dave" }, KeyType.Sr25519);
 
             _walletIndex = 0;
-            if (PlayerPrefs.HasKey("NetworkManager.WalletRef"))
+            if (wallets.Any() && PlayerPrefs.HasKey("NetworkManager.WalletRef"))
             {
                 var playerPrefsWallet = PlayerPrefs.GetString("NetworkManager.WalletRef");
                 _walletIndex = wallets.IndexOf(wallets.First(p => p.Meta.Name == playerPrefsWallet));
             }
 
+            var initialWallet = Keyring.Wallets[_walletIndex];
+            Debug.Log($"[NetworkManager] Initial wallet = {initialWallet.Meta.Name} ({initialWallet.Address})");
             SetWallet(Keyring.Wallets[_walletIndex]);
         }
 
@@ -224,7 +226,13 @@ namespace Assets.Scripts
 
         private IEnumerable<string> WalletFiles()
         {
-            var d = new DirectoryInfo(CachingManager.GetInstance().PersistentPath);
+            var path = CachingManager.GetInstance().PersistentPath;
+            Debug.Log($"[NetworkManager] PersistentPath = {path}");
+
+            if (string.IsNullOrEmpty(path))
+                return Enumerable.Empty<string>();
+
+            var d = new DirectoryInfo(path);
             return d.GetFiles(Wallet.ConcatWalletFileType("*")).Select(p => Path.GetFileNameWithoutExtension(p.Name));
         }
 

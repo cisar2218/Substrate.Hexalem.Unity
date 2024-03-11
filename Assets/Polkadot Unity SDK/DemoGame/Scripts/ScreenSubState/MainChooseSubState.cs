@@ -155,21 +155,22 @@ namespace Assets.Scripts.ScreenStates
 
         private void OnBtnTrainClicked(ClickEvent evt)
         {
-            Storage.UpdateHexalem = false;
+            //Storage.UpdateHexalem = false;
 
-            var hexaTuple = new List<(HexaPlayer, HexaBoard)>
-            {
-                { (new HexaPlayer(Network.Client.Account.Bytes), new HexaBoard(new byte[(int)GridSize.Medium])) }
-            };
+            //var hexaTuple = new List<(HexaPlayer, HexaBoard)>
+            //{
+            //    { (new HexaPlayer(Network.Client.Account.Bytes), new HexaBoard(new byte[(int)GridSize.Medium])) }
+            //};
 
-            var gameId = new byte[HexalemConfig.GAME_STORAGE_ID];
-            _random.NextBytes(gameId);
-            var hexaGame = new HexaGame(gameId, hexaTuple);
-            hexaGame.Init(1234567);
+            //var gameId = new byte[HexalemConfig.GAME_STORAGE_ID];
+            //_random.NextBytes(gameId);
+            //var hexaGame = new HexaGame(gameId, hexaTuple);
+            //hexaGame.Init(1234567);
 
-            Storage.SetTrainGame(hexaGame, 0);
+            //Storage.SetTrainGame(hexaGame, 0);
 
-            FlowController.ChangeScreenState(DemoGameScreen.PlayScreen);
+            //FlowController.ChangeScreenState(DemoGameScreen.PlayScreen);
+            FlowController.ChangeScreenSubState(DemoGameScreen.MainScreen, DemoGameSubScreen.PlayMatchmaking);
         }
 
         private void OnBtnPlayClicked(ClickEvent evt)

@@ -94,7 +94,6 @@ namespace Assets.Scripts.ScreenStates
             _lblNodeType.RegisterCallback<ClickEvent>(OnNodeTypeClicked);
 
             // initially select alice
-            Debug.Log($"############## {Network.CurrentAccountName}");
             _velPortrait.style.backgroundImage = GetPortraitByName(Network.CurrentAccountName);
             _lblPlayerName.text = Network.CurrentAccountName;
 
