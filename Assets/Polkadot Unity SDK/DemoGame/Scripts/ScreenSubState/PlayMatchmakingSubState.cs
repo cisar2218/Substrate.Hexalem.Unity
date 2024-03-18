@@ -1,31 +1,26 @@
 ﻿using Assets.Scripts;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 using UnityEngine.UIElements;
 using UnityEngine;
-using System.Xml.Linq;
+using System.Threading;
+using Substrate.Integration.Client;
 
 namespace Assets.Polkadot_Unity_SDK.DemoGame.Scripts.ScreenSubState
 {
     internal class PlayMatchmakingSubState : GameBaseState
     {
-        private Label _advertisingOnJoinGame;
-        private Label _currentPlayerRating;
-        private VisualElement _matchAccepted;
-
         private VisualElement _playersAccepted;
-        private VisualElement _playersInQueue;
-        
+        private VisualElement _playersInQueueSameBracket;
 
+        private Button _btnAcceptMatch;
+        private string _acceptGameSubscriptionId;
+        private Button _btnForceAcceptMatch;
+        private string _forceGameSubscriptionId;
+        private Label _lblExtrinsicUpdate;
 
         public PlayMatchmakingSubState(DemoGameController flowController, GameBaseState parent)
             : base(flowController, parent)
         {
-            //_playerScoreElement = Resources.Load<VisualTreeAsset>($"DemoGame/UI/Elements/PlayerScoreElement");
-            //_waitingPlayersElements = new List<VisualElement>();
         }
 
         public override void EnterState()
@@ -41,27 +36,33 @@ namespace Assets.Polkadot_Unity_SDK.DemoGame.Scripts.ScreenSubState
             var scrollView = scrollViewElement.Q<ScrollView>("ScvElement");
 
             TemplateContainer elementInstance = ElementInstance("DemoGame/UI/Frames/MatchmakingFrame");
+            mainPlayerInformation(elementInstance);
 
-            _matchAccepted = elementInstance.Q<VisualElement>("VelJoinQueue");
-            _matchAccepted.RegisterCallback<ClickEvent>(OnJoinQueueClicked);
-            _advertisingOnJoinGame = elementInstance.Q<Label>("LblAdvertising");
+            _btnAcceptMatch = elementInstance.Q<Button>("BtnAcceptMatch");
+            _btnAcceptMatch.SetEnabled(false);
+            _btnAcceptMatch.RegisterCallback<ClickEvent>(OnGameAccepted);
+            
+            _btnForceAcceptMatch = elementInstance.Q<Button>("BtnForceAcceptMatch");
+            _btnForceAcceptMatch.SetEnabled(false);
+            _btnForceAcceptMatch.RegisterCallback<ClickEvent>(OnForceMatch);
 
-            _currentPlayerRating = elementInstance.Q<Label>("RatingValue");
-            _currentPlayerRating.text = "2000";
+            _lblExtrinsicUpdate = elementInstance.Q<Label>("LblExtrinsicUpdate");
 
-            _playersInQueue = elementInstance.Q<VisualElement>("VelPlayersQueue");
-            _playersInQueue.Clear();
+            _playersInQueueSameBracket = elementInstance.Q<VisualElement>("VelPlayersQueue");
+            _playersInQueueSameBracket.Clear();
 
-            for (int i = 0; i < 5; i++)
+            foreach(var playerSameBracket in Storage.PlayersInSameBracket)
             {
                 TemplateContainer playerEloInstance = ElementInstance("DemoGame/UI/Elements/PlayerEloElement");
-                _playersInQueue.Add(playerEloInstance);
+                var opponentEloRating = playerEloInstance.Q<Label>("LblEloRating");
+                opponentEloRating.text = playerSameBracket.ToString();
+                _playersInQueueSameBracket.Add(playerEloInstance);
             }
 
             _playersAccepted = elementInstance.Q<VisualElement>("VelPlayersAccept");
             _playersAccepted.Clear();
 
-            for (int i = 0; i < 3; i++)
+            for (int i = 0; i < 1; i++)
             {
                 TemplateContainer waitingSlotInstance = ElementInstance("DemoGame/UI/Elements/SlotElement");
                 var waitingSlotContent = waitingSlotInstance.Q<VisualElement>("VelSlotContent");
@@ -79,32 +80,111 @@ namespace Assets.Polkadot_Unity_SDK.DemoGame.Scripts.ScreenSubState
             _playersAccepted.Insert(0, filledSlotInstance);
 
             scrollView.Add(elementInstance);
+
+            Network.Client.ExtrinsicManager.ExtrinsicUpdated += OnExtrinsicUpdated;
+            Storage.OnGameFound += OnGameFound;
+            Storage.OnForceAcceptMatch += OnForceMatchEnable;
+            Storage.OnGameStarted += OnGameStarted;
         }
 
         public override void ExitState()
         {
             Debug.Log($"[{this.GetType().Name}][SUB] ExitState");
+            Network.Client.ExtrinsicManager.ExtrinsicUpdated -= OnExtrinsicUpdated;
+            Storage.OnGameFound -= OnGameFound;
+            Storage.OnForceAcceptMatch -= OnForceMatchEnable;
+            Storage.OnGameStarted -= OnGameStarted;
         }
 
-        public void OnJoinQueueClicked(ClickEvent evt)
+        private void mainPlayerInformation(TemplateContainer elementInstance)
         {
-            // Call extrinsic and wait for confirmation
-            OnCurrentPlayerJoinedQueue(); // Tmp
-        }
+            
+            var advertisingOnJoinGame = elementInstance.Q<Label>("LblAdvertising");
+            var currentPlayerRating = elementInstance.Q<Label>("RatingValue");
 
-        public void OnCurrentPlayerJoinedQueue()
-        {
+            currentPlayerRating.text = Storage.AccountEloRating.ToString();
+
+            var joinQueue = elementInstance.Q<VisualElement>("VelJoinQueue");
             TemplateContainer playerProfilElement = ElementInstance("DemoGame/UI/Elements/CurrentPlayerProfilElement");
+            joinQueue.Clear();
+            joinQueue.Add(playerProfilElement);
 
-            _matchAccepted.Clear();
-            _matchAccepted.Add(playerProfilElement);
-
-            _advertisingOnJoinGame.visible = false;
+            advertisingOnJoinGame.style.display = DisplayStyle.None;
         }
 
-        public void OnOtherPlayersJoinedQueue(int slotIndex)
+        /// <summary>
+        /// Matchmaking done, a game has been found
+        /// </summary>
+        /// <param name="gameId"></param>
+        private void OnGameFound(byte[] gameId)
         {
+            _btnAcceptMatch.SetEnabled(true);
+        }
 
+        /// <summary>
+        /// Player click on accept match
+        /// </summary>
+        /// <param name="evt"></param>
+        private async void OnGameAccepted(ClickEvent evt)
+        {
+            _acceptGameSubscriptionId = await Network.Client.AcceptAsync(Network.Client.Account, 1, CancellationToken.None);
+
+            _btnAcceptMatch.style.display = DisplayStyle.None;
+            _btnForceAcceptMatch.style.display = DisplayStyle.Flex;
+
+            _btnForceAcceptMatch.text = "Please wait all players accept";
+        }
+
+        public void OnGameStarted(byte[] gameId)
+        {
+            FlowController.ChangeScreenState(DemoGameScreen.PlayScreen);
+        }
+
+        private async void OnForceMatch(ClickEvent evt)
+        {
+            _forceGameSubscriptionId = await Network.Client.ForceAcceptMatch(Network.Client.Account, 1, CancellationToken.None);
+
+            _btnForceAcceptMatch.text = "Game is starting...";
+            _btnForceAcceptMatch.SetEnabled(false);
+        }
+
+        private void OnForceMatchEnable()
+        {
+            _btnForceAcceptMatch.text = "Force start match !";
+            _btnForceAcceptMatch.SetEnabled(true);
+        }
+
+        private void OnExtrinsicUpdated(string subscriptionId, ExtrinsicInfo extrinsicInfo)
+        {
+            if (_acceptGameSubscriptionId == null || _acceptGameSubscriptionId != subscriptionId)
+            {
+                return;
+            }
+            UnityMainThreadDispatcher.Instance().Enqueue(() =>
+            {
+                switch (extrinsicInfo.TransactionEvent)
+                {
+                    case Substrate.NetApi.Model.Rpc.TransactionEvent.Validated:
+                    case Substrate.NetApi.Model.Rpc.TransactionEvent.Finalized:
+                        _lblExtrinsicUpdate.text = $"\"Awesome ! Get ready !\"";
+                        break;
+
+                    case Substrate.NetApi.Model.Rpc.TransactionEvent.Broadcasted:
+                    case Substrate.NetApi.Model.Rpc.TransactionEvent.BestChainBlockIncluded:
+                        _lblExtrinsicUpdate.text = $"\"Hold on ! Hold oon ! Hold oooon !\"";
+                        break;
+
+                    case Substrate.NetApi.Model.Rpc.TransactionEvent.Error:
+                    case Substrate.NetApi.Model.Rpc.TransactionEvent.Invalid:
+                    case Substrate.NetApi.Model.Rpc.TransactionEvent.Dropped:
+                        _lblExtrinsicUpdate.text = $"\"That doesn't work, bro!\"";
+                        break;
+
+                    default:
+                        _lblExtrinsicUpdate.text = $"\"No blue, funk soul bro!\"";
+                        break;
+                }
+            });
         }
 
         public Label GetSlotTextContent(string content)

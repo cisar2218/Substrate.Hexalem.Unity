@@ -1,5 +1,4 @@
 ﻿using Substrate.Hexalem.Engine;
-using Substrate.Hexalem.NET.NetApiExt.Generated.Storage;
 using UnityEngine;
 using UnityEngine.UIElements;
 
@@ -40,8 +39,6 @@ namespace Assets.Scripts
         public static string TileDescription(TileOffer selectTile)
         {
             var cost = $"{selectTile.SelectCost.Cost}{ResourceTypeIcon(selectTile.SelectCost.MaterialType)}";
-
-            var hexalemConstants = new HexalemModuleConstants();
 
             var produce = "";
 

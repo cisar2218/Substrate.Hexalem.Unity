@@ -77,7 +77,7 @@ namespace Assets.Scripts.ScreenStates
 
             _lblPlayerCount = elementInstance.Q<Label>("LblPlayerCount");
 
-            _lblExtriniscUpdate = elementInstance.Q<Label>("LblExtriniscUpdate");
+            _lblExtriniscUpdate = elementInstance.Q<Label>("LblExtrinsicUpdate");
 
             PlayerParty(PartyAction.Add, Network.CurrentAccountName);
 

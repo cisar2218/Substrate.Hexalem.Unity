@@ -25,7 +25,7 @@
         </member>
         <member name="T:Substrate.Hexalem.NET.NetApiExt.Generated.Model.bounded_collections.bounded_vec.BoundedVecT2">
             <summary>
-            >> 107 - Composite[bounded_collections.bounded_vec.BoundedVecT2]
+            >> 111 - Composite[bounded_collections.bounded_vec.BoundedVecT2]
             </summary>
         </member>
         <member name="P:Substrate.Hexalem.NET.NetApiExt.Generated.Model.bounded_collections.bounded_vec.BoundedVecT2.Value">
@@ -44,7 +44,7 @@
         </member>
         <member name="T:Substrate.Hexalem.NET.NetApiExt.Generated.Model.bounded_collections.bounded_vec.BoundedVecT3">
             <summary>
-            >> 110 - Composite[bounded_collections.bounded_vec.BoundedVecT3]
+            >> 114 - Composite[bounded_collections.bounded_vec.BoundedVecT3]
             </summary>
         </member>
         <member name="P:Substrate.Hexalem.NET.NetApiExt.Generated.Model.bounded_collections.bounded_vec.BoundedVecT3.Value">
@@ -63,7 +63,7 @@
         </member>
         <member name="T:Substrate.Hexalem.NET.NetApiExt.Generated.Model.bounded_collections.bounded_vec.BoundedVecT4">
             <summary>
-            >> 119 - Composite[bounded_collections.bounded_vec.BoundedVecT4]
+            >> 124 - Composite[bounded_collections.bounded_vec.BoundedVecT4]
             </summary>
         </member>
         <member name="P:Substrate.Hexalem.NET.NetApiExt.Generated.Model.bounded_collections.bounded_vec.BoundedVecT4.Value">
@@ -82,7 +82,7 @@
         </member>
         <member name="T:Substrate.Hexalem.NET.NetApiExt.Generated.Model.bounded_collections.bounded_vec.BoundedVecT5">
             <summary>
-            >> 122 - Composite[bounded_collections.bounded_vec.BoundedVecT5]
+            >> 126 - Composite[bounded_collections.bounded_vec.BoundedVecT5]
             </summary>
         </member>
         <member name="P:Substrate.Hexalem.NET.NetApiExt.Generated.Model.bounded_collections.bounded_vec.BoundedVecT5.Value">
@@ -101,7 +101,7 @@
         </member>
         <member name="T:Substrate.Hexalem.NET.NetApiExt.Generated.Model.bounded_collections.bounded_vec.BoundedVecT6">
             <summary>
-            >> 133 - Composite[bounded_collections.bounded_vec.BoundedVecT6]
+            >> 129 - Composite[bounded_collections.bounded_vec.BoundedVecT6]
             </summary>
         </member>
         <member name="P:Substrate.Hexalem.NET.NetApiExt.Generated.Model.bounded_collections.bounded_vec.BoundedVecT6.Value">
@@ -118,9 +118,47 @@
         <member name="M:Substrate.Hexalem.NET.NetApiExt.Generated.Model.bounded_collections.bounded_vec.BoundedVecT6.Decode(System.Byte[],System.Int32@)">
             <inheritdoc/>
         </member>
+        <member name="T:Substrate.Hexalem.NET.NetApiExt.Generated.Model.bounded_collections.bounded_vec.BoundedVecT7">
+            <summary>
+            >> 135 - Composite[bounded_collections.bounded_vec.BoundedVecT7]
+            </summary>
+        </member>
+        <member name="P:Substrate.Hexalem.NET.NetApiExt.Generated.Model.bounded_collections.bounded_vec.BoundedVecT7.Value">
+            <summary>
+            >> value
+            </summary>
+        </member>
+        <member name="M:Substrate.Hexalem.NET.NetApiExt.Generated.Model.bounded_collections.bounded_vec.BoundedVecT7.TypeName">
+            <inheritdoc/>
+        </member>
+        <member name="M:Substrate.Hexalem.NET.NetApiExt.Generated.Model.bounded_collections.bounded_vec.BoundedVecT7.Encode">
+            <inheritdoc/>
+        </member>
+        <member name="M:Substrate.Hexalem.NET.NetApiExt.Generated.Model.bounded_collections.bounded_vec.BoundedVecT7.Decode(System.Byte[],System.Int32@)">
+            <inheritdoc/>
+        </member>
+        <member name="T:Substrate.Hexalem.NET.NetApiExt.Generated.Model.bounded_collections.bounded_vec.BoundedVecT8">
+            <summary>
+            >> 145 - Composite[bounded_collections.bounded_vec.BoundedVecT8]
+            </summary>
+        </member>
+        <member name="P:Substrate.Hexalem.NET.NetApiExt.Generated.Model.bounded_collections.bounded_vec.BoundedVecT8.Value">
+            <summary>
+            >> value
+            </summary>
+        </member>
+        <member name="M:Substrate.Hexalem.NET.NetApiExt.Generated.Model.bounded_collections.bounded_vec.BoundedVecT8.TypeName">
+            <inheritdoc/>
+        </member>
+        <member name="M:Substrate.Hexalem.NET.NetApiExt.Generated.Model.bounded_collections.bounded_vec.BoundedVecT8.Encode">
+            <inheritdoc/>
+        </member>
+        <member name="M:Substrate.Hexalem.NET.NetApiExt.Generated.Model.bounded_collections.bounded_vec.BoundedVecT8.Decode(System.Byte[],System.Int32@)">
+            <inheritdoc/>
+        </member>
         <member name="T:Substrate.Hexalem.NET.NetApiExt.Generated.Model.bounded_collections.weak_bounded_vec.WeakBoundedVecT1">
             <summary>
-            >> 103 - Composite[bounded_collections.weak_bounded_vec.WeakBoundedVecT1]
+            >> 107 - Composite[bounded_collections.weak_bounded_vec.WeakBoundedVecT1]
             </summary>
         </member>
         <member name="P:Substrate.Hexalem.NET.NetApiExt.Generated.Model.bounded_collections.weak_bounded_vec.WeakBoundedVecT1.Value">
@@ -139,7 +177,7 @@
         </member>
         <member name="T:Substrate.Hexalem.NET.NetApiExt.Generated.Model.bounded_collections.weak_bounded_vec.WeakBoundedVecT2">
             <summary>
-            >> 140 - Composite[bounded_collections.weak_bounded_vec.WeakBoundedVecT2]
+            >> 152 - Composite[bounded_collections.weak_bounded_vec.WeakBoundedVecT2]
             </summary>
         </member>
         <member name="P:Substrate.Hexalem.NET.NetApiExt.Generated.Model.bounded_collections.weak_bounded_vec.WeakBoundedVecT2.Value">
@@ -158,7 +196,7 @@
         </member>
         <member name="T:Substrate.Hexalem.NET.NetApiExt.Generated.Model.finality_grandpa.EquivocationT1">
             <summary>
-            >> 92 - Composite[finality_grandpa.EquivocationT1]
+            >> 94 - Composite[finality_grandpa.EquivocationT1]
             </summary>
         </member>
         <member name="P:Substrate.Hexalem.NET.NetApiExt.Generated.Model.finality_grandpa.EquivocationT1.RoundNumber">
@@ -192,7 +230,7 @@
         </member>
         <member name="T:Substrate.Hexalem.NET.NetApiExt.Generated.Model.finality_grandpa.EquivocationT2">
             <summary>
-            >> 98 - Composite[finality_grandpa.EquivocationT2]
+            >> 100 - Composite[finality_grandpa.EquivocationT2]
             </summary>
         </member>
         <member name="P:Substrate.Hexalem.NET.NetApiExt.Generated.Model.finality_grandpa.EquivocationT2.RoundNumber">
@@ -226,7 +264,7 @@
         </member>
         <member name="T:Substrate.Hexalem.NET.NetApiExt.Generated.Model.finality_grandpa.Precommit">
             <summary>
-            >> 99 - Composite[finality_grandpa.Precommit]
+            >> 101 - Composite[finality_grandpa.Precommit]
             </summary>
         </member>
         <member name="P:Substrate.Hexalem.NET.NetApiExt.Generated.Model.finality_grandpa.Precommit.TargetHash">
@@ -250,7 +288,7 @@
         </member>
         <member name="T:Substrate.Hexalem.NET.NetApiExt.Generated.Model.finality_grandpa.Prevote">
             <summary>
-            >> 93 - Composite[finality_grandpa.Prevote]
+            >> 95 - Composite[finality_grandpa.Prevote]
             </summary>
         </member>
         <member name="P:Substrate.Hexalem.NET.NetApiExt.Generated.Model.finality_grandpa.Prevote.TargetHash">
@@ -368,7 +406,7 @@
         </member>
         <member name="T:Substrate.Hexalem.NET.NetApiExt.Generated.Model.frame_support.dispatch.EnumRawOrigin">
             <summary>
-            >> 81 - Variant[frame_support.dispatch.RawOrigin]
+            >> 83 - Variant[frame_support.dispatch.RawOrigin]
             </summary>
         </member>
         <member name="T:Substrate.Hexalem.NET.NetApiExt.Generated.Model.frame_support.dispatch.PerDispatchClassT1">
@@ -402,7 +440,7 @@
         </member>
         <member name="T:Substrate.Hexalem.NET.NetApiExt.Generated.Model.frame_support.dispatch.PerDispatchClassT2">
             <summary>
-            >> 62 - Composite[frame_support.dispatch.PerDispatchClassT2]
+            >> 65 - Composite[frame_support.dispatch.PerDispatchClassT2]
             </summary>
         </member>
         <member name="P:Substrate.Hexalem.NET.NetApiExt.Generated.Model.frame_support.dispatch.PerDispatchClassT2.Normal">
@@ -431,7 +469,7 @@
         </member>
         <member name="T:Substrate.Hexalem.NET.NetApiExt.Generated.Model.frame_support.dispatch.PerDispatchClassT3">
             <summary>
-            >> 66 - Composite[frame_support.dispatch.PerDispatchClassT3]
+            >> 69 - Composite[frame_support.dispatch.PerDispatchClassT3]
             </summary>
         </member>
         <member name="P:Substrate.Hexalem.NET.NetApiExt.Generated.Model.frame_support.dispatch.PerDispatchClassT3.Normal">
@@ -539,7 +577,7 @@
         </member>
         <member name="T:Substrate.Hexalem.NET.NetApiExt.Generated.Model.frame_system.EnumPhase">
             <summary>
-            >> 49 - Variant[frame_system.Phase]
+            >> 52 - Variant[frame_system.Phase]
             </summary>
         </member>
         <member name="T:Substrate.Hexalem.NET.NetApiExt.Generated.Model.frame_system.EventRecord">
@@ -573,7 +611,7 @@
         </member>
         <member name="T:Substrate.Hexalem.NET.NetApiExt.Generated.Model.frame_system.extensions.check_genesis.CheckGenesis">
             <summary>
-            >> 152 - Composite[frame_system.extensions.check_genesis.CheckGenesis]
+            >> 168 - Composite[frame_system.extensions.check_genesis.CheckGenesis]
             </summary>
         </member>
         <member name="M:Substrate.Hexalem.NET.NetApiExt.Generated.Model.frame_system.extensions.check_genesis.CheckGenesis.TypeName">
@@ -587,7 +625,7 @@
         </member>
         <member name="T:Substrate.Hexalem.NET.NetApiExt.Generated.Model.frame_system.extensions.check_mortality.CheckMortality">
             <summary>
-            >> 153 - Composite[frame_system.extensions.check_mortality.CheckMortality]
+            >> 169 - Composite[frame_system.extensions.check_mortality.CheckMortality]
             </summary>
         </member>
         <member name="P:Substrate.Hexalem.NET.NetApiExt.Generated.Model.frame_system.extensions.check_mortality.CheckMortality.Value">
@@ -606,7 +644,7 @@
         </member>
         <member name="T:Substrate.Hexalem.NET.NetApiExt.Generated.Model.frame_system.extensions.check_nonce.CheckNonce">
             <summary>
-            >> 155 - Composite[frame_system.extensions.check_nonce.CheckNonce]
+            >> 171 - Composite[frame_system.extensions.check_nonce.CheckNonce]
             </summary>
         </member>
         <member name="P:Substrate.Hexalem.NET.NetApiExt.Generated.Model.frame_system.extensions.check_nonce.CheckNonce.Value">
@@ -625,7 +663,7 @@
         </member>
         <member name="T:Substrate.Hexalem.NET.NetApiExt.Generated.Model.frame_system.extensions.check_non_zero_sender.CheckNonZeroSender">
             <summary>
-            >> 149 - Composite[frame_system.extensions.check_non_zero_sender.CheckNonZeroSender]
+            >> 165 - Composite[frame_system.extensions.check_non_zero_sender.CheckNonZeroSender]
             </summary>
         </member>
         <member name="M:Substrate.Hexalem.NET.NetApiExt.Generated.Model.frame_system.extensions.check_non_zero_sender.CheckNonZeroSender.TypeName">
@@ -639,7 +677,7 @@
         </member>
         <member name="T:Substrate.Hexalem.NET.NetApiExt.Generated.Model.frame_system.extensions.check_spec_version.CheckSpecVersion">
             <summary>
-            >> 150 - Composite[frame_system.extensions.check_spec_version.CheckSpecVersion]
+            >> 166 - Composite[frame_system.extensions.check_spec_version.CheckSpecVersion]
             </summary>
         </member>
         <member name="M:Substrate.Hexalem.NET.NetApiExt.Generated.Model.frame_system.extensions.check_spec_version.CheckSpecVersion.TypeName">
@@ -653,7 +691,7 @@
         </member>
         <member name="T:Substrate.Hexalem.NET.NetApiExt.Generated.Model.frame_system.extensions.check_tx_version.CheckTxVersion">
             <summary>
-            >> 151 - Composite[frame_system.extensions.check_tx_version.CheckTxVersion]
+            >> 167 - Composite[frame_system.extensions.check_tx_version.CheckTxVersion]
             </summary>
         </member>
         <member name="M:Substrate.Hexalem.NET.NetApiExt.Generated.Model.frame_system.extensions.check_tx_version.CheckTxVersion.TypeName">
@@ -667,7 +705,7 @@
         </member>
         <member name="T:Substrate.Hexalem.NET.NetApiExt.Generated.Model.frame_system.extensions.check_weight.CheckWeight">
             <summary>
-            >> 156 - Composite[frame_system.extensions.check_weight.CheckWeight]
+            >> 172 - Composite[frame_system.extensions.check_weight.CheckWeight]
             </summary>
         </member>
         <member name="M:Substrate.Hexalem.NET.NetApiExt.Generated.Model.frame_system.extensions.check_weight.CheckWeight.TypeName">
@@ -681,7 +719,7 @@
         </member>
         <member name="T:Substrate.Hexalem.NET.NetApiExt.Generated.Model.frame_system.LastRuntimeUpgradeInfo">
             <summary>
-            >> 53 - Composite[frame_system.LastRuntimeUpgradeInfo]
+            >> 56 - Composite[frame_system.LastRuntimeUpgradeInfo]
             </summary>
         </member>
         <member name="P:Substrate.Hexalem.NET.NetApiExt.Generated.Model.frame_system.LastRuntimeUpgradeInfo.SpecVersion">
@@ -705,7 +743,7 @@
         </member>
         <member name="T:Substrate.Hexalem.NET.NetApiExt.Generated.Model.frame_system.limits.BlockLength">
             <summary>
-            >> 65 - Composite[frame_system.limits.BlockLength]
+            >> 68 - Composite[frame_system.limits.BlockLength]
             </summary>
         </member>
         <member name="P:Substrate.Hexalem.NET.NetApiExt.Generated.Model.frame_system.limits.BlockLength.Max">
@@ -724,7 +762,7 @@
         </member>
         <member name="T:Substrate.Hexalem.NET.NetApiExt.Generated.Model.frame_system.limits.BlockWeights">
             <summary>
-            >> 61 - Composite[frame_system.limits.BlockWeights]
+            >> 64 - Composite[frame_system.limits.BlockWeights]
             </summary>
         </member>
         <member name="P:Substrate.Hexalem.NET.NetApiExt.Generated.Model.frame_system.limits.BlockWeights.BaseBlock">
@@ -753,7 +791,7 @@
         </member>
         <member name="T:Substrate.Hexalem.NET.NetApiExt.Generated.Model.frame_system.limits.WeightsPerClass">
             <summary>
-            >> 63 - Composite[frame_system.limits.WeightsPerClass]
+            >> 66 - Composite[frame_system.limits.WeightsPerClass]
             </summary>
         </member>
         <member name="P:Substrate.Hexalem.NET.NetApiExt.Generated.Model.frame_system.limits.WeightsPerClass.BaseExtrinsic">
@@ -841,7 +879,7 @@
         </member>
         <member name="T:Substrate.Hexalem.NET.NetApiExt.Generated.Model.frame_system.pallet.EnumCall">
             <summary>
-            >> 57 - Variant[frame_system.pallet.Call]
+            >> 60 - Variant[frame_system.pallet.Call]
             Contains a variant per dispatchable extrinsic that this pallet has.
             </summary>
         </member>
@@ -893,7 +931,7 @@
         </member>
         <member name="T:Substrate.Hexalem.NET.NetApiExt.Generated.Model.frame_system.pallet.EnumError">
             <summary>
-            >> 74 - Variant[frame_system.pallet.Error]
+            >> 76 - Variant[frame_system.pallet.Error]
             Error for the System pallet
             </summary>
         </member>
@@ -962,7 +1000,7 @@
         </member>
         <member name="T:Substrate.Hexalem.NET.NetApiExt.Generated.Model.hexalem_runtime.EnumOriginCaller">
             <summary>
-            >> 80 - Variant[hexalem_runtime.OriginCaller]
+            >> 82 - Variant[hexalem_runtime.OriginCaller]
             </summary>
         </member>
         <member name="T:Substrate.Hexalem.NET.NetApiExt.Generated.Model.hexalem_runtime.RuntimeCall">
@@ -1005,9 +1043,19 @@
             >> Grandpa
             </summary>
         </member>
+        <member name="F:Substrate.Hexalem.NET.NetApiExt.Generated.Model.hexalem_runtime.RuntimeCall.MatchmakerModule">
+            <summary>
+            >> MatchmakerModule
+            </summary>
+        </member>
+        <member name="F:Substrate.Hexalem.NET.NetApiExt.Generated.Model.hexalem_runtime.RuntimeCall.EloModule">
+            <summary>
+            >> EloModule
+            </summary>
+        </member>
         <member name="T:Substrate.Hexalem.NET.NetApiExt.Generated.Model.hexalem_runtime.EnumRuntimeCall">
             <summary>
-            >> 77 - Variant[hexalem_runtime.RuntimeCall]
+            >> 79 - Variant[hexalem_runtime.RuntimeCall]
             </summary>
         </member>
         <member name="T:Substrate.Hexalem.NET.NetApiExt.Generated.Model.hexalem_runtime.RuntimeEvent">
@@ -1050,6 +1098,16 @@
             >> Grandpa
             </summary>
         </member>
+        <member name="F:Substrate.Hexalem.NET.NetApiExt.Generated.Model.hexalem_runtime.RuntimeEvent.MatchmakerModule">
+            <summary>
+            >> MatchmakerModule
+            </summary>
+        </member>
+        <member name="F:Substrate.Hexalem.NET.NetApiExt.Generated.Model.hexalem_runtime.RuntimeEvent.EloModule">
+            <summary>
+            >> EloModule
+            </summary>
+        </member>
         <member name="T:Substrate.Hexalem.NET.NetApiExt.Generated.Model.hexalem_runtime.EnumRuntimeEvent">
             <summary>
             >> 20 - Variant[hexalem_runtime.RuntimeEvent]
@@ -1057,7 +1115,7 @@
         </member>
         <member name="T:Substrate.Hexalem.NET.NetApiExt.Generated.Model.hexalem_runtime.HexalemTile">
             <summary>
-            >> 123 - Composite[hexalem_runtime.HexalemTile]
+            >> 132 - Composite[hexalem_runtime.HexalemTile]
             </summary>
         </member>
         <member name="P:Substrate.Hexalem.NET.NetApiExt.Generated.Model.hexalem_runtime.HexalemTile.Value">
@@ -1074,9 +1132,51 @@
         <member name="M:Substrate.Hexalem.NET.NetApiExt.Generated.Model.hexalem_runtime.HexalemTile.Decode(System.Byte[],System.Int32@)">
             <inheritdoc/>
         </member>
+        <member name="T:Substrate.Hexalem.NET.NetApiExt.Generated.Model.hexalem_runtime.ParameterGetT1">
+            <summary>
+            >> 121 - Composite[hexalem_runtime.ParameterGetT1]
+            </summary>
+        </member>
+        <member name="M:Substrate.Hexalem.NET.NetApiExt.Generated.Model.hexalem_runtime.ParameterGetT1.TypeName">
+            <inheritdoc/>
+        </member>
+        <member name="M:Substrate.Hexalem.NET.NetApiExt.Generated.Model.hexalem_runtime.ParameterGetT1.Encode">
+            <inheritdoc/>
+        </member>
+        <member name="M:Substrate.Hexalem.NET.NetApiExt.Generated.Model.hexalem_runtime.ParameterGetT1.Decode(System.Byte[],System.Int32@)">
+            <inheritdoc/>
+        </member>
+        <member name="T:Substrate.Hexalem.NET.NetApiExt.Generated.Model.hexalem_runtime.ParameterGetT2">
+            <summary>
+            >> 122 - Composite[hexalem_runtime.ParameterGetT2]
+            </summary>
+        </member>
+        <member name="M:Substrate.Hexalem.NET.NetApiExt.Generated.Model.hexalem_runtime.ParameterGetT2.TypeName">
+            <inheritdoc/>
+        </member>
+        <member name="M:Substrate.Hexalem.NET.NetApiExt.Generated.Model.hexalem_runtime.ParameterGetT2.Encode">
+            <inheritdoc/>
+        </member>
+        <member name="M:Substrate.Hexalem.NET.NetApiExt.Generated.Model.hexalem_runtime.ParameterGetT2.Decode(System.Byte[],System.Int32@)">
+            <inheritdoc/>
+        </member>
+        <member name="T:Substrate.Hexalem.NET.NetApiExt.Generated.Model.hexalem_runtime.ParameterGetT3">
+            <summary>
+            >> 133 - Composite[hexalem_runtime.ParameterGetT3]
+            </summary>
+        </member>
+        <member name="M:Substrate.Hexalem.NET.NetApiExt.Generated.Model.hexalem_runtime.ParameterGetT3.TypeName">
+            <inheritdoc/>
+        </member>
+        <member name="M:Substrate.Hexalem.NET.NetApiExt.Generated.Model.hexalem_runtime.ParameterGetT3.Encode">
+            <inheritdoc/>
+        </member>
+        <member name="M:Substrate.Hexalem.NET.NetApiExt.Generated.Model.hexalem_runtime.ParameterGetT3.Decode(System.Byte[],System.Int32@)">
+            <inheritdoc/>
+        </member>
         <member name="T:Substrate.Hexalem.NET.NetApiExt.Generated.Model.hexalem_runtime.Runtime">
             <summary>
-            >> 158 - Composite[hexalem_runtime.Runtime]
+            >> 174 - Composite[hexalem_runtime.Runtime]
             </summary>
         </member>
         <member name="M:Substrate.Hexalem.NET.NetApiExt.Generated.Model.hexalem_runtime.Runtime.TypeName">
@@ -1150,7 +1250,7 @@
         </member>
         <member name="T:Substrate.Hexalem.NET.NetApiExt.Generated.Model.pallet_balances.pallet.EnumCall">
             <summary>
-            >> 83 - Variant[pallet_balances.pallet.Call]
+            >> 85 - Variant[pallet_balances.pallet.Call]
             Contains a variant per dispatchable extrinsic that this pallet has.
             </summary>
         </member>
@@ -1222,7 +1322,7 @@
         </member>
         <member name="T:Substrate.Hexalem.NET.NetApiExt.Generated.Model.pallet_balances.pallet.EnumError">
             <summary>
-            >> 113 - Variant[pallet_balances.pallet.Error]
+            >> 117 - Variant[pallet_balances.pallet.Error]
             The `Error` enum of this pallet.
             </summary>
         </member>
@@ -1402,7 +1502,7 @@
         </member>
         <member name="T:Substrate.Hexalem.NET.NetApiExt.Generated.Model.pallet_balances.types.BalanceLock">
             <summary>
-            >> 104 - Composite[pallet_balances.types.BalanceLock]
+            >> 108 - Composite[pallet_balances.types.BalanceLock]
             </summary>
         </member>
         <member name="P:Substrate.Hexalem.NET.NetApiExt.Generated.Model.pallet_balances.types.BalanceLock.Id">
@@ -1451,7 +1551,7 @@
         </member>
         <member name="T:Substrate.Hexalem.NET.NetApiExt.Generated.Model.pallet_balances.types.EnumReasons">
             <summary>
-            >> 105 - Variant[pallet_balances.types.Reasons]
+            >> 109 - Variant[pallet_balances.types.Reasons]
             </summary>
         </member>
         <member name="T:Substrate.Hexalem.NET.NetApiExt.Generated.Model.pallet_balances.types.ExtraFlags">
@@ -1475,7 +1575,7 @@
         </member>
         <member name="T:Substrate.Hexalem.NET.NetApiExt.Generated.Model.pallet_balances.types.IdAmount">
             <summary>
-            >> 111 - Composite[pallet_balances.types.IdAmount]
+            >> 115 - Composite[pallet_balances.types.IdAmount]
             </summary>
         </member>
         <member name="P:Substrate.Hexalem.NET.NetApiExt.Generated.Model.pallet_balances.types.IdAmount.Id">
@@ -1499,7 +1599,7 @@
         </member>
         <member name="T:Substrate.Hexalem.NET.NetApiExt.Generated.Model.pallet_balances.types.ReserveData">
             <summary>
-            >> 108 - Composite[pallet_balances.types.ReserveData]
+            >> 112 - Composite[pallet_balances.types.ReserveData]
             </summary>
         </member>
         <member name="P:Substrate.Hexalem.NET.NetApiExt.Generated.Model.pallet_balances.types.ReserveData.Id">
@@ -1520,6 +1620,52 @@
         </member>
         <member name="M:Substrate.Hexalem.NET.NetApiExt.Generated.Model.pallet_balances.types.ReserveData.Decode(System.Byte[],System.Int32@)">
             <inheritdoc/>
+        </member>
+        <member name="T:Substrate.Hexalem.NET.NetApiExt.Generated.Model.pallet_elo.pallet.Call">
+            <summary>
+            >> Call
+            Contains a variant per dispatchable extrinsic that this pallet has.
+            </summary>
+        </member>
+        <member name="T:Substrate.Hexalem.NET.NetApiExt.Generated.Model.pallet_elo.pallet.EnumCall">
+            <summary>
+            >> 104 - Variant[pallet_elo.pallet.Call]
+            Contains a variant per dispatchable extrinsic that this pallet has.
+            </summary>
+        </member>
+        <member name="T:Substrate.Hexalem.NET.NetApiExt.Generated.Model.pallet_elo.pallet.Error">
+            <summary>
+            >> Error
+            The `Error` enum of this pallet.
+            </summary>
+        </member>
+        <member name="T:Substrate.Hexalem.NET.NetApiExt.Generated.Model.pallet_elo.pallet.EnumError">
+            <summary>
+            >> 158 - Variant[pallet_elo.pallet.Error]
+            The `Error` enum of this pallet.
+            </summary>
+        </member>
+        <member name="T:Substrate.Hexalem.NET.NetApiExt.Generated.Model.pallet_elo.pallet.Event">
+            <summary>
+            >> Event
+            The `Event` enum of this pallet
+            </summary>
+        </member>
+        <member name="F:Substrate.Hexalem.NET.NetApiExt.Generated.Model.pallet_elo.pallet.Event.RatingGained">
+            <summary>
+            >> RatingGained
+            </summary>
+        </member>
+        <member name="F:Substrate.Hexalem.NET.NetApiExt.Generated.Model.pallet_elo.pallet.Event.RatingLost">
+            <summary>
+            >> RatingLost
+            </summary>
+        </member>
+        <member name="T:Substrate.Hexalem.NET.NetApiExt.Generated.Model.pallet_elo.pallet.EnumEvent">
+            <summary>
+            >> 50 - Variant[pallet_elo.pallet.Event]
+            The `Event` enum of this pallet
+            </summary>
         </member>
         <member name="T:Substrate.Hexalem.NET.NetApiExt.Generated.Model.pallet_grandpa.StoredState">
             <summary>
@@ -1548,7 +1694,7 @@
         </member>
         <member name="T:Substrate.Hexalem.NET.NetApiExt.Generated.Model.pallet_grandpa.EnumStoredState">
             <summary>
-            >> 138 - Variant[pallet_grandpa.StoredState]
+            >> 150 - Variant[pallet_grandpa.StoredState]
             </summary>
         </member>
         <member name="T:Substrate.Hexalem.NET.NetApiExt.Generated.Model.pallet_grandpa.pallet.Call">
@@ -1577,7 +1723,7 @@
         </member>
         <member name="T:Substrate.Hexalem.NET.NetApiExt.Generated.Model.pallet_grandpa.pallet.EnumCall">
             <summary>
-            >> 89 - Variant[pallet_grandpa.pallet.Call]
+            >> 91 - Variant[pallet_grandpa.pallet.Call]
             Contains a variant per dispatchable extrinsic that this pallet has.
             </summary>
         </member>
@@ -1633,7 +1779,7 @@
         </member>
         <member name="T:Substrate.Hexalem.NET.NetApiExt.Generated.Model.pallet_grandpa.pallet.EnumError">
             <summary>
-            >> 142 - Variant[pallet_grandpa.pallet.Error]
+            >> 154 - Variant[pallet_grandpa.pallet.Error]
             The `Error` enum of this pallet.
             </summary>
         </member>
@@ -1669,7 +1815,7 @@
         </member>
         <member name="T:Substrate.Hexalem.NET.NetApiExt.Generated.Model.pallet_grandpa.StoredPendingChange">
             <summary>
-            >> 139 - Composite[pallet_grandpa.StoredPendingChange]
+            >> 151 - Composite[pallet_grandpa.StoredPendingChange]
             </summary>
         </member>
         <member name="P:Substrate.Hexalem.NET.NetApiExt.Generated.Model.pallet_grandpa.StoredPendingChange.ScheduledAt">
@@ -1701,56 +1847,6 @@
         <member name="M:Substrate.Hexalem.NET.NetApiExt.Generated.Model.pallet_grandpa.StoredPendingChange.Decode(System.Byte[],System.Int32@)">
             <inheritdoc/>
         </member>
-        <member name="T:Substrate.Hexalem.NET.NetApiExt.Generated.Model.pallet_hexalem.pallet.Arr15TileCost">
-            <summary>
-            >> 126 - Array
-            </summary>
-        </member>
-        <member name="P:Substrate.Hexalem.NET.NetApiExt.Generated.Model.pallet_hexalem.pallet.Arr15TileCost.Value">
-            <summary>
-            >> Substrate.Hexalem.NET.NetApiExt.Generated.Model.pallet_hexalem.pallet.TileCost[]
-            </summary>
-        </member>
-        <member name="P:Substrate.Hexalem.NET.NetApiExt.Generated.Model.pallet_hexalem.pallet.Arr15TileCost.TypeSize">
-            <inheritdoc/>
-        </member>
-        <member name="M:Substrate.Hexalem.NET.NetApiExt.Generated.Model.pallet_hexalem.pallet.Arr15TileCost.TypeName">
-            <inheritdoc/>
-        </member>
-        <member name="M:Substrate.Hexalem.NET.NetApiExt.Generated.Model.pallet_hexalem.pallet.Arr15TileCost.Encode">
-            <inheritdoc/>
-        </member>
-        <member name="M:Substrate.Hexalem.NET.NetApiExt.Generated.Model.pallet_hexalem.pallet.Arr15TileCost.Decode(System.Byte[],System.Int32@)">
-            <inheritdoc/>
-        </member>
-        <member name="M:Substrate.Hexalem.NET.NetApiExt.Generated.Model.pallet_hexalem.pallet.Arr15TileCost.Create(Substrate.Hexalem.NET.NetApiExt.Generated.Model.pallet_hexalem.pallet.TileCost[])">
-            <inheritdoc/>
-        </member>
-        <member name="T:Substrate.Hexalem.NET.NetApiExt.Generated.Model.pallet_hexalem.pallet.Arr8ResourceProductions">
-            <summary>
-            >> 130 - Array
-            </summary>
-        </member>
-        <member name="P:Substrate.Hexalem.NET.NetApiExt.Generated.Model.pallet_hexalem.pallet.Arr8ResourceProductions.Value">
-            <summary>
-            >> Substrate.Hexalem.NET.NetApiExt.Generated.Model.pallet_hexalem.pallet.ResourceProductions[]
-            </summary>
-        </member>
-        <member name="P:Substrate.Hexalem.NET.NetApiExt.Generated.Model.pallet_hexalem.pallet.Arr8ResourceProductions.TypeSize">
-            <inheritdoc/>
-        </member>
-        <member name="M:Substrate.Hexalem.NET.NetApiExt.Generated.Model.pallet_hexalem.pallet.Arr8ResourceProductions.TypeName">
-            <inheritdoc/>
-        </member>
-        <member name="M:Substrate.Hexalem.NET.NetApiExt.Generated.Model.pallet_hexalem.pallet.Arr8ResourceProductions.Encode">
-            <inheritdoc/>
-        </member>
-        <member name="M:Substrate.Hexalem.NET.NetApiExt.Generated.Model.pallet_hexalem.pallet.Arr8ResourceProductions.Decode(System.Byte[],System.Int32@)">
-            <inheritdoc/>
-        </member>
-        <member name="M:Substrate.Hexalem.NET.NetApiExt.Generated.Model.pallet_hexalem.pallet.Arr8ResourceProductions.Create(Substrate.Hexalem.NET.NetApiExt.Generated.Model.pallet_hexalem.pallet.ResourceProductions[])">
-            <inheritdoc/>
-        </member>
         <member name="T:Substrate.Hexalem.NET.NetApiExt.Generated.Model.pallet_hexalem.pallet.Call">
             <summary>
             >> Call
@@ -1761,6 +1857,24 @@
             <summary>
             >> create_game
             See [`Pallet::create_game`].
+            </summary>
+        </member>
+        <member name="F:Substrate.Hexalem.NET.NetApiExt.Generated.Model.pallet_hexalem.pallet.Call.queue">
+            <summary>
+            >> queue
+            See [`Pallet::queue`].
+            </summary>
+        </member>
+        <member name="F:Substrate.Hexalem.NET.NetApiExt.Generated.Model.pallet_hexalem.pallet.Call.accept_match">
+            <summary>
+            >> accept_match
+            See [`Pallet::accept_match`].
+            </summary>
+        </member>
+        <member name="F:Substrate.Hexalem.NET.NetApiExt.Generated.Model.pallet_hexalem.pallet.Call.force_accept_match">
+            <summary>
+            >> force_accept_match
+            See [`Pallet::force_accept_match`].
             </summary>
         </member>
         <member name="F:Substrate.Hexalem.NET.NetApiExt.Generated.Model.pallet_hexalem.pallet.Call.play">
@@ -1787,10 +1901,10 @@
             See [`Pallet::force_finish_turn`].
             </summary>
         </member>
-        <member name="F:Substrate.Hexalem.NET.NetApiExt.Generated.Model.pallet_hexalem.pallet.Call.receive_reward">
+        <member name="F:Substrate.Hexalem.NET.NetApiExt.Generated.Model.pallet_hexalem.pallet.Call.claim_rewards">
             <summary>
-            >> receive_reward
-            See [`Pallet::receive_reward`].
+            >> claim_rewards
+            See [`Pallet::claim_rewards`].
             </summary>
         </member>
         <member name="F:Substrate.Hexalem.NET.NetApiExt.Generated.Model.pallet_hexalem.pallet.Call.root_delete_game">
@@ -1801,7 +1915,7 @@
         </member>
         <member name="T:Substrate.Hexalem.NET.NetApiExt.Generated.Model.pallet_hexalem.pallet.EnumCall">
             <summary>
-            >> 88 - Variant[pallet_hexalem.pallet.Call]
+            >> 90 - Variant[pallet_hexalem.pallet.Call]
             Contains a variant per dispatchable extrinsic that this pallet has.
             </summary>
         </member>
@@ -1821,14 +1935,29 @@
             >> GameNotInitialized
             </summary>
         </member>
+        <member name="F:Substrate.Hexalem.NET.NetApiExt.Generated.Model.pallet_hexalem.pallet.Error.DidNotJoinGame">
+            <summary>
+            >> DidNotJoinGame
+            </summary>
+        </member>
         <member name="F:Substrate.Hexalem.NET.NetApiExt.Generated.Model.pallet_hexalem.pallet.Error.HexBoardNotInitialized">
             <summary>
             >> HexBoardNotInitialized
             </summary>
         </member>
-        <member name="F:Substrate.Hexalem.NET.NetApiExt.Generated.Model.pallet_hexalem.pallet.Error.GameAlreadyStarted">
+        <member name="F:Substrate.Hexalem.NET.NetApiExt.Generated.Model.pallet_hexalem.pallet.Error.HexBoardAlreadyInitialized">
             <summary>
-            >> GameAlreadyStarted
+            >> HexBoardAlreadyInitialized
+            </summary>
+        </member>
+        <member name="F:Substrate.Hexalem.NET.NetApiExt.Generated.Model.pallet_hexalem.pallet.Error.GameNotInFinishedState">
+            <summary>
+            >> GameNotInFinishedState
+            </summary>
+        </member>
+        <member name="F:Substrate.Hexalem.NET.NetApiExt.Generated.Model.pallet_hexalem.pallet.Error.CreatorNotInPlayersAtIndexZero">
+            <summary>
+            >> CreatorNotInPlayersAtIndexZero
             </summary>
         </member>
         <member name="F:Substrate.Hexalem.NET.NetApiExt.Generated.Model.pallet_hexalem.pallet.Error.GameAlreadyCreated">
@@ -1891,9 +2020,14 @@
             >> CurrentPlayerCannotForceFinishTurn
             </summary>
         </member>
-        <member name="F:Substrate.Hexalem.NET.NetApiExt.Generated.Model.pallet_hexalem.pallet.Error.GameNotPlaying">
+        <member name="F:Substrate.Hexalem.NET.NetApiExt.Generated.Model.pallet_hexalem.pallet.Error.GameNotInPlayingState">
             <summary>
-            >> GameNotPlaying
+            >> GameNotInPlayingState
+            </summary>
+        </member>
+        <member name="F:Substrate.Hexalem.NET.NetApiExt.Generated.Model.pallet_hexalem.pallet.Error.GameNotInAcceptingState">
+            <summary>
+            >> GameNotInAcceptingState
             </summary>
         </member>
         <member name="F:Substrate.Hexalem.NET.NetApiExt.Generated.Model.pallet_hexalem.pallet.Error.BadGridSize">
@@ -1931,9 +2065,19 @@
             >> BlocksToPlayLimitNotPassed
             </summary>
         </member>
+        <member name="F:Substrate.Hexalem.NET.NetApiExt.Generated.Model.pallet_hexalem.pallet.Error.BlocksToAcceptMatchLimitNotPassed">
+            <summary>
+            >> BlocksToAcceptMatchLimitNotPassed
+            </summary>
+        </member>
+        <member name="F:Substrate.Hexalem.NET.NetApiExt.Generated.Model.pallet_hexalem.pallet.Error.ClaimCooldownNotPassed">
+            <summary>
+            >> ClaimCooldownNotPassed
+            </summary>
+        </member>
         <member name="T:Substrate.Hexalem.NET.NetApiExt.Generated.Model.pallet_hexalem.pallet.EnumError">
             <summary>
-            >> 132 - Variant[pallet_hexalem.pallet.Error]
+            >> 144 - Variant[pallet_hexalem.pallet.Error]
             The `Error` enum of this pallet.
             </summary>
         </member>
@@ -1983,6 +2127,11 @@
             >> GameFinished
             </summary>
         </member>
+        <member name="F:Substrate.Hexalem.NET.NetApiExt.Generated.Model.pallet_hexalem.pallet.Event.RewardsClaimed">
+            <summary>
+            >> RewardsClaimed
+            </summary>
+        </member>
         <member name="F:Substrate.Hexalem.NET.NetApiExt.Generated.Model.pallet_hexalem.pallet.Event.ExposeEnums">
             <summary>
             >> ExposeEnums
@@ -1994,329 +2143,488 @@
             The `Event` enum of this pallet
             </summary>
         </member>
-        <member name="T:Substrate.Hexalem.NET.NetApiExt.Generated.Model.pallet_hexalem.pallet.GameState">
+        <member name="T:Substrate.Hexalem.NET.NetApiExt.Generated.Model.pallet_hexalem.types.board.Arr15TileCost">
             <summary>
-            >> GameState
+            >> 138 - Array
             </summary>
         </member>
-        <member name="F:Substrate.Hexalem.NET.NetApiExt.Generated.Model.pallet_hexalem.pallet.GameState.Matchmaking">
+        <member name="P:Substrate.Hexalem.NET.NetApiExt.Generated.Model.pallet_hexalem.types.board.Arr15TileCost.Value">
             <summary>
-            >> Matchmaking
+            >> Substrate.Hexalem.NET.NetApiExt.Generated.Model.pallet_hexalem.types.board.TileCost[]
             </summary>
         </member>
-        <member name="F:Substrate.Hexalem.NET.NetApiExt.Generated.Model.pallet_hexalem.pallet.GameState.Playing">
-            <summary>
-            >> Playing
-            </summary>
-        </member>
-        <member name="F:Substrate.Hexalem.NET.NetApiExt.Generated.Model.pallet_hexalem.pallet.GameState.Finished">
-            <summary>
-            >> Finished
-            </summary>
-        </member>
-        <member name="T:Substrate.Hexalem.NET.NetApiExt.Generated.Model.pallet_hexalem.pallet.EnumGameState">
-            <summary>
-            >> 117 - Variant[pallet_hexalem.pallet.GameState]
-            </summary>
-        </member>
-        <member name="T:Substrate.Hexalem.NET.NetApiExt.Generated.Model.pallet_hexalem.pallet.ResourceType">
-            <summary>
-            >> ResourceType
-            </summary>
-        </member>
-        <member name="F:Substrate.Hexalem.NET.NetApiExt.Generated.Model.pallet_hexalem.pallet.ResourceType.Mana">
-            <summary>
-            >> Mana
-            </summary>
-        </member>
-        <member name="F:Substrate.Hexalem.NET.NetApiExt.Generated.Model.pallet_hexalem.pallet.ResourceType.Human">
-            <summary>
-            >> Human
-            </summary>
-        </member>
-        <member name="F:Substrate.Hexalem.NET.NetApiExt.Generated.Model.pallet_hexalem.pallet.ResourceType.Water">
-            <summary>
-            >> Water
-            </summary>
-        </member>
-        <member name="F:Substrate.Hexalem.NET.NetApiExt.Generated.Model.pallet_hexalem.pallet.ResourceType.Food">
-            <summary>
-            >> Food
-            </summary>
-        </member>
-        <member name="F:Substrate.Hexalem.NET.NetApiExt.Generated.Model.pallet_hexalem.pallet.ResourceType.Wood">
-            <summary>
-            >> Wood
-            </summary>
-        </member>
-        <member name="F:Substrate.Hexalem.NET.NetApiExt.Generated.Model.pallet_hexalem.pallet.ResourceType.Stone">
-            <summary>
-            >> Stone
-            </summary>
-        </member>
-        <member name="F:Substrate.Hexalem.NET.NetApiExt.Generated.Model.pallet_hexalem.pallet.ResourceType.Gold">
-            <summary>
-            >> Gold
-            </summary>
-        </member>
-        <member name="T:Substrate.Hexalem.NET.NetApiExt.Generated.Model.pallet_hexalem.pallet.EnumResourceType">
-            <summary>
-            >> 129 - Variant[pallet_hexalem.pallet.ResourceType]
-            </summary>
-        </member>
-        <member name="T:Substrate.Hexalem.NET.NetApiExt.Generated.Model.pallet_hexalem.pallet.TilePattern">
-            <summary>
-            >> TilePattern
-            </summary>
-        </member>
-        <member name="F:Substrate.Hexalem.NET.NetApiExt.Generated.Model.pallet_hexalem.pallet.TilePattern.Normal">
-            <summary>
-            >> Normal
-            </summary>
-        </member>
-        <member name="F:Substrate.Hexalem.NET.NetApiExt.Generated.Model.pallet_hexalem.pallet.TilePattern.Delta">
-            <summary>
-            >> Delta
-            </summary>
-        </member>
-        <member name="F:Substrate.Hexalem.NET.NetApiExt.Generated.Model.pallet_hexalem.pallet.TilePattern.Line">
-            <summary>
-            >> Line
-            </summary>
-        </member>
-        <member name="F:Substrate.Hexalem.NET.NetApiExt.Generated.Model.pallet_hexalem.pallet.TilePattern.Ypsilon">
-            <summary>
-            >> Ypsilon
-            </summary>
-        </member>
-        <member name="T:Substrate.Hexalem.NET.NetApiExt.Generated.Model.pallet_hexalem.pallet.EnumTilePattern">
-            <summary>
-            >> 43 - Variant[pallet_hexalem.pallet.TilePattern]
-            </summary>
-        </member>
-        <member name="T:Substrate.Hexalem.NET.NetApiExt.Generated.Model.pallet_hexalem.pallet.TileType">
-            <summary>
-            >> TileType
-            </summary>
-        </member>
-        <member name="F:Substrate.Hexalem.NET.NetApiExt.Generated.Model.pallet_hexalem.pallet.TileType.Empty">
-            <summary>
-            >> Empty
-            </summary>
-        </member>
-        <member name="F:Substrate.Hexalem.NET.NetApiExt.Generated.Model.pallet_hexalem.pallet.TileType.Home">
-            <summary>
-            >> Home
-            </summary>
-        </member>
-        <member name="F:Substrate.Hexalem.NET.NetApiExt.Generated.Model.pallet_hexalem.pallet.TileType.Grass">
-            <summary>
-            >> Grass
-            </summary>
-        </member>
-        <member name="F:Substrate.Hexalem.NET.NetApiExt.Generated.Model.pallet_hexalem.pallet.TileType.Water">
-            <summary>
-            >> Water
-            </summary>
-        </member>
-        <member name="F:Substrate.Hexalem.NET.NetApiExt.Generated.Model.pallet_hexalem.pallet.TileType.Mountain">
-            <summary>
-            >> Mountain
-            </summary>
-        </member>
-        <member name="F:Substrate.Hexalem.NET.NetApiExt.Generated.Model.pallet_hexalem.pallet.TileType.Tree">
-            <summary>
-            >> Tree
-            </summary>
-        </member>
-        <member name="F:Substrate.Hexalem.NET.NetApiExt.Generated.Model.pallet_hexalem.pallet.TileType.Desert">
-            <summary>
-            >> Desert
-            </summary>
-        </member>
-        <member name="F:Substrate.Hexalem.NET.NetApiExt.Generated.Model.pallet_hexalem.pallet.TileType.Cave">
-            <summary>
-            >> Cave
-            </summary>
-        </member>
-        <member name="T:Substrate.Hexalem.NET.NetApiExt.Generated.Model.pallet_hexalem.pallet.EnumTileType">
-            <summary>
-            >> 42 - Variant[pallet_hexalem.pallet.TileType]
-            </summary>
-        </member>
-        <member name="T:Substrate.Hexalem.NET.NetApiExt.Generated.Model.pallet_hexalem.pallet.Game">
-            <summary>
-            >> 116 - Composite[pallet_hexalem.pallet.Game]
-            </summary>
-        </member>
-        <member name="P:Substrate.Hexalem.NET.NetApiExt.Generated.Model.pallet_hexalem.pallet.Game.State">
-            <summary>
-            >> state
-            </summary>
-        </member>
-        <member name="P:Substrate.Hexalem.NET.NetApiExt.Generated.Model.pallet_hexalem.pallet.Game.PlayerTurnAndPlayed">
-            <summary>
-            >> player_turn_and_played
-            </summary>
-        </member>
-        <member name="P:Substrate.Hexalem.NET.NetApiExt.Generated.Model.pallet_hexalem.pallet.Game.LastPlayedBlock">
-            <summary>
-            >> last_played_block
-            </summary>
-        </member>
-        <member name="P:Substrate.Hexalem.NET.NetApiExt.Generated.Model.pallet_hexalem.pallet.Game.Players">
-            <summary>
-            >> players
-            </summary>
-        </member>
-        <member name="P:Substrate.Hexalem.NET.NetApiExt.Generated.Model.pallet_hexalem.pallet.Game.Selection">
-            <summary>
-            >> selection
-            </summary>
-        </member>
-        <member name="P:Substrate.Hexalem.NET.NetApiExt.Generated.Model.pallet_hexalem.pallet.Game.SelectionSize">
-            <summary>
-            >> selection_size
-            </summary>
-        </member>
-        <member name="P:Substrate.Hexalem.NET.NetApiExt.Generated.Model.pallet_hexalem.pallet.Game.Round">
-            <summary>
-            >> round
-            </summary>
-        </member>
-        <member name="M:Substrate.Hexalem.NET.NetApiExt.Generated.Model.pallet_hexalem.pallet.Game.TypeName">
+        <member name="P:Substrate.Hexalem.NET.NetApiExt.Generated.Model.pallet_hexalem.types.board.Arr15TileCost.TypeSize">
             <inheritdoc/>
         </member>
-        <member name="M:Substrate.Hexalem.NET.NetApiExt.Generated.Model.pallet_hexalem.pallet.Game.Encode">
+        <member name="M:Substrate.Hexalem.NET.NetApiExt.Generated.Model.pallet_hexalem.types.board.Arr15TileCost.TypeName">
             <inheritdoc/>
         </member>
-        <member name="M:Substrate.Hexalem.NET.NetApiExt.Generated.Model.pallet_hexalem.pallet.Game.Decode(System.Byte[],System.Int32@)">
+        <member name="M:Substrate.Hexalem.NET.NetApiExt.Generated.Model.pallet_hexalem.types.board.Arr15TileCost.Encode">
             <inheritdoc/>
         </member>
-        <member name="T:Substrate.Hexalem.NET.NetApiExt.Generated.Model.pallet_hexalem.pallet.HexBoard">
+        <member name="M:Substrate.Hexalem.NET.NetApiExt.Generated.Model.pallet_hexalem.types.board.Arr15TileCost.Decode(System.Byte[],System.Int32@)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Substrate.Hexalem.NET.NetApiExt.Generated.Model.pallet_hexalem.types.board.Arr15TileCost.Create(Substrate.Hexalem.NET.NetApiExt.Generated.Model.pallet_hexalem.types.board.TileCost[])">
+            <inheritdoc/>
+        </member>
+        <member name="T:Substrate.Hexalem.NET.NetApiExt.Generated.Model.pallet_hexalem.types.board.HexBoard">
             <summary>
-            >> 120 - Composite[pallet_hexalem.pallet.HexBoard]
+            >> 131 - Composite[pallet_hexalem.types.board.HexBoard]
             </summary>
         </member>
-        <member name="P:Substrate.Hexalem.NET.NetApiExt.Generated.Model.pallet_hexalem.pallet.HexBoard.Resources">
+        <member name="P:Substrate.Hexalem.NET.NetApiExt.Generated.Model.pallet_hexalem.types.board.HexBoard.Resources">
             <summary>
             >> resources
             </summary>
         </member>
-        <member name="P:Substrate.Hexalem.NET.NetApiExt.Generated.Model.pallet_hexalem.pallet.HexBoard.HexGrid">
+        <member name="P:Substrate.Hexalem.NET.NetApiExt.Generated.Model.pallet_hexalem.types.board.HexBoard.HexGrid">
             <summary>
             >> hex_grid
             </summary>
         </member>
-        <member name="P:Substrate.Hexalem.NET.NetApiExt.Generated.Model.pallet_hexalem.pallet.HexBoard.GameId">
+        <member name="P:Substrate.Hexalem.NET.NetApiExt.Generated.Model.pallet_hexalem.types.board.HexBoard.GameId">
             <summary>
             >> game_id
             </summary>
         </member>
-        <member name="M:Substrate.Hexalem.NET.NetApiExt.Generated.Model.pallet_hexalem.pallet.HexBoard.TypeName">
+        <member name="M:Substrate.Hexalem.NET.NetApiExt.Generated.Model.pallet_hexalem.types.board.HexBoard.TypeName">
             <inheritdoc/>
         </member>
-        <member name="M:Substrate.Hexalem.NET.NetApiExt.Generated.Model.pallet_hexalem.pallet.HexBoard.Encode">
+        <member name="M:Substrate.Hexalem.NET.NetApiExt.Generated.Model.pallet_hexalem.types.board.HexBoard.Encode">
             <inheritdoc/>
         </member>
-        <member name="M:Substrate.Hexalem.NET.NetApiExt.Generated.Model.pallet_hexalem.pallet.HexBoard.Decode(System.Byte[],System.Int32@)">
+        <member name="M:Substrate.Hexalem.NET.NetApiExt.Generated.Model.pallet_hexalem.types.board.HexBoard.Decode(System.Byte[],System.Int32@)">
             <inheritdoc/>
         </member>
-        <member name="T:Substrate.Hexalem.NET.NetApiExt.Generated.Model.pallet_hexalem.pallet.Move">
+        <member name="T:Substrate.Hexalem.NET.NetApiExt.Generated.Model.pallet_hexalem.types.board.resource.Arr8ResourceProductions">
             <summary>
-            >> 40 - Composite[pallet_hexalem.pallet.Move]
+            >> 142 - Array
             </summary>
         </member>
-        <member name="P:Substrate.Hexalem.NET.NetApiExt.Generated.Model.pallet_hexalem.pallet.Move.PlaceIndex">
+        <member name="P:Substrate.Hexalem.NET.NetApiExt.Generated.Model.pallet_hexalem.types.board.resource.Arr8ResourceProductions.Value">
+            <summary>
+            >> Substrate.Hexalem.NET.NetApiExt.Generated.Model.pallet_hexalem.types.board.resource.ResourceProductions[]
+            </summary>
+        </member>
+        <member name="P:Substrate.Hexalem.NET.NetApiExt.Generated.Model.pallet_hexalem.types.board.resource.Arr8ResourceProductions.TypeSize">
+            <inheritdoc/>
+        </member>
+        <member name="M:Substrate.Hexalem.NET.NetApiExt.Generated.Model.pallet_hexalem.types.board.resource.Arr8ResourceProductions.TypeName">
+            <inheritdoc/>
+        </member>
+        <member name="M:Substrate.Hexalem.NET.NetApiExt.Generated.Model.pallet_hexalem.types.board.resource.Arr8ResourceProductions.Encode">
+            <inheritdoc/>
+        </member>
+        <member name="M:Substrate.Hexalem.NET.NetApiExt.Generated.Model.pallet_hexalem.types.board.resource.Arr8ResourceProductions.Decode(System.Byte[],System.Int32@)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Substrate.Hexalem.NET.NetApiExt.Generated.Model.pallet_hexalem.types.board.resource.Arr8ResourceProductions.Create(Substrate.Hexalem.NET.NetApiExt.Generated.Model.pallet_hexalem.types.board.resource.ResourceProductions[])">
+            <inheritdoc/>
+        </member>
+        <member name="T:Substrate.Hexalem.NET.NetApiExt.Generated.Model.pallet_hexalem.types.board.resource.ResourceType">
+            <summary>
+            >> ResourceType
+            </summary>
+        </member>
+        <member name="F:Substrate.Hexalem.NET.NetApiExt.Generated.Model.pallet_hexalem.types.board.resource.ResourceType.Mana">
+            <summary>
+            >> Mana
+            </summary>
+        </member>
+        <member name="F:Substrate.Hexalem.NET.NetApiExt.Generated.Model.pallet_hexalem.types.board.resource.ResourceType.Human">
+            <summary>
+            >> Human
+            </summary>
+        </member>
+        <member name="F:Substrate.Hexalem.NET.NetApiExt.Generated.Model.pallet_hexalem.types.board.resource.ResourceType.Water">
+            <summary>
+            >> Water
+            </summary>
+        </member>
+        <member name="F:Substrate.Hexalem.NET.NetApiExt.Generated.Model.pallet_hexalem.types.board.resource.ResourceType.Food">
+            <summary>
+            >> Food
+            </summary>
+        </member>
+        <member name="F:Substrate.Hexalem.NET.NetApiExt.Generated.Model.pallet_hexalem.types.board.resource.ResourceType.Wood">
+            <summary>
+            >> Wood
+            </summary>
+        </member>
+        <member name="F:Substrate.Hexalem.NET.NetApiExt.Generated.Model.pallet_hexalem.types.board.resource.ResourceType.Stone">
+            <summary>
+            >> Stone
+            </summary>
+        </member>
+        <member name="F:Substrate.Hexalem.NET.NetApiExt.Generated.Model.pallet_hexalem.types.board.resource.ResourceType.Gold">
+            <summary>
+            >> Gold
+            </summary>
+        </member>
+        <member name="T:Substrate.Hexalem.NET.NetApiExt.Generated.Model.pallet_hexalem.types.board.resource.EnumResourceType">
+            <summary>
+            >> 141 - Variant[pallet_hexalem.types.board.resource.ResourceType]
+            </summary>
+        </member>
+        <member name="T:Substrate.Hexalem.NET.NetApiExt.Generated.Model.pallet_hexalem.types.board.resource.Move">
+            <summary>
+            >> 40 - Composite[pallet_hexalem.types.board.resource.Move]
+            </summary>
+        </member>
+        <member name="P:Substrate.Hexalem.NET.NetApiExt.Generated.Model.pallet_hexalem.types.board.resource.Move.PlaceIndex">
             <summary>
             >> place_index
             </summary>
         </member>
-        <member name="P:Substrate.Hexalem.NET.NetApiExt.Generated.Model.pallet_hexalem.pallet.Move.BuyIndex">
+        <member name="P:Substrate.Hexalem.NET.NetApiExt.Generated.Model.pallet_hexalem.types.board.resource.Move.BuyIndex">
             <summary>
             >> buy_index
             </summary>
         </member>
-        <member name="M:Substrate.Hexalem.NET.NetApiExt.Generated.Model.pallet_hexalem.pallet.Move.TypeName">
+        <member name="M:Substrate.Hexalem.NET.NetApiExt.Generated.Model.pallet_hexalem.types.board.resource.Move.TypeName">
             <inheritdoc/>
         </member>
-        <member name="M:Substrate.Hexalem.NET.NetApiExt.Generated.Model.pallet_hexalem.pallet.Move.Encode">
+        <member name="M:Substrate.Hexalem.NET.NetApiExt.Generated.Model.pallet_hexalem.types.board.resource.Move.Encode">
             <inheritdoc/>
         </member>
-        <member name="M:Substrate.Hexalem.NET.NetApiExt.Generated.Model.pallet_hexalem.pallet.Move.Decode(System.Byte[],System.Int32@)">
+        <member name="M:Substrate.Hexalem.NET.NetApiExt.Generated.Model.pallet_hexalem.types.board.resource.Move.Decode(System.Byte[],System.Int32@)">
             <inheritdoc/>
         </member>
-        <member name="T:Substrate.Hexalem.NET.NetApiExt.Generated.Model.pallet_hexalem.pallet.ResourceAmount">
+        <member name="T:Substrate.Hexalem.NET.NetApiExt.Generated.Model.pallet_hexalem.types.board.resource.ResourceAmount">
             <summary>
-            >> 128 - Composite[pallet_hexalem.pallet.ResourceAmount]
+            >> 140 - Composite[pallet_hexalem.types.board.resource.ResourceAmount]
             </summary>
         </member>
-        <member name="P:Substrate.Hexalem.NET.NetApiExt.Generated.Model.pallet_hexalem.pallet.ResourceAmount.ResourceType">
+        <member name="P:Substrate.Hexalem.NET.NetApiExt.Generated.Model.pallet_hexalem.types.board.resource.ResourceAmount.ResourceType">
             <summary>
             >> resource_type
             </summary>
         </member>
-        <member name="P:Substrate.Hexalem.NET.NetApiExt.Generated.Model.pallet_hexalem.pallet.ResourceAmount.Amount">
+        <member name="P:Substrate.Hexalem.NET.NetApiExt.Generated.Model.pallet_hexalem.types.board.resource.ResourceAmount.Amount">
             <summary>
             >> amount
             </summary>
         </member>
-        <member name="M:Substrate.Hexalem.NET.NetApiExt.Generated.Model.pallet_hexalem.pallet.ResourceAmount.TypeName">
+        <member name="M:Substrate.Hexalem.NET.NetApiExt.Generated.Model.pallet_hexalem.types.board.resource.ResourceAmount.TypeName">
             <inheritdoc/>
         </member>
-        <member name="M:Substrate.Hexalem.NET.NetApiExt.Generated.Model.pallet_hexalem.pallet.ResourceAmount.Encode">
+        <member name="M:Substrate.Hexalem.NET.NetApiExt.Generated.Model.pallet_hexalem.types.board.resource.ResourceAmount.Encode">
             <inheritdoc/>
         </member>
-        <member name="M:Substrate.Hexalem.NET.NetApiExt.Generated.Model.pallet_hexalem.pallet.ResourceAmount.Decode(System.Byte[],System.Int32@)">
+        <member name="M:Substrate.Hexalem.NET.NetApiExt.Generated.Model.pallet_hexalem.types.board.resource.ResourceAmount.Decode(System.Byte[],System.Int32@)">
             <inheritdoc/>
         </member>
-        <member name="T:Substrate.Hexalem.NET.NetApiExt.Generated.Model.pallet_hexalem.pallet.ResourceProductions">
+        <member name="T:Substrate.Hexalem.NET.NetApiExt.Generated.Model.pallet_hexalem.types.board.resource.ResourceProductions">
             <summary>
-            >> 131 - Composite[pallet_hexalem.pallet.ResourceProductions]
+            >> 143 - Composite[pallet_hexalem.types.board.resource.ResourceProductions]
             </summary>
         </member>
-        <member name="P:Substrate.Hexalem.NET.NetApiExt.Generated.Model.pallet_hexalem.pallet.ResourceProductions.Produces">
+        <member name="P:Substrate.Hexalem.NET.NetApiExt.Generated.Model.pallet_hexalem.types.board.resource.ResourceProductions.Produces">
             <summary>
             >> produces
             </summary>
         </member>
-        <member name="P:Substrate.Hexalem.NET.NetApiExt.Generated.Model.pallet_hexalem.pallet.ResourceProductions.HumanRequirements">
+        <member name="P:Substrate.Hexalem.NET.NetApiExt.Generated.Model.pallet_hexalem.types.board.resource.ResourceProductions.HumanRequirements">
             <summary>
             >> human_requirements
             </summary>
         </member>
-        <member name="M:Substrate.Hexalem.NET.NetApiExt.Generated.Model.pallet_hexalem.pallet.ResourceProductions.TypeName">
+        <member name="M:Substrate.Hexalem.NET.NetApiExt.Generated.Model.pallet_hexalem.types.board.resource.ResourceProductions.TypeName">
             <inheritdoc/>
         </member>
-        <member name="M:Substrate.Hexalem.NET.NetApiExt.Generated.Model.pallet_hexalem.pallet.ResourceProductions.Encode">
+        <member name="M:Substrate.Hexalem.NET.NetApiExt.Generated.Model.pallet_hexalem.types.board.resource.ResourceProductions.Encode">
             <inheritdoc/>
         </member>
-        <member name="M:Substrate.Hexalem.NET.NetApiExt.Generated.Model.pallet_hexalem.pallet.ResourceProductions.Decode(System.Byte[],System.Int32@)">
+        <member name="M:Substrate.Hexalem.NET.NetApiExt.Generated.Model.pallet_hexalem.types.board.resource.ResourceProductions.Decode(System.Byte[],System.Int32@)">
             <inheritdoc/>
         </member>
-        <member name="T:Substrate.Hexalem.NET.NetApiExt.Generated.Model.pallet_hexalem.pallet.TileCost">
+        <member name="T:Substrate.Hexalem.NET.NetApiExt.Generated.Model.pallet_hexalem.types.board.TileCost">
             <summary>
-            >> 127 - Composite[pallet_hexalem.pallet.TileCost]
+            >> 139 - Composite[pallet_hexalem.types.board.TileCost]
             </summary>
         </member>
-        <member name="P:Substrate.Hexalem.NET.NetApiExt.Generated.Model.pallet_hexalem.pallet.TileCost.TileToBuy">
+        <member name="P:Substrate.Hexalem.NET.NetApiExt.Generated.Model.pallet_hexalem.types.board.TileCost.TileToBuy">
             <summary>
             >> tile_to_buy
             </summary>
         </member>
-        <member name="P:Substrate.Hexalem.NET.NetApiExt.Generated.Model.pallet_hexalem.pallet.TileCost.Cost">
+        <member name="P:Substrate.Hexalem.NET.NetApiExt.Generated.Model.pallet_hexalem.types.board.TileCost.Cost">
             <summary>
             >> cost
             </summary>
         </member>
-        <member name="M:Substrate.Hexalem.NET.NetApiExt.Generated.Model.pallet_hexalem.pallet.TileCost.TypeName">
+        <member name="M:Substrate.Hexalem.NET.NetApiExt.Generated.Model.pallet_hexalem.types.board.TileCost.TypeName">
             <inheritdoc/>
         </member>
-        <member name="M:Substrate.Hexalem.NET.NetApiExt.Generated.Model.pallet_hexalem.pallet.TileCost.Encode">
+        <member name="M:Substrate.Hexalem.NET.NetApiExt.Generated.Model.pallet_hexalem.types.board.TileCost.Encode">
             <inheritdoc/>
         </member>
-        <member name="M:Substrate.Hexalem.NET.NetApiExt.Generated.Model.pallet_hexalem.pallet.TileCost.Decode(System.Byte[],System.Int32@)">
+        <member name="M:Substrate.Hexalem.NET.NetApiExt.Generated.Model.pallet_hexalem.types.board.TileCost.Decode(System.Byte[],System.Int32@)">
             <inheritdoc/>
+        </member>
+        <member name="T:Substrate.Hexalem.NET.NetApiExt.Generated.Model.pallet_hexalem.types.board.tile.TilePattern">
+            <summary>
+            >> TilePattern
+            </summary>
+        </member>
+        <member name="F:Substrate.Hexalem.NET.NetApiExt.Generated.Model.pallet_hexalem.types.board.tile.TilePattern.Normal">
+            <summary>
+            >> Normal
+            </summary>
+        </member>
+        <member name="F:Substrate.Hexalem.NET.NetApiExt.Generated.Model.pallet_hexalem.types.board.tile.TilePattern.Delta">
+            <summary>
+            >> Delta
+            </summary>
+        </member>
+        <member name="F:Substrate.Hexalem.NET.NetApiExt.Generated.Model.pallet_hexalem.types.board.tile.TilePattern.Line">
+            <summary>
+            >> Line
+            </summary>
+        </member>
+        <member name="F:Substrate.Hexalem.NET.NetApiExt.Generated.Model.pallet_hexalem.types.board.tile.TilePattern.Ypsilon">
+            <summary>
+            >> Ypsilon
+            </summary>
+        </member>
+        <member name="T:Substrate.Hexalem.NET.NetApiExt.Generated.Model.pallet_hexalem.types.board.tile.EnumTilePattern">
+            <summary>
+            >> 43 - Variant[pallet_hexalem.types.board.tile.TilePattern]
+            </summary>
+        </member>
+        <member name="T:Substrate.Hexalem.NET.NetApiExt.Generated.Model.pallet_hexalem.types.board.tile.TileType">
+            <summary>
+            >> TileType
+            </summary>
+        </member>
+        <member name="F:Substrate.Hexalem.NET.NetApiExt.Generated.Model.pallet_hexalem.types.board.tile.TileType.Empty">
+            <summary>
+            >> Empty
+            </summary>
+        </member>
+        <member name="F:Substrate.Hexalem.NET.NetApiExt.Generated.Model.pallet_hexalem.types.board.tile.TileType.Home">
+            <summary>
+            >> Home
+            </summary>
+        </member>
+        <member name="F:Substrate.Hexalem.NET.NetApiExt.Generated.Model.pallet_hexalem.types.board.tile.TileType.Grass">
+            <summary>
+            >> Grass
+            </summary>
+        </member>
+        <member name="F:Substrate.Hexalem.NET.NetApiExt.Generated.Model.pallet_hexalem.types.board.tile.TileType.Water">
+            <summary>
+            >> Water
+            </summary>
+        </member>
+        <member name="F:Substrate.Hexalem.NET.NetApiExt.Generated.Model.pallet_hexalem.types.board.tile.TileType.Mountain">
+            <summary>
+            >> Mountain
+            </summary>
+        </member>
+        <member name="F:Substrate.Hexalem.NET.NetApiExt.Generated.Model.pallet_hexalem.types.board.tile.TileType.Tree">
+            <summary>
+            >> Tree
+            </summary>
+        </member>
+        <member name="F:Substrate.Hexalem.NET.NetApiExt.Generated.Model.pallet_hexalem.types.board.tile.TileType.Desert">
+            <summary>
+            >> Desert
+            </summary>
+        </member>
+        <member name="F:Substrate.Hexalem.NET.NetApiExt.Generated.Model.pallet_hexalem.types.board.tile.TileType.Cave">
+            <summary>
+            >> Cave
+            </summary>
+        </member>
+        <member name="T:Substrate.Hexalem.NET.NetApiExt.Generated.Model.pallet_hexalem.types.board.tile.EnumTileType">
+            <summary>
+            >> 42 - Variant[pallet_hexalem.types.board.tile.TileType]
+            </summary>
+        </member>
+        <member name="T:Substrate.Hexalem.NET.NetApiExt.Generated.Model.pallet_hexalem.types.MatchmakingState">
+            <summary>
+            >> MatchmakingState
+            </summary>
+        </member>
+        <member name="F:Substrate.Hexalem.NET.NetApiExt.Generated.Model.pallet_hexalem.types.MatchmakingState.None">
+            <summary>
+            >> None
+            </summary>
+        </member>
+        <member name="F:Substrate.Hexalem.NET.NetApiExt.Generated.Model.pallet_hexalem.types.MatchmakingState.Matchmaking">
+            <summary>
+            >> Matchmaking
+            </summary>
+        </member>
+        <member name="F:Substrate.Hexalem.NET.NetApiExt.Generated.Model.pallet_hexalem.types.MatchmakingState.Joined">
+            <summary>
+            >> Joined
+            </summary>
+        </member>
+        <member name="T:Substrate.Hexalem.NET.NetApiExt.Generated.Model.pallet_hexalem.types.EnumMatchmakingState">
+            <summary>
+            >> 130 - Variant[pallet_hexalem.types.MatchmakingState]
+            </summary>
+        </member>
+        <member name="T:Substrate.Hexalem.NET.NetApiExt.Generated.Model.pallet_hexalem.types.game.GameState">
+            <summary>
+            >> GameState
+            </summary>
+        </member>
+        <member name="F:Substrate.Hexalem.NET.NetApiExt.Generated.Model.pallet_hexalem.types.game.GameState.Accepting">
+            <summary>
+            >> Accepting
+            </summary>
+        </member>
+        <member name="F:Substrate.Hexalem.NET.NetApiExt.Generated.Model.pallet_hexalem.types.game.GameState.Playing">
+            <summary>
+            >> Playing
+            </summary>
+        </member>
+        <member name="F:Substrate.Hexalem.NET.NetApiExt.Generated.Model.pallet_hexalem.types.game.GameState.Finished">
+            <summary>
+            >> Finished
+            </summary>
+        </member>
+        <member name="T:Substrate.Hexalem.NET.NetApiExt.Generated.Model.pallet_hexalem.types.game.EnumGameState">
+            <summary>
+            >> 123 - Variant[pallet_hexalem.types.game.GameState]
+            </summary>
+        </member>
+        <member name="T:Substrate.Hexalem.NET.NetApiExt.Generated.Model.pallet_hexalem.types.game.Rewards">
+            <summary>
+            >> Rewards
+            </summary>
+        </member>
+        <member name="F:Substrate.Hexalem.NET.NetApiExt.Generated.Model.pallet_hexalem.types.game.Rewards.Winner">
+            <summary>
+            >> Winner
+            </summary>
+        </member>
+        <member name="F:Substrate.Hexalem.NET.NetApiExt.Generated.Model.pallet_hexalem.types.game.Rewards.Loser">
+            <summary>
+            >> Loser
+            </summary>
+        </member>
+        <member name="F:Substrate.Hexalem.NET.NetApiExt.Generated.Model.pallet_hexalem.types.game.Rewards.Draw">
+            <summary>
+            >> Draw
+            </summary>
+        </member>
+        <member name="T:Substrate.Hexalem.NET.NetApiExt.Generated.Model.pallet_hexalem.types.game.EnumRewards">
+            <summary>
+            >> 127 - Variant[pallet_hexalem.types.game.Rewards]
+            </summary>
+        </member>
+        <member name="T:Substrate.Hexalem.NET.NetApiExt.Generated.Model.pallet_hexalem.types.game.Game">
+            <summary>
+            >> 120 - Composite[pallet_hexalem.types.game.Game]
+            </summary>
+        </member>
+        <member name="P:Substrate.Hexalem.NET.NetApiExt.Generated.Model.pallet_hexalem.types.game.Game.State">
+            <summary>
+            >> state
+            </summary>
+        </member>
+        <member name="P:Substrate.Hexalem.NET.NetApiExt.Generated.Model.pallet_hexalem.types.game.Game.PlayerTurnAndPlayed">
+            <summary>
+            >> player_turn_and_played
+            </summary>
+        </member>
+        <member name="P:Substrate.Hexalem.NET.NetApiExt.Generated.Model.pallet_hexalem.types.game.Game.LastPlayedBlock">
+            <summary>
+            >> last_played_block
+            </summary>
+        </member>
+        <member name="P:Substrate.Hexalem.NET.NetApiExt.Generated.Model.pallet_hexalem.types.game.Game.Players">
+            <summary>
+            >> players
+            </summary>
+        </member>
+        <member name="P:Substrate.Hexalem.NET.NetApiExt.Generated.Model.pallet_hexalem.types.game.Game.Selection">
+            <summary>
+            >> selection
+            </summary>
+        </member>
+        <member name="P:Substrate.Hexalem.NET.NetApiExt.Generated.Model.pallet_hexalem.types.game.Game.SelectionSize">
+            <summary>
+            >> selection_size
+            </summary>
+        </member>
+        <member name="P:Substrate.Hexalem.NET.NetApiExt.Generated.Model.pallet_hexalem.types.game.Game.Round">
+            <summary>
+            >> round
+            </summary>
+        </member>
+        <member name="P:Substrate.Hexalem.NET.NetApiExt.Generated.Model.pallet_hexalem.types.game.Game.MaxRounds">
+            <summary>
+            >> max_rounds
+            </summary>
+        </member>
+        <member name="M:Substrate.Hexalem.NET.NetApiExt.Generated.Model.pallet_hexalem.types.game.Game.TypeName">
+            <inheritdoc/>
+        </member>
+        <member name="M:Substrate.Hexalem.NET.NetApiExt.Generated.Model.pallet_hexalem.types.game.Game.Encode">
+            <inheritdoc/>
+        </member>
+        <member name="M:Substrate.Hexalem.NET.NetApiExt.Generated.Model.pallet_hexalem.types.game.Game.Decode(System.Byte[],System.Int32@)">
+            <inheritdoc/>
+        </member>
+        <member name="T:Substrate.Hexalem.NET.NetApiExt.Generated.Model.pallet_matchmaker.pallet.Call">
+            <summary>
+            >> Call
+            Contains a variant per dispatchable extrinsic that this pallet has.
+            </summary>
+        </member>
+        <member name="T:Substrate.Hexalem.NET.NetApiExt.Generated.Model.pallet_matchmaker.pallet.EnumCall">
+            <summary>
+            >> 103 - Variant[pallet_matchmaker.pallet.Call]
+            Contains a variant per dispatchable extrinsic that this pallet has.
+            </summary>
+        </member>
+        <member name="T:Substrate.Hexalem.NET.NetApiExt.Generated.Model.pallet_matchmaker.pallet.Error">
+            <summary>
+            >> Error
+            The `Error` enum of this pallet.
+            </summary>
+        </member>
+        <member name="F:Substrate.Hexalem.NET.NetApiExt.Generated.Model.pallet_matchmaker.pallet.Error.AlreadyQueued">
+            <summary>
+            >> AlreadyQueued
+            Player has already queued, can not queue twice
+            </summary>
+        </member>
+        <member name="T:Substrate.Hexalem.NET.NetApiExt.Generated.Model.pallet_matchmaker.pallet.EnumError">
+            <summary>
+            >> 157 - Variant[pallet_matchmaker.pallet.Error]
+            The `Error` enum of this pallet.
+            </summary>
+        </member>
+        <member name="T:Substrate.Hexalem.NET.NetApiExt.Generated.Model.pallet_matchmaker.pallet.Event">
+            <summary>
+            >> Event
+            The `Event` enum of this pallet
+            </summary>
+        </member>
+        <member name="F:Substrate.Hexalem.NET.NetApiExt.Generated.Model.pallet_matchmaker.pallet.Event.Queued">
+            <summary>
+            >> Queued
+            Queued event
+            </summary>
+        </member>
+        <member name="F:Substrate.Hexalem.NET.NetApiExt.Generated.Model.pallet_matchmaker.pallet.Event.Popped">
+            <summary>
+            >> Popped
+            Popped event
+            </summary>
+        </member>
+        <member name="T:Substrate.Hexalem.NET.NetApiExt.Generated.Model.pallet_matchmaker.pallet.EnumEvent">
+            <summary>
+            >> 49 - Variant[pallet_matchmaker.pallet.Event]
+            The `Event` enum of this pallet
+            </summary>
         </member>
         <member name="T:Substrate.Hexalem.NET.NetApiExt.Generated.Model.pallet_sudo.pallet.Call">
             <summary>
@@ -2350,7 +2658,7 @@
         </member>
         <member name="T:Substrate.Hexalem.NET.NetApiExt.Generated.Model.pallet_sudo.pallet.EnumCall">
             <summary>
-            >> 76 - Variant[pallet_sudo.pallet.Call]
+            >> 78 - Variant[pallet_sudo.pallet.Call]
             Contains a variant per dispatchable extrinsic that this pallet has.
             </summary>
         </member>
@@ -2368,7 +2676,7 @@
         </member>
         <member name="T:Substrate.Hexalem.NET.NetApiExt.Generated.Model.pallet_sudo.pallet.EnumError">
             <summary>
-            >> 101 - Variant[pallet_sudo.pallet.Error]
+            >> 105 - Variant[pallet_sudo.pallet.Error]
             Error for the Sudo pallet
             </summary>
         </member>
@@ -2416,13 +2724,13 @@
         </member>
         <member name="T:Substrate.Hexalem.NET.NetApiExt.Generated.Model.pallet_timestamp.pallet.EnumCall">
             <summary>
-            >> 75 - Variant[pallet_timestamp.pallet.Call]
+            >> 77 - Variant[pallet_timestamp.pallet.Call]
             Contains a variant per dispatchable extrinsic that this pallet has.
             </summary>
         </member>
         <member name="T:Substrate.Hexalem.NET.NetApiExt.Generated.Model.pallet_transaction_payment.ChargeTransactionPayment">
             <summary>
-            >> 157 - Composite[pallet_transaction_payment.ChargeTransactionPayment]
+            >> 173 - Composite[pallet_transaction_payment.ChargeTransactionPayment]
             </summary>
         </member>
         <member name="P:Substrate.Hexalem.NET.NetApiExt.Generated.Model.pallet_transaction_payment.ChargeTransactionPayment.Value">
@@ -2456,7 +2764,7 @@
         </member>
         <member name="T:Substrate.Hexalem.NET.NetApiExt.Generated.Model.pallet_transaction_payment.EnumReleases">
             <summary>
-            >> 115 - Variant[pallet_transaction_payment.Releases]
+            >> 119 - Variant[pallet_transaction_payment.Releases]
             </summary>
         </member>
         <member name="T:Substrate.Hexalem.NET.NetApiExt.Generated.Model.pallet_transaction_payment.pallet.Event">
@@ -2522,7 +2830,7 @@
         </member>
         <member name="T:Substrate.Hexalem.NET.NetApiExt.Generated.Model.pallet_utility.pallet.EnumCall">
             <summary>
-            >> 78 - Variant[pallet_utility.pallet.Call]
+            >> 80 - Variant[pallet_utility.pallet.Call]
             Contains a variant per dispatchable extrinsic that this pallet has.
             </summary>
         </member>
@@ -2540,7 +2848,7 @@
         </member>
         <member name="T:Substrate.Hexalem.NET.NetApiExt.Generated.Model.pallet_utility.pallet.EnumError">
             <summary>
-            >> 102 - Variant[pallet_utility.pallet.Error]
+            >> 106 - Variant[pallet_utility.pallet.Error]
             The `Error` enum of this pallet.
             </summary>
         </member>
@@ -2639,7 +2947,7 @@
         </member>
         <member name="T:Substrate.Hexalem.NET.NetApiExt.Generated.Model.sp_arithmetic.fixed_point.FixedU128">
             <summary>
-            >> 114 - Composite[sp_arithmetic.fixed_point.FixedU128]
+            >> 118 - Composite[sp_arithmetic.fixed_point.FixedU128]
             </summary>
         </member>
         <member name="P:Substrate.Hexalem.NET.NetApiExt.Generated.Model.sp_arithmetic.fixed_point.FixedU128.Value">
@@ -2658,7 +2966,7 @@
         </member>
         <member name="T:Substrate.Hexalem.NET.NetApiExt.Generated.Model.sp_consensus_aura.sr25519.app_sr25519.Public">
             <summary>
-            >> 134 - Composite[sp_consensus_aura.sr25519.app_sr25519.Public]
+            >> 146 - Composite[sp_consensus_aura.sr25519.app_sr25519.Public]
             </summary>
         </member>
         <member name="P:Substrate.Hexalem.NET.NetApiExt.Generated.Model.sp_consensus_aura.sr25519.app_sr25519.Public.Value">
@@ -2696,7 +3004,7 @@
         </member>
         <member name="T:Substrate.Hexalem.NET.NetApiExt.Generated.Model.sp_consensus_grandpa.app.Signature">
             <summary>
-            >> 94 - Composite[sp_consensus_grandpa.app.Signature]
+            >> 96 - Composite[sp_consensus_grandpa.app.Signature]
             </summary>
         </member>
         <member name="P:Substrate.Hexalem.NET.NetApiExt.Generated.Model.sp_consensus_grandpa.app.Signature.Value">
@@ -2730,12 +3038,12 @@
         </member>
         <member name="T:Substrate.Hexalem.NET.NetApiExt.Generated.Model.sp_consensus_grandpa.EnumEquivocation">
             <summary>
-            >> 91 - Variant[sp_consensus_grandpa.Equivocation]
+            >> 93 - Variant[sp_consensus_grandpa.Equivocation]
             </summary>
         </member>
         <member name="T:Substrate.Hexalem.NET.NetApiExt.Generated.Model.sp_consensus_grandpa.EquivocationProof">
             <summary>
-            >> 90 - Composite[sp_consensus_grandpa.EquivocationProof]
+            >> 92 - Composite[sp_consensus_grandpa.EquivocationProof]
             </summary>
         </member>
         <member name="P:Substrate.Hexalem.NET.NetApiExt.Generated.Model.sp_consensus_grandpa.EquivocationProof.SetId">
@@ -2759,7 +3067,7 @@
         </member>
         <member name="T:Substrate.Hexalem.NET.NetApiExt.Generated.Model.sp_consensus_slots.Slot">
             <summary>
-            >> 137 - Composite[sp_consensus_slots.Slot]
+            >> 149 - Composite[sp_consensus_slots.Slot]
             </summary>
         </member>
         <member name="P:Substrate.Hexalem.NET.NetApiExt.Generated.Model.sp_consensus_slots.Slot.Value">
@@ -2797,7 +3105,7 @@
         </member>
         <member name="T:Substrate.Hexalem.NET.NetApiExt.Generated.Model.sp_core.ecdsa.Signature">
             <summary>
-            >> 146 - Composite[sp_core.ecdsa.Signature]
+            >> 162 - Composite[sp_core.ecdsa.Signature]
             </summary>
         </member>
         <member name="P:Substrate.Hexalem.NET.NetApiExt.Generated.Model.sp_core.ecdsa.Signature.Value">
@@ -2835,7 +3143,7 @@
         </member>
         <member name="T:Substrate.Hexalem.NET.NetApiExt.Generated.Model.sp_core.ed25519.Signature">
             <summary>
-            >> 95 - Composite[sp_core.ed25519.Signature]
+            >> 97 - Composite[sp_core.ed25519.Signature]
             </summary>
         </member>
         <member name="P:Substrate.Hexalem.NET.NetApiExt.Generated.Model.sp_core.ed25519.Signature.Value">
@@ -2854,7 +3162,7 @@
         </member>
         <member name="T:Substrate.Hexalem.NET.NetApiExt.Generated.Model.sp_core.sr25519.Public">
             <summary>
-            >> 135 - Composite[sp_core.sr25519.Public]
+            >> 147 - Composite[sp_core.sr25519.Public]
             </summary>
         </member>
         <member name="P:Substrate.Hexalem.NET.NetApiExt.Generated.Model.sp_core.sr25519.Public.Value">
@@ -2873,7 +3181,7 @@
         </member>
         <member name="T:Substrate.Hexalem.NET.NetApiExt.Generated.Model.sp_core.sr25519.Signature">
             <summary>
-            >> 145 - Composite[sp_core.sr25519.Signature]
+            >> 161 - Composite[sp_core.sr25519.Signature]
             </summary>
         </member>
         <member name="P:Substrate.Hexalem.NET.NetApiExt.Generated.Model.sp_core.sr25519.Signature.Value">
@@ -2992,7 +3300,7 @@
         </member>
         <member name="T:Substrate.Hexalem.NET.NetApiExt.Generated.Model.sp_runtime.EnumMultiSignature">
             <summary>
-            >> 144 - Variant[sp_runtime.MultiSignature]
+            >> 160 - Variant[sp_runtime.MultiSignature]
             </summary>
         </member>
         <member name="T:Substrate.Hexalem.NET.NetApiExt.Generated.Model.sp_runtime.TokenError">
@@ -4416,12 +4724,12 @@
         </member>
         <member name="T:Substrate.Hexalem.NET.NetApiExt.Generated.Model.sp_runtime.generic.era.EnumEra">
             <summary>
-            >> 154 - Variant[sp_runtime.generic.era.Era]
+            >> 170 - Variant[sp_runtime.generic.era.Era]
             </summary>
         </member>
         <member name="T:Substrate.Hexalem.NET.NetApiExt.Generated.Model.sp_runtime.generic.unchecked_extrinsic.UncheckedExtrinsic">
             <summary>
-            >> 143 - Composite[sp_runtime.generic.unchecked_extrinsic.UncheckedExtrinsic]
+            >> 159 - Composite[sp_runtime.generic.unchecked_extrinsic.UncheckedExtrinsic]
             </summary>
         </member>
         <member name="P:Substrate.Hexalem.NET.NetApiExt.Generated.Model.sp_runtime.generic.unchecked_extrinsic.UncheckedExtrinsic.Value">
@@ -4494,12 +4802,12 @@
         </member>
         <member name="T:Substrate.Hexalem.NET.NetApiExt.Generated.Model.sp_runtime.multiaddress.EnumMultiAddress">
             <summary>
-            >> 84 - Variant[sp_runtime.multiaddress.MultiAddress]
+            >> 86 - Variant[sp_runtime.multiaddress.MultiAddress]
             </summary>
         </member>
         <member name="T:Substrate.Hexalem.NET.NetApiExt.Generated.Model.sp_version.RuntimeVersion">
             <summary>
-            >> 68 - Composite[sp_version.RuntimeVersion]
+            >> 71 - Composite[sp_version.RuntimeVersion]
             </summary>
         </member>
         <member name="P:Substrate.Hexalem.NET.NetApiExt.Generated.Model.sp_version.RuntimeVersion.SpecName">
@@ -4553,7 +4861,7 @@
         </member>
         <member name="T:Substrate.Hexalem.NET.NetApiExt.Generated.Model.sp_weights.RuntimeDbWeight">
             <summary>
-            >> 67 - Composite[sp_weights.RuntimeDbWeight]
+            >> 70 - Composite[sp_weights.RuntimeDbWeight]
             </summary>
         </member>
         <member name="P:Substrate.Hexalem.NET.NetApiExt.Generated.Model.sp_weights.RuntimeDbWeight.Read">
@@ -4954,6 +5262,52 @@
             Number of freezes exceed `MaxFreezes`.
             </summary>
         </member>
+        <member name="T:Substrate.Hexalem.NET.NetApiExt.Generated.Storage.EloModuleStorage">
+            <summary>
+            >> EloModuleStorage
+            </summary>
+        </member>
+        <member name="M:Substrate.Hexalem.NET.NetApiExt.Generated.Storage.EloModuleStorage.#ctor(Substrate.Hexalem.NET.NetApiExt.Generated.SubstrateClientExt)">
+            <summary>
+            >> EloModuleStorage Constructor
+            </summary>
+        </member>
+        <member name="M:Substrate.Hexalem.NET.NetApiExt.Generated.Storage.EloModuleStorage.RatingStorageParams(Substrate.Hexalem.NET.NetApiExt.Generated.Model.sp_core.crypto.AccountId32)">
+            <summary>
+            >> RatingStorageParams
+            </summary>
+        </member>
+        <member name="M:Substrate.Hexalem.NET.NetApiExt.Generated.Storage.EloModuleStorage.RatingStorageDefault">
+            <summary>
+            >> RatingStorageDefault
+            Default value as hex string
+            </summary>
+        </member>
+        <member name="M:Substrate.Hexalem.NET.NetApiExt.Generated.Storage.EloModuleStorage.RatingStorage(Substrate.Hexalem.NET.NetApiExt.Generated.Model.sp_core.crypto.AccountId32,System.String,System.Threading.CancellationToken)">
+            <summary>
+            >> RatingStorage
+            </summary>
+        </member>
+        <member name="T:Substrate.Hexalem.NET.NetApiExt.Generated.Storage.EloModuleCalls">
+            <summary>
+            >> EloModuleCalls
+            </summary>
+        </member>
+        <member name="T:Substrate.Hexalem.NET.NetApiExt.Generated.Storage.EloModuleConstants">
+            <summary>
+            >> EloModuleConstants
+            </summary>
+        </member>
+        <member name="M:Substrate.Hexalem.NET.NetApiExt.Generated.Storage.EloModuleConstants.MaxPlayers">
+            <summary>
+            >> MaxPlayers
+            </summary>
+        </member>
+        <member name="T:Substrate.Hexalem.NET.NetApiExt.Generated.Storage.EloModuleErrors">
+            <summary>
+            >> EloModuleErrors
+            </summary>
+        </member>
         <member name="T:Substrate.Hexalem.NET.NetApiExt.Generated.Storage.GrandpaStorage">
             <summary>
             >> GrandpaStorage
@@ -5202,6 +5556,22 @@
             >> HexalemModuleStorage Constructor
             </summary>
         </member>
+        <member name="M:Substrate.Hexalem.NET.NetApiExt.Generated.Storage.HexalemModuleStorage.StoreTestParams(Substrate.Hexalem.NET.NetApiExt.Generated.Types.Base.Arr32U8)">
+            <summary>
+            >> StoreTestParams
+            </summary>
+        </member>
+        <member name="M:Substrate.Hexalem.NET.NetApiExt.Generated.Storage.HexalemModuleStorage.StoreTestDefault">
+            <summary>
+            >> StoreTestDefault
+            Default value as hex string
+            </summary>
+        </member>
+        <member name="M:Substrate.Hexalem.NET.NetApiExt.Generated.Storage.HexalemModuleStorage.StoreTest(Substrate.Hexalem.NET.NetApiExt.Generated.Types.Base.Arr32U8,System.String,System.Threading.CancellationToken)">
+            <summary>
+            >> StoreTest
+            </summary>
+        </member>
         <member name="M:Substrate.Hexalem.NET.NetApiExt.Generated.Storage.HexalemModuleStorage.GameStorageParams(Substrate.Hexalem.NET.NetApiExt.Generated.Types.Base.Arr32U8)">
             <summary>
             >> GameStorageParams
@@ -5216,6 +5586,22 @@
         <member name="M:Substrate.Hexalem.NET.NetApiExt.Generated.Storage.HexalemModuleStorage.GameStorage(Substrate.Hexalem.NET.NetApiExt.Generated.Types.Base.Arr32U8,System.String,System.Threading.CancellationToken)">
             <summary>
             >> GameStorage
+            </summary>
+        </member>
+        <member name="M:Substrate.Hexalem.NET.NetApiExt.Generated.Storage.HexalemModuleStorage.MatchmakingStateStorageParams(Substrate.Hexalem.NET.NetApiExt.Generated.Model.sp_core.crypto.AccountId32)">
+            <summary>
+            >> MatchmakingStateStorageParams
+            </summary>
+        </member>
+        <member name="M:Substrate.Hexalem.NET.NetApiExt.Generated.Storage.HexalemModuleStorage.MatchmakingStateStorageDefault">
+            <summary>
+            >> MatchmakingStateStorageDefault
+            Default value as hex string
+            </summary>
+        </member>
+        <member name="M:Substrate.Hexalem.NET.NetApiExt.Generated.Storage.HexalemModuleStorage.MatchmakingStateStorage(Substrate.Hexalem.NET.NetApiExt.Generated.Model.sp_core.crypto.AccountId32,System.String,System.Threading.CancellationToken)">
+            <summary>
+            >> MatchmakingStateStorage
             </summary>
         </member>
         <member name="M:Substrate.Hexalem.NET.NetApiExt.Generated.Storage.HexalemModuleStorage.HexBoardStorageParams(Substrate.Hexalem.NET.NetApiExt.Generated.Model.sp_core.crypto.AccountId32)">
@@ -5261,7 +5647,25 @@
             Contains a variant per dispatchable extrinsic that this pallet has.
             </summary>
         </member>
-        <member name="M:Substrate.Hexalem.NET.NetApiExt.Generated.Storage.HexalemModuleCalls.Play(Substrate.Hexalem.NET.NetApiExt.Generated.Model.pallet_hexalem.pallet.Move)">
+        <member name="M:Substrate.Hexalem.NET.NetApiExt.Generated.Storage.HexalemModuleCalls.Queue">
+            <summary>
+            >> queue
+            Contains a variant per dispatchable extrinsic that this pallet has.
+            </summary>
+        </member>
+        <member name="M:Substrate.Hexalem.NET.NetApiExt.Generated.Storage.HexalemModuleCalls.AcceptMatch">
+            <summary>
+            >> accept_match
+            Contains a variant per dispatchable extrinsic that this pallet has.
+            </summary>
+        </member>
+        <member name="M:Substrate.Hexalem.NET.NetApiExt.Generated.Storage.HexalemModuleCalls.ForceAcceptMatch">
+            <summary>
+            >> force_accept_match
+            Contains a variant per dispatchable extrinsic that this pallet has.
+            </summary>
+        </member>
+        <member name="M:Substrate.Hexalem.NET.NetApiExt.Generated.Storage.HexalemModuleCalls.Play(Substrate.Hexalem.NET.NetApiExt.Generated.Model.pallet_hexalem.types.board.resource.Move)">
             <summary>
             >> play
             Contains a variant per dispatchable extrinsic that this pallet has.
@@ -5285,9 +5689,9 @@
             Contains a variant per dispatchable extrinsic that this pallet has.
             </summary>
         </member>
-        <member name="M:Substrate.Hexalem.NET.NetApiExt.Generated.Storage.HexalemModuleCalls.ReceiveReward">
+        <member name="M:Substrate.Hexalem.NET.NetApiExt.Generated.Storage.HexalemModuleCalls.ClaimRewards">
             <summary>
-            >> receive_reward
+            >> claim_rewards
             Contains a variant per dispatchable extrinsic that this pallet has.
             </summary>
         </member>
@@ -5322,6 +5726,16 @@
             >> BlocksToPlayLimit
             </summary>
         </member>
+        <member name="M:Substrate.Hexalem.NET.NetApiExt.Generated.Storage.HexalemModuleConstants.BlocksToAcceptMatchLimit">
+            <summary>
+            >> BlocksToAcceptMatchLimit
+            </summary>
+        </member>
+        <member name="M:Substrate.Hexalem.NET.NetApiExt.Generated.Storage.HexalemModuleConstants.BlocksToClaimCooldown">
+            <summary>
+            >> BlocksToClaimCooldown
+            </summary>
+        </member>
         <member name="M:Substrate.Hexalem.NET.NetApiExt.Generated.Storage.HexalemModuleConstants.MaxHexGridSize">
             <summary>
             >> MaxHexGridSize
@@ -5330,6 +5744,11 @@
         <member name="M:Substrate.Hexalem.NET.NetApiExt.Generated.Storage.HexalemModuleConstants.MaxTileSelection">
             <summary>
             >> MaxTileSelection
+            </summary>
+        </member>
+        <member name="M:Substrate.Hexalem.NET.NetApiExt.Generated.Storage.HexalemModuleConstants.MatchmakingPeriod">
+            <summary>
+            >> MatchmakingPeriod
             </summary>
         </member>
         <member name="M:Substrate.Hexalem.NET.NetApiExt.Generated.Storage.HexalemModuleConstants.TileCosts">
@@ -5392,14 +5811,29 @@
             >> GameNotInitialized
             </summary>
         </member>
+        <member name="F:Substrate.Hexalem.NET.NetApiExt.Generated.Storage.HexalemModuleErrors.DidNotJoinGame">
+            <summary>
+            >> DidNotJoinGame
+            </summary>
+        </member>
         <member name="F:Substrate.Hexalem.NET.NetApiExt.Generated.Storage.HexalemModuleErrors.HexBoardNotInitialized">
             <summary>
             >> HexBoardNotInitialized
             </summary>
         </member>
-        <member name="F:Substrate.Hexalem.NET.NetApiExt.Generated.Storage.HexalemModuleErrors.GameAlreadyStarted">
+        <member name="F:Substrate.Hexalem.NET.NetApiExt.Generated.Storage.HexalemModuleErrors.HexBoardAlreadyInitialized">
             <summary>
-            >> GameAlreadyStarted
+            >> HexBoardAlreadyInitialized
+            </summary>
+        </member>
+        <member name="F:Substrate.Hexalem.NET.NetApiExt.Generated.Storage.HexalemModuleErrors.GameNotInFinishedState">
+            <summary>
+            >> GameNotInFinishedState
+            </summary>
+        </member>
+        <member name="F:Substrate.Hexalem.NET.NetApiExt.Generated.Storage.HexalemModuleErrors.CreatorNotInPlayersAtIndexZero">
+            <summary>
+            >> CreatorNotInPlayersAtIndexZero
             </summary>
         </member>
         <member name="F:Substrate.Hexalem.NET.NetApiExt.Generated.Storage.HexalemModuleErrors.GameAlreadyCreated">
@@ -5462,9 +5896,14 @@
             >> CurrentPlayerCannotForceFinishTurn
             </summary>
         </member>
-        <member name="F:Substrate.Hexalem.NET.NetApiExt.Generated.Storage.HexalemModuleErrors.GameNotPlaying">
+        <member name="F:Substrate.Hexalem.NET.NetApiExt.Generated.Storage.HexalemModuleErrors.GameNotInPlayingState">
             <summary>
-            >> GameNotPlaying
+            >> GameNotInPlayingState
+            </summary>
+        </member>
+        <member name="F:Substrate.Hexalem.NET.NetApiExt.Generated.Storage.HexalemModuleErrors.GameNotInAcceptingState">
+            <summary>
+            >> GameNotInAcceptingState
             </summary>
         </member>
         <member name="F:Substrate.Hexalem.NET.NetApiExt.Generated.Storage.HexalemModuleErrors.BadGridSize">
@@ -5500,6 +5939,123 @@
         <member name="F:Substrate.Hexalem.NET.NetApiExt.Generated.Storage.HexalemModuleErrors.BlocksToPlayLimitNotPassed">
             <summary>
             >> BlocksToPlayLimitNotPassed
+            </summary>
+        </member>
+        <member name="F:Substrate.Hexalem.NET.NetApiExt.Generated.Storage.HexalemModuleErrors.BlocksToAcceptMatchLimitNotPassed">
+            <summary>
+            >> BlocksToAcceptMatchLimitNotPassed
+            </summary>
+        </member>
+        <member name="F:Substrate.Hexalem.NET.NetApiExt.Generated.Storage.HexalemModuleErrors.ClaimCooldownNotPassed">
+            <summary>
+            >> ClaimCooldownNotPassed
+            </summary>
+        </member>
+        <member name="T:Substrate.Hexalem.NET.NetApiExt.Generated.Storage.MatchmakerModuleStorage">
+            <summary>
+            >> MatchmakerModuleStorage
+            </summary>
+        </member>
+        <member name="M:Substrate.Hexalem.NET.NetApiExt.Generated.Storage.MatchmakerModuleStorage.#ctor(Substrate.Hexalem.NET.NetApiExt.Generated.SubstrateClientExt)">
+            <summary>
+            >> MatchmakerModuleStorage Constructor
+            </summary>
+        </member>
+        <member name="M:Substrate.Hexalem.NET.NetApiExt.Generated.Storage.MatchmakerModuleStorage.BracketsCountParams">
+            <summary>
+            >> BracketsCountParams
+            </summary>
+        </member>
+        <member name="M:Substrate.Hexalem.NET.NetApiExt.Generated.Storage.MatchmakerModuleStorage.BracketsCountDefault">
+            <summary>
+            >> BracketsCountDefault
+            Default value as hex string
+            </summary>
+        </member>
+        <member name="M:Substrate.Hexalem.NET.NetApiExt.Generated.Storage.MatchmakerModuleStorage.BracketsCount(System.String,System.Threading.CancellationToken)">
+            <summary>
+            >> BracketsCount
+            </summary>
+        </member>
+        <member name="M:Substrate.Hexalem.NET.NetApiExt.Generated.Storage.MatchmakerModuleStorage.BracketIndicesParams(Substrate.NetApi.Model.Types.Primitive.U8)">
+            <summary>
+            >> BracketIndicesParams
+            </summary>
+        </member>
+        <member name="M:Substrate.Hexalem.NET.NetApiExt.Generated.Storage.MatchmakerModuleStorage.BracketIndicesDefault">
+            <summary>
+            >> BracketIndicesDefault
+            Default value as hex string
+            </summary>
+        </member>
+        <member name="M:Substrate.Hexalem.NET.NetApiExt.Generated.Storage.MatchmakerModuleStorage.BracketIndices(Substrate.NetApi.Model.Types.Primitive.U8,System.String,System.Threading.CancellationToken)">
+            <summary>
+            >> BracketIndices
+            </summary>
+        </member>
+        <member name="M:Substrate.Hexalem.NET.NetApiExt.Generated.Storage.MatchmakerModuleStorage.BracketIndexKeyMapParams(Substrate.NetApi.Model.Types.Base.BaseTuple{Substrate.NetApi.Model.Types.Primitive.U8,Substrate.NetApi.Model.Types.Primitive.U16})">
+            <summary>
+            >> BracketIndexKeyMapParams
+            </summary>
+        </member>
+        <member name="M:Substrate.Hexalem.NET.NetApiExt.Generated.Storage.MatchmakerModuleStorage.BracketIndexKeyMapDefault">
+            <summary>
+            >> BracketIndexKeyMapDefault
+            Default value as hex string
+            </summary>
+        </member>
+        <member name="M:Substrate.Hexalem.NET.NetApiExt.Generated.Storage.MatchmakerModuleStorage.BracketIndexKeyMap(Substrate.NetApi.Model.Types.Base.BaseTuple{Substrate.NetApi.Model.Types.Primitive.U8,Substrate.NetApi.Model.Types.Primitive.U16},System.String,System.Threading.CancellationToken)">
+            <summary>
+            >> BracketIndexKeyMap
+            </summary>
+        </member>
+        <member name="M:Substrate.Hexalem.NET.NetApiExt.Generated.Storage.MatchmakerModuleStorage.KeyPresentMapParams(Substrate.Hexalem.NET.NetApiExt.Generated.Model.sp_core.crypto.AccountId32)">
+            <summary>
+            >> KeyPresentMapParams
+            </summary>
+        </member>
+        <member name="M:Substrate.Hexalem.NET.NetApiExt.Generated.Storage.MatchmakerModuleStorage.KeyPresentMapDefault">
+            <summary>
+            >> KeyPresentMapDefault
+            Default value as hex string
+            </summary>
+        </member>
+        <member name="M:Substrate.Hexalem.NET.NetApiExt.Generated.Storage.MatchmakerModuleStorage.KeyPresentMap(Substrate.Hexalem.NET.NetApiExt.Generated.Model.sp_core.crypto.AccountId32,System.String,System.Threading.CancellationToken)">
+            <summary>
+            >> KeyPresentMap
+            </summary>
+        </member>
+        <member name="T:Substrate.Hexalem.NET.NetApiExt.Generated.Storage.MatchmakerModuleCalls">
+            <summary>
+            >> MatchmakerModuleCalls
+            </summary>
+        </member>
+        <member name="T:Substrate.Hexalem.NET.NetApiExt.Generated.Storage.MatchmakerModuleConstants">
+            <summary>
+            >> MatchmakerModuleConstants
+            </summary>
+        </member>
+        <member name="M:Substrate.Hexalem.NET.NetApiExt.Generated.Storage.MatchmakerModuleConstants.AmountPlayers">
+            <summary>
+            >> AmountPlayers
+             Constant that indicates how many players are needed to create a new match.
+            </summary>
+        </member>
+        <member name="M:Substrate.Hexalem.NET.NetApiExt.Generated.Storage.MatchmakerModuleConstants.AmountBrackets">
+            <summary>
+            >> AmountBrackets
+             Constant that indicates how many ranking brackets exist for players.
+            </summary>
+        </member>
+        <member name="T:Substrate.Hexalem.NET.NetApiExt.Generated.Storage.MatchmakerModuleErrors">
+            <summary>
+            >> MatchmakerModuleErrors
+            </summary>
+        </member>
+        <member name="F:Substrate.Hexalem.NET.NetApiExt.Generated.Storage.MatchmakerModuleErrors.AlreadyQueued">
+            <summary>
+            >> AlreadyQueued
+            Player has already queued, can not queue twice
             </summary>
         </member>
         <member name="T:Substrate.Hexalem.NET.NetApiExt.Generated.Storage.SudoStorage">
@@ -6282,9 +6838,19 @@
             GrandpaStorage storage calls.
             </summary>
         </member>
+        <member name="F:Substrate.Hexalem.NET.NetApiExt.Generated.SubstrateClientExt.MatchmakerModuleStorage">
+            <summary>
+            MatchmakerModuleStorage storage calls.
+            </summary>
+        </member>
+        <member name="F:Substrate.Hexalem.NET.NetApiExt.Generated.SubstrateClientExt.EloModuleStorage">
+            <summary>
+            EloModuleStorage storage calls.
+            </summary>
+        </member>
         <member name="T:Substrate.Hexalem.NET.NetApiExt.Generated.Types.Base.Arr16U8">
             <summary>
-            >> 125 - Array
+            >> 137 - Array
             </summary>
         </member>
         <member name="P:Substrate.Hexalem.NET.NetApiExt.Generated.Types.Base.Arr16U8.Value">
@@ -6309,7 +6875,7 @@
         </member>
         <member name="T:Substrate.Hexalem.NET.NetApiExt.Generated.Types.Base.Arr20U8">
             <summary>
-            >> 86 - Array
+            >> 88 - Array
             </summary>
         </member>
         <member name="P:Substrate.Hexalem.NET.NetApiExt.Generated.Types.Base.Arr20U8.Value">
@@ -6384,7 +6950,7 @@
         </member>
         <member name="T:Substrate.Hexalem.NET.NetApiExt.Generated.Types.Base.Arr64U8">
             <summary>
-            >> 96 - Array
+            >> 98 - Array
             </summary>
         </member>
         <member name="P:Substrate.Hexalem.NET.NetApiExt.Generated.Types.Base.Arr64U8.Value">
@@ -6409,7 +6975,7 @@
         </member>
         <member name="T:Substrate.Hexalem.NET.NetApiExt.Generated.Types.Base.Arr65U8">
             <summary>
-            >> 147 - Array
+            >> 163 - Array
             </summary>
         </member>
         <member name="P:Substrate.Hexalem.NET.NetApiExt.Generated.Types.Base.Arr65U8.Value">
@@ -6434,7 +7000,7 @@
         </member>
         <member name="T:Substrate.Hexalem.NET.NetApiExt.Generated.Types.Base.Arr7U8">
             <summary>
-            >> 121 - Array
+            >> 134 - Array
             </summary>
         </member>
         <member name="P:Substrate.Hexalem.NET.NetApiExt.Generated.Types.Base.Arr7U8.Value">
@@ -6459,7 +7025,7 @@
         </member>
         <member name="T:Substrate.Hexalem.NET.NetApiExt.Generated.Types.Base.Arr8U8">
             <summary>
-            >> 72 - Array
+            >> 75 - Array
             </summary>
         </member>
         <member name="P:Substrate.Hexalem.NET.NetApiExt.Generated.Types.Base.Arr8U8.Value">
@@ -6484,7 +7050,7 @@
         </member>
         <member name="T:Substrate.Hexalem.NET.NetApiExt.Generated.Types.Base.Cow">
             <summary>
-            >> 69 - Composite[Cow]
+            >> 72 - Composite[Cow]
             </summary>
         </member>
         <member name="P:Substrate.Hexalem.NET.NetApiExt.Generated.Types.Base.Cow.Value">

@@ -707,19 +707,78 @@
             Substrate network
             </summary>
         </member>
-        <member name="M:Substrate.Integration.SubstrateNetwork.GetGameAsync(System.Byte[],System.Threading.CancellationToken)">
+        <member name="M:Substrate.Integration.SubstrateNetwork.GetMatchmakingStateAsync(System.String,System.String,System.Threading.CancellationToken)">
             <summary>
             Get game
             </summary>
             <param name="gameId"></param>
+            <param name="blockHash"></param>
             <param name="token"></param>
             <returns></returns>
         </member>
-        <member name="M:Substrate.Integration.SubstrateNetwork.GetBoardAsync(System.String,System.Threading.CancellationToken)">
+        <member name="M:Substrate.Integration.SubstrateNetwork.GetGameAsync(System.Byte[],System.String,System.Threading.CancellationToken)">
+            <summary>
+            Get game
+            </summary>
+            <param name="gameId"></param>
+            <param name="blockHash"></param>
+            <param name="token"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Substrate.Integration.SubstrateNetwork.GetBoardAsync(System.String,System.String,System.Threading.CancellationToken)">
             <summary>
             Get board
             </summary>
             <param name="playerAddress"></param>
+            <param name="blockHash"></param>
+            <param name="token"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Substrate.Integration.SubstrateNetwork.GetRatingStorageAsync(System.String,System.Threading.CancellationToken)">
+            <summary>
+            Get the elo rating of a player
+            </summary>
+            <param name="playerAddress"></param>
+            <param name="token"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Substrate.Integration.SubstrateNetwork.GetPlayerBracketAsync(Substrate.NetApi.Model.Types.Account,System.Threading.CancellationToken)">
+            <summary>
+            Return player bracket (need to be changed)
+            </summary>
+            <param name="player"></param>
+            <param name="token"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Substrate.Integration.SubstrateNetwork.GetPlayerBracketIndexAsync(System.Byte,System.UInt32,System.Threading.CancellationToken)">
+            <summary>
+            
+            </summary>
+            <param name="bracketIndex"></param>
+            <param name="bracketKey"></param>
+            <param name="token"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Substrate.Integration.SubstrateNetwork.GetBracketIndicesAsync(System.Byte,System.Threading.CancellationToken)">
+            <summary>
+            
+            </summary>
+            <param name="bracketIndex"></param>
+            <param name="token"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Substrate.Integration.SubstrateNetwork.IsPlayerInMatchmakingAsync(Substrate.NetApi.Model.Types.Account,System.Threading.CancellationToken)">
+            <summary>
+            
+            </summary>
+            <param name="playerAddress"></param>
+            <param name="token"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Substrate.Integration.SubstrateNetwork.GetBracketsCountAsync(System.Threading.CancellationToken)">
+            <summary>
+            Return the number of brackets
+            </summary>
             <param name="token"></param>
             <returns></returns>
         </member>
@@ -730,6 +789,15 @@
             <param name="account"></param>
             <param name="players"></param>
             <param name="gridSize"></param>
+            <param name="concurrentTasks"></param>
+            <param name="token"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Substrate.Integration.SubstrateNetwork.QueueAsync(Substrate.NetApi.Model.Types.Account,System.Int32,System.Threading.CancellationToken)">
+            <summary>
+            Queue
+            </summary>
+            <param name="account"></param>
             <param name="concurrentTasks"></param>
             <param name="token"></param>
             <returns></returns>
@@ -766,6 +834,24 @@
             <param name="token"></param>
             <returns></returns>
         </member>
+        <member name="M:Substrate.Integration.SubstrateNetwork.ClaimAsync(Substrate.NetApi.Model.Types.Account,System.Int32,System.Threading.CancellationToken)">
+            <summary>
+            Claim rewards
+            </summary>
+            <param name="account"></param>
+            <param name="concurrentTasks"></param>
+            <param name="token"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Substrate.Integration.SubstrateNetwork.AcceptAsync(Substrate.NetApi.Model.Types.Account,System.Int32,System.Threading.CancellationToken)">
+            <summary>
+            Accept match
+            </summary>
+            <param name="account"></param>
+            <param name="concurrentTasks"></param>
+            <param name="token"></param>
+            <returns></returns>
+        </member>
         <member name="M:Substrate.Integration.SubstrateNetwork.SudoRootDeleteGameAsync(Substrate.NetApi.Model.Types.Account,System.Byte[],System.Int32,System.Threading.CancellationToken)">
             <summary>
             Root delete game, needs to be called by Sudo.
@@ -794,25 +880,28 @@
             <param name="networkType"></param>
             <param name="url"></param>
         </member>
-        <member name="M:Substrate.Integration.SubstrateNetwork.GetBlocknumberAsync(System.Threading.CancellationToken)">
+        <member name="M:Substrate.Integration.SubstrateNetwork.GetBlocknumberAsync(System.String,System.Threading.CancellationToken)">
             <summary>
             Get the current block number.
             </summary>
+            <param name="blockHash"></param>
             <param name="token"></param>
             <returns></returns>
         </member>
-        <member name="M:Substrate.Integration.SubstrateNetwork.GetAccountAsync(System.Threading.CancellationToken)">
+        <member name="M:Substrate.Integration.SubstrateNetwork.GetAccountAsync(System.String,System.Threading.CancellationToken)">
             <summary>
             Get owner account informations.
             </summary>
+            <param name="blockHash"></param>
             <param name="token"></param>
             <returns></returns>
         </member>
-        <member name="M:Substrate.Integration.SubstrateNetwork.GetAccountAsync(Substrate.NetApi.Model.Types.Account,System.Threading.CancellationToken)">
+        <member name="M:Substrate.Integration.SubstrateNetwork.GetAccountAsync(Substrate.NetApi.Model.Types.Account,System.String,System.Threading.CancellationToken)">
             <summary>
             Get account informations.
             </summary>
-            <param name="account32"></param>
+            <param name="key"></param>
+            <param name="blockHash"></param>
             <param name="token"></param>
             <returns></returns>
         </member>
@@ -998,7 +1087,7 @@
             Board C# Wrapper
             </summary>
         </member>
-        <member name="M:Substrate.Hexalem.Integration.Model.BoardSharp.#ctor(Substrate.Hexalem.NET.NetApiExt.Generated.Model.pallet_hexalem.pallet.HexBoard)">
+        <member name="M:Substrate.Hexalem.Integration.Model.BoardSharp.#ctor(Substrate.Hexalem.NET.NetApiExt.Generated.Model.pallet_hexalem.types.board.HexBoard)">
             <summary>
             Board Constructor
             </summary>
@@ -1006,7 +1095,7 @@
         </member>
         <member name="P:Substrate.Hexalem.Integration.Model.BoardSharp.GameId">
             <summary>
-            Game Id
+            The game identifier
             </summary>
         </member>
         <member name="P:Substrate.Hexalem.Integration.Model.BoardSharp.Resources">
@@ -1024,7 +1113,7 @@
             Game C# Wrapper
             </summary>
         </member>
-        <member name="M:Substrate.Hexalem.Integration.Model.GameSharp.#ctor(System.Byte[],Substrate.Hexalem.NET.NetApiExt.Generated.Model.pallet_hexalem.pallet.Game)">
+        <member name="M:Substrate.Hexalem.Integration.Model.GameSharp.#ctor(System.Byte[],Substrate.Hexalem.NET.NetApiExt.Generated.Model.pallet_hexalem.types.game.Game)">
             <summary>
             Game Constructor
             </summary>
@@ -1039,6 +1128,16 @@
         <member name="P:Substrate.Hexalem.Integration.Model.GameSharp.State">
             <summary>
             Game State
+            </summary>
+        </member>
+        <member name="P:Substrate.Hexalem.Integration.Model.GameSharp.PlayerAccepted">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="P:Substrate.Hexalem.Integration.Model.GameSharp.Rewards">
+            <summary>
+            Rewards
             </summary>
         </member>
         <member name="P:Substrate.Hexalem.Integration.Model.GameSharp.MaxRounds">
@@ -1079,6 +1178,32 @@
         <member name="P:Substrate.Hexalem.Integration.Model.GameSharp.LastBlock">
             <summary>
             Last Block
+            </summary>
+        </member>
+        <member name="T:Substrate.Hexalem.Integration.Model.MatchmakingStateSharp">
+            <summary>
+            Matchmaking State C# Wrapper
+            </summary>
+        </member>
+        <member name="M:Substrate.Hexalem.Integration.Model.MatchmakingStateSharp.#ctor(Substrate.Hexalem.NET.NetApiExt.Generated.Model.pallet_hexalem.types.EnumMatchmakingState)">
+            <summary>
+            Matchmaking State Constructor
+            </summary>
+            <param name="matchmakingState"></param>
+        </member>
+        <member name="P:Substrate.Hexalem.Integration.Model.MatchmakingStateSharp.MatchmakingState">
+            <summary>
+            Matchmaking State
+            </summary>
+        </member>
+        <member name="P:Substrate.Hexalem.Integration.Model.MatchmakingStateSharp.GameId">
+            <summary>
+            Game Id
+            </summary>
+        </member>
+        <member name="P:Substrate.Hexalem.Integration.Model.MatchmakingStateSharp.IsGameFound">
+            <summary>
+            Return true if the game is created
             </summary>
         </member>
         <member name="T:Substrate.Hexalem.Integration.Model.TileSharp">
