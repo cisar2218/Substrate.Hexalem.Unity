@@ -1,54 +1,59 @@
 <ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../../../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
-    <ui:Template name="JoinSlotElement" src="project://database/Assets/Polkadot%20Unity%20SDK/DemoGame/Resources/DemoGame/UI/Elements/JoinSlotElement.uxml?fileID=9197481963319205126&amp;guid=f555b6eb01b25a64ea3adfcc9fd1fa7f&amp;type=3#JoinSlotElement" />
     <ui:Template name="PlayerEloElement" src="project://database/Assets/Polkadot%20Unity%20SDK/DemoGame/Resources/DemoGame/UI/Elements/PlayerEloElement.uxml?fileID=9197481963319205126&amp;guid=3851715b082690a4aa9da39b6750da8c&amp;type=3#PlayerEloElement" />
     <ui:Template name="SlotElement" src="project://database/Assets/Polkadot%20Unity%20SDK/DemoGame/Resources/DemoGame/UI/Elements/SlotElement.uxml?fileID=9197481963319205126&amp;guid=f55819dbd55c7d6479a72a0746a6a26a&amp;type=3#SlotElement" />
     <Style src="project://database/Assets/Polkadot%20Unity%20SDK/DemoGame/UIStylesheet.uss?fileID=7433441132597879392&amp;guid=7b9a8bdc89bd4444c8329e09faba0d7c&amp;type=3#UIStylesheet" />
     <ui:VisualElement name="Body" style="flex-grow: 0; padding-top: 4px; padding-right: 4px; padding-bottom: 4px; padding-left: 4px; flex-direction: column; flex-shrink: 0; height: 1697px; width: 100%;">
-        <ui:VisualElement name="VelJoinGame" style="flex-grow: 0; flex-direction: column; align-items: center; flex-shrink: 0; height: 15%; padding-top: 20px; padding-right: 0; padding-bottom: 20px; padding-left: 0;">
-            <ui:VisualElement name="VelJoinQueue" style="flex-grow: 1;">
-                <ui:Instance template="JoinSlotElement" name="JoinSlotElement" />
+        <ui:VisualElement name="VelCommon" style="flex-grow: 0; flex-shrink: 0; height: 35%;">
+            <ui:VisualElement name="VelJoinGame" style="flex-grow: 0; flex-direction: column; align-items: center; flex-shrink: 0; height: 60%; padding-top: 20px; padding-right: 0; padding-bottom: 20px; padding-left: 0;">
+                <ui:VisualElement name="VelPortait" style="flex-grow: 0; background-image: resource(&apos;DemoGame/Images/alice_portrait&apos;); flex-shrink: 0; width: 250px; height: 250px;" />
+                <ui:Label tabindex="-1" text="You won&apos;t be able to cancel if you join the game" parse-escape-sequences="true" display-tooltip-when-elided="true" name="LblAdvertising" class="font-comic" style="font-size: 24px; margin-top: 20px;" />
             </ui:VisualElement>
-            <ui:Label tabindex="-1" text="You won&apos;t be able to cancel if you join the game" parse-escape-sequences="true" display-tooltip-when-elided="true" name="LblAdvertising" class="font-comic" style="font-size: 24px;" />
-        </ui:VisualElement>
-        <ui:VisualElement name="VelRating" style="flex-grow: 0; flex-shrink: 0; height: 10%;">
-            <ui:VisualElement name="VeRatingBox" style="flex-grow: 1; width: 60%; justify-content: flex-start; align-self: center; -unity-text-outline-width: 0; -unity-text-outline-color: rgb(0, 0, 0); padding-top: 20px; padding-right: 20px; padding-bottom: 20px; padding-left: 20px; border-top-width: 8px; border-right-width: 8px; border-bottom-width: 8px; border-left-width: 8px; border-left-color: rgb(0, 0, 0); border-right-color: rgb(0, 0, 0); border-top-color: rgb(0, 0, 0); border-bottom-color: rgb(0, 0, 0); border-top-left-radius: 20px; border-top-right-radius: 20px; border-bottom-right-radius: 20px; border-bottom-left-radius: 20px; flex-direction: row;">
-                <ui:Label tabindex="-1" text="Rating :" parse-escape-sequences="true" display-tooltip-when-elided="true" name="RatingLabel" class="font-chicken" style="flex-shrink: 1; flex-grow: 1; align-self: center; font-size: 50px; -unity-text-align: upper-right;" />
-                <ui:Label tabindex="-1" text=" - " parse-escape-sequences="true" display-tooltip-when-elided="true" name="RatingValue" class="font-chicken" style="flex-shrink: 1; flex-grow: 1; align-self: center; font-size: 50px; color: rgb(255, 255, 255); -unity-text-outline-width: 8px; letter-spacing: 4px;" />
+            <ui:VisualElement name="VelRating" style="flex-grow: 0; flex-shrink: 0; height: 40%;">
+                <ui:VisualElement name="VeRatingBox" style="flex-grow: 1; width: 60%; justify-content: flex-start; align-self: center; -unity-text-outline-width: 0; -unity-text-outline-color: rgb(0, 0, 0); padding-top: 20px; padding-right: 20px; padding-bottom: 20px; padding-left: 20px; border-top-width: 8px; border-right-width: 8px; border-bottom-width: 8px; border-left-width: 8px; border-left-color: rgb(0, 0, 0); border-right-color: rgb(0, 0, 0); border-top-color: rgb(0, 0, 0); border-bottom-color: rgb(0, 0, 0); border-top-left-radius: 20px; border-top-right-radius: 20px; border-bottom-right-radius: 20px; border-bottom-left-radius: 20px; flex-direction: row;">
+                    <ui:Label tabindex="-1" text="Rating :" parse-escape-sequences="true" display-tooltip-when-elided="true" name="RatingLabel" class="font-chicken" style="flex-shrink: 1; flex-grow: 1; align-self: center; font-size: 50px; -unity-text-align: upper-right;" />
+                    <ui:Label tabindex="-1" text=" - " parse-escape-sequences="true" display-tooltip-when-elided="true" name="RatingValue" class="font-chicken" style="flex-shrink: 1; flex-grow: 1; align-self: center; font-size: 50px; color: rgb(255, 255, 255); -unity-text-outline-width: 8px; letter-spacing: 4px;" />
+                </ui:VisualElement>
             </ui:VisualElement>
         </ui:VisualElement>
-        <ui:VisualElement name="VelPlayersAccept" style="flex-grow: 0; flex-direction: row; flex-shrink: 0; height: 20%; align-items: center; justify-content: center; align-self: center;">
-            <ui:VisualElement name="VelSlotBox" style="flex-grow: 1; flex-direction: column; padding-top: 10px; padding-right: 10px; padding-bottom: 10px; padding-left: 10px;">
-                <ui:VisualElement name="VelContent" style="flex-grow: 0; flex-shrink: 0; height: 200px; width: auto; align-items: center;">
-                    <ui:VisualElement name="VelSlot" style="flex-grow: 1; background-image: resource(&apos;DemoGame/Images/slot&apos;); width: 200px; height: 100px; align-items: stretch; justify-content: center; align-self: auto;">
-                        <ui:Instance template="PlayerEloElement" name="PlayerEloElement" style="margin-top: 20px;" />
+        <ui:VisualElement name="VelWaiting" style="flex-grow: 1; flex-shrink: 1; width: auto; height: auto; display: flex; padding-top: 40px; padding-right: 40px; padding-bottom: 40px; padding-left: 40px;">
+            <ui:VisualElement name="VelPlayersAccept" style="flex-grow: 0; flex-direction: row; flex-shrink: 0; height: 20%; align-items: center; justify-content: center; align-self: center; display: flex;">
+                <ui:VisualElement name="VelSlotBox" style="flex-grow: 1; flex-direction: column; padding-top: 10px; padding-right: 10px; padding-bottom: 10px; padding-left: 10px;">
+                    <ui:VisualElement name="VelContent" style="flex-grow: 0; flex-shrink: 0; height: 200px; width: auto; align-items: center;">
+                        <ui:VisualElement name="VelSlot" style="flex-grow: 1; background-image: resource(&apos;DemoGame/Images/slot&apos;); width: 200px; height: 100px; align-items: stretch; justify-content: center; align-self: auto;">
+                            <ui:Instance template="PlayerEloElement" name="PlayerEloElement" style="margin-top: 20px;" />
+                        </ui:VisualElement>
                     </ui:VisualElement>
                 </ui:VisualElement>
+                <ui:Instance template="SlotElement" name="SlotElement" />
+                <ui:Instance template="SlotElement" name="SlotElement" />
+                <ui:Instance template="SlotElement" name="SlotElement" />
             </ui:VisualElement>
-            <ui:Instance template="SlotElement" name="SlotElement" />
-            <ui:Instance template="SlotElement" name="SlotElement" />
-            <ui:Instance template="SlotElement" name="SlotElement" />
-        </ui:VisualElement>
-        <ui:VisualElement name="VelPlayersQueue" style="flex-grow: 0; flex-shrink: 0; height: 35%; flex-direction: column;">
-            <ui:VisualElement style="flex-grow: 1; flex-direction: row;">
-                <ui:VisualElement name="VelPlayer1" style="flex-grow: 1; flex-shrink: 1; width: auto; height: auto; background-image: none; display: flex;">
-                    <ui:Instance template="PlayerEloElement" name="PlayerEloElement" />
+            <ui:VisualElement name="VelWaitingMatchmaking" style="flex-grow: 0; flex-shrink: 0; height: 70%; flex-direction: column; padding-top: 80px; display: flex;">
+                <ui:VisualElement name="VelPlayerQueueBox" style="flex-grow: 1; flex-direction: row; display: none;">
+                    <ui:VisualElement name="VelPlayer1" style="flex-grow: 1; flex-shrink: 1; width: auto; height: auto; background-image: none; display: flex; transition-timing-function: ease-in-out; transition-delay: 0s; transition-duration: 2s;">
+                        <ui:Instance template="PlayerEloElement" name="PlayerEloElement" />
+                    </ui:VisualElement>
+                    <ui:VisualElement name="VelPlayer2" style="flex-grow: 1; flex-shrink: 1; width: auto; height: auto; background-image: none; display: flex;">
+                        <ui:Instance template="PlayerEloElement" name="PlayerEloElement" />
+                    </ui:VisualElement>
+                    <ui:VisualElement name="VelPlayer2" style="flex-grow: 1; flex-shrink: 1; width: auto; height: auto; background-image: none; display: flex;">
+                        <ui:Instance template="PlayerEloElement" name="PlayerEloElement" />
+                    </ui:VisualElement>
                 </ui:VisualElement>
-                <ui:VisualElement name="VelPlayer2" style="flex-grow: 1; flex-shrink: 1; width: auto; height: auto; background-image: none; display: flex;">
-                    <ui:Instance template="PlayerEloElement" name="PlayerEloElement" />
-                </ui:VisualElement>
-            </ui:VisualElement>
-            <ui:VisualElement style="flex-grow: 1; flex-direction: row;">
-                <ui:VisualElement name="VelPlayer2" style="flex-grow: 1; flex-shrink: 1; width: auto; height: auto; background-image: none; display: flex;">
-                    <ui:Instance template="PlayerEloElement" name="PlayerEloElement" />
+                <ui:VisualElement style="flex-grow: 1; justify-content: center; align-items: center; align-self: auto;">
+                    <ui:Label tabindex="-1" text="... Wait for matchmaking ..." parse-escape-sequences="true" display-tooltip-when-elided="true" name="Label" class="font-comic" />
                 </ui:VisualElement>
             </ui:VisualElement>
+            <ui:VisualElement name="VelExtrinsic" style="flex-grow: 0; flex-shrink: 0; height: 10%;">
+                <ui:Label tabindex="-1" text="..." parse-escape-sequences="true" display-tooltip-when-elided="true" name="LblExtrinsicUpdate" class="font-comic" style="-unity-text-align: upper-center; font-size: 20px;" />
+            </ui:VisualElement>
         </ui:VisualElement>
-        <ui:VisualElement name="VelExtrinsic" style="flex-grow: 0; flex-shrink: 0; height: 10%;">
-            <ui:Label tabindex="-1" text="..." parse-escape-sequences="true" display-tooltip-when-elided="true" name="LblExtrinsicUpdate" class="font-comic" style="-unity-text-align: upper-center; font-size: 20px;" />
-        </ui:VisualElement>
-        <ui:VisualElement name="VelAcceptMatch" class="font-comic" style="flex-grow: 0; flex-shrink: 0; height: 10%;">
-            <ui:Button text="Start Game !" parse-escape-sequences="true" display-tooltip-when-elided="true" name="BtnAcceptMatch" class="button-basic" style="font-size: 40px; display: flex;" />
-            <ui:Button text="..." parse-escape-sequences="true" display-tooltip-when-elided="true" name="BtnForceAcceptMatch" class="button-basic" style="display: none; font-size: 40px;" />
+        <ui:VisualElement name="VelMatchFound" style="flex-grow: 1; display: none; padding-top: 50px; padding-right: 100px; padding-bottom: 50px; padding-left: 100px; align-self: auto; justify-content: center;">
+            <ui:Label tabindex="-1" text="An opponent has been found" parse-escape-sequences="true" display-tooltip-when-elided="true" class="font-comic" style="-unity-text-align: upper-center; padding-bottom: 50px;" />
+            <ui:VisualElement name="VelAcceptMatch" class="font-comic" style="flex-grow: 0; flex-shrink: 0; height: 10%;">
+                <ui:Button text="Start Game !" parse-escape-sequences="true" display-tooltip-when-elided="true" name="BtnAcceptMatch" class="button-basic" style="font-size: 80px; display: flex; border-left-color: rgb(0, 0, 0); border-right-color: rgb(0, 0, 0); border-top-color: rgb(0, 0, 0); border-bottom-color: rgb(0, 0, 0);" />
+                <ui:Button text="..." parse-escape-sequences="true" display-tooltip-when-elided="true" name="BtnForceAcceptMatch" class="button-basic" style="display: none; font-size: 80px;" />
+            </ui:VisualElement>
         </ui:VisualElement>
     </ui:VisualElement>
 </ui:UXML>

@@ -86,6 +86,7 @@ namespace Assets.Scripts.ScreenStates
             _subscriptionOrder = new List<string>();
             _subscriptionDict = new Dictionary<string, ExtrinsicInfo>();
 
+            Debug.Log($"[{nameof(PlayScreenState)}] HexaGame?.HexaTuples = {Storage.HexaGame?.HexaTuples}");
             PlayerIndex = Storage.PlayerIndex(Network.Client.Account).Value;
 
             // filler is to avoid camera in the ui

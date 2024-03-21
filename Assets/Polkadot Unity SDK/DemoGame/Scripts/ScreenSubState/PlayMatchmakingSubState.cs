@@ -14,9 +14,12 @@ namespace Assets.Polkadot_Unity_SDK.DemoGame.Scripts.ScreenSubState
 
         private Button _btnAcceptMatch;
         private string _acceptGameSubscriptionId;
+        private string _forceMatchSubscriptionId = null;
         private Button _btnForceAcceptMatch;
-        private string _forceGameSubscriptionId;
         private Label _lblExtrinsicUpdate;
+
+        private VisualElement _velWaitingQueue;
+        private VisualElement _velMatchFound;
 
         public PlayMatchmakingSubState(DemoGameController flowController, GameBaseState parent)
             : base(flowController, parent)
@@ -36,7 +39,11 @@ namespace Assets.Polkadot_Unity_SDK.DemoGame.Scripts.ScreenSubState
             var scrollView = scrollViewElement.Q<ScrollView>("ScvElement");
 
             TemplateContainer elementInstance = ElementInstance("DemoGame/UI/Frames/MatchmakingFrame");
-            mainPlayerInformation(elementInstance);
+            initPlayerInformation(elementInstance);
+
+            _velWaitingQueue = elementInstance.Q<VisualElement>("VelWaiting");
+            _velMatchFound = elementInstance.Q<VisualElement>("VelMatchFound");
+            //_velWaitingMatchmaking = elementInstance.Q<VisualElement>("VelWaitingMatchmaking");
 
             _btnAcceptMatch = elementInstance.Q<Button>("BtnAcceptMatch");
             _btnAcceptMatch.SetEnabled(false);
@@ -49,15 +56,15 @@ namespace Assets.Polkadot_Unity_SDK.DemoGame.Scripts.ScreenSubState
             _lblExtrinsicUpdate = elementInstance.Q<Label>("LblExtrinsicUpdate");
 
             _playersInQueueSameBracket = elementInstance.Q<VisualElement>("VelPlayersQueue");
-            _playersInQueueSameBracket.Clear();
+            //_playersInQueueSameBracket.Clear();
 
-            foreach(var playerSameBracket in Storage.PlayersInSameBracket)
-            {
-                TemplateContainer playerEloInstance = ElementInstance("DemoGame/UI/Elements/PlayerEloElement");
-                var opponentEloRating = playerEloInstance.Q<Label>("LblEloRating");
-                opponentEloRating.text = playerSameBracket.ToString();
-                _playersInQueueSameBracket.Add(playerEloInstance);
-            }
+            //foreach(var playerSameBracket in Storage.PlayersInSameBracket)
+            //{
+            //    TemplateContainer playerEloInstance = ElementInstance("DemoGame/UI/Elements/PlayerEloElement");
+            //    var opponentEloRating = playerEloInstance.Q<Label>("LblEloRating");
+            //    opponentEloRating.text = playerSameBracket.ToString();
+            //    _playersInQueueSameBracket.Add(playerEloInstance);
+            //}
 
             _playersAccepted = elementInstance.Q<VisualElement>("VelPlayersAccept");
             _playersAccepted.Clear();
@@ -96,18 +103,13 @@ namespace Assets.Polkadot_Unity_SDK.DemoGame.Scripts.ScreenSubState
             Storage.OnGameStarted -= OnGameStarted;
         }
 
-        private void mainPlayerInformation(TemplateContainer elementInstance)
+        private void initPlayerInformation(TemplateContainer elementInstance)
         {
             
             var advertisingOnJoinGame = elementInstance.Q<Label>("LblAdvertising");
             var currentPlayerRating = elementInstance.Q<Label>("RatingValue");
 
             currentPlayerRating.text = Storage.AccountEloRating.ToString();
-
-            var joinQueue = elementInstance.Q<VisualElement>("VelJoinQueue");
-            TemplateContainer playerProfilElement = ElementInstance("DemoGame/UI/Elements/CurrentPlayerProfilElement");
-            joinQueue.Clear();
-            joinQueue.Add(playerProfilElement);
 
             advertisingOnJoinGame.style.display = DisplayStyle.None;
         }
@@ -118,6 +120,8 @@ namespace Assets.Polkadot_Unity_SDK.DemoGame.Scripts.ScreenSubState
         /// <param name="gameId"></param>
         private void OnGameFound(byte[] gameId)
         {
+            _velWaitingQueue.style.display = DisplayStyle.None;
+            _velMatchFound.style.display = DisplayStyle.Flex;
             _btnAcceptMatch.SetEnabled(true);
         }
 
@@ -132,7 +136,7 @@ namespace Assets.Polkadot_Unity_SDK.DemoGame.Scripts.ScreenSubState
             _btnAcceptMatch.style.display = DisplayStyle.None;
             _btnForceAcceptMatch.style.display = DisplayStyle.Flex;
 
-            _btnForceAcceptMatch.text = "Please wait all players accept";
+            _btnForceAcceptMatch.text = "... Please wait ...";
         }
 
         public void OnGameStarted(byte[] gameId)
@@ -142,14 +146,17 @@ namespace Assets.Polkadot_Unity_SDK.DemoGame.Scripts.ScreenSubState
 
         private async void OnForceMatch(ClickEvent evt)
         {
-            _forceGameSubscriptionId = await Network.Client.ForceAcceptMatch(Network.Client.Account, 1, CancellationToken.None);
+            _forceMatchSubscriptionId = await Network.Client.ForceAcceptMatch(Network.Client.Account, 1, CancellationToken.None);
 
-            _btnForceAcceptMatch.text = "Game is starting...";
+            _btnForceAcceptMatch.text = "... Game is starting...";
             _btnForceAcceptMatch.SetEnabled(false);
         }
 
         private void OnForceMatchEnable()
         {
+            // If we already clicked on the button, we do nothing
+            if (!string.IsNullOrEmpty(_forceMatchSubscriptionId)) return;
+
             _btnForceAcceptMatch.text = "Force start match !";
             _btnForceAcceptMatch.SetEnabled(true);
         }

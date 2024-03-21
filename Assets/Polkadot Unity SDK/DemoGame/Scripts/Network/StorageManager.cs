@@ -217,7 +217,7 @@ namespace Assets.Scripts
                         }
                         break;
                     case Substrate.Hexalem.NET.NetApiExt.Generated.Model.pallet_hexalem.types.game.GameState.Playing:
-                        OnGameStarted(playerGame.GameId);
+                        OnGameStarted.Invoke(playerGame.GameId);
                         var playerBoards = new List<BoardSharp>();
                         foreach (var player in playerGame.Players)
                         {
@@ -241,36 +241,6 @@ namespace Assets.Scripts
                         // Todo
                         break;
                 }
-                //IsAllPlayerAcceptMatch = playerGame.PlayerAccepted.All(x => x);
-                //Debug.Log($"IsAllPlayerAcceptMatch = {IsAllPlayerAcceptMatch}");
-                //// Should call HexalemModuleConstants.BlocksToPlayLimit
-                //if (!IsAllPlayerAcceptMatch && blockNumberNewGameIsCreated + 10 > blockNumber)
-                //{
-                //    Debug.Log($"Enable force match !");
-                //    OnForceAcceptMatch?.Invoke(playerGame.GameId);
-                //}
-
-                //if(HasGameStarted(playerGame))
-                //{
-                //    var playerBoards = new List<BoardSharp>();
-                //    foreach (var player in playerGame.Players)
-                //    {
-                //        var playerBoard = await Network.Client.GetBoardAsync(player, null, CancellationToken.None);
-                //        if (playerBoard != null)
-                //        {
-                //            playerBoards.Add(playerBoard);
-                //        }
-                //    }
-
-                //    HexaGame oldGame = null;
-                //    if (HexaGame != null)
-                //    {
-                //        oldGame = (HexaGame)HexaGame.Clone();
-                //    }
-                //    HexaGame = HexalemWrapper.GetHexaGame(playerGame, playerBoards.ToArray());
-                //    // check for the event
-                //    HexaGameDiff(oldGame, HexaGame, PlayerIndex(Network.Client.Account).Value);
-                //}
             }
 
             OnStorageUpdated?.Invoke(blockNumber.Value);

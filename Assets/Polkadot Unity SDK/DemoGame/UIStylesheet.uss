@@ -8,6 +8,7 @@
 .font-comic {
     -unity-font-definition: resource('DemoGame/Fonts & Materials/Hey Comic SDF');
     -unity-font: url("project://database/Assets/Polkadot%20Unity%20SDK/DemoGame/Fonts/Hey%20Comic.ttf?fileID=12800000&guid=4174102ac3175b3418182b34e4242389&type=3#Hey Comic");
+    font-size: 50px;
 }
 
 .font-chicken {

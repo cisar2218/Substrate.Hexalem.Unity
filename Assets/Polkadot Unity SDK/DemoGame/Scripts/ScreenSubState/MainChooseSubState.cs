@@ -174,21 +174,20 @@ namespace Assets.Scripts.ScreenStates
 
         private async void OnBtnPlayClicked(ClickEvent evt)
         {
-            if(!Storage.IsAlreadyInQueue)
+            if (Storage.HexaGame != null)
             {
-                await Network.Client.QueueAsync(Network.Client.Account, 1, CancellationToken.None);
+                Debug.Log($"[{nameof(MainChooseSubState)}] Player is already in a game");
+                FlowController.ChangeScreenState(DemoGameScreen.PlayScreen);
+            } else
+            {
+                if (!Storage.IsAlreadyInQueue)
+                {
+                    Debug.Log($"[{nameof(MainChooseSubState)}] Player is not currently in a queue");
+                    await Network.Client.QueueAsync(Network.Client.Account, 1, CancellationToken.None);
+                }                
+
+                FlowController.ChangeScreenSubState(DemoGameScreen.MainScreen, DemoGameSubScreen.PlayMatchmaking);
             }
-
-            FlowController.ChangeScreenSubState(DemoGameScreen.MainScreen, DemoGameSubScreen.PlayMatchmaking);
-
-            //if (Storage.HexaGame != null)
-            //{
-            //    FlowController.ChangeScreenState(DemoGameScreen.PlayScreen);
-            //}
-            //else
-            //{
-            //    FlowController.ChangeScreenSubState(DemoGameScreen.MainScreen, DemoGameSubScreen.MainInvite);
-            //}
         }
 
         private async void OnBtnResetClicked(ClickEvent evt)
