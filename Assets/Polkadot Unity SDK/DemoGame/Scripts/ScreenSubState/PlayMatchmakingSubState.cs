@@ -43,28 +43,17 @@ namespace Assets.Polkadot_Unity_SDK.DemoGame.Scripts.ScreenSubState
 
             _velWaitingQueue = elementInstance.Q<VisualElement>("VelWaiting");
             _velMatchFound = elementInstance.Q<VisualElement>("VelMatchFound");
-            //_velWaitingMatchmaking = elementInstance.Q<VisualElement>("VelWaitingMatchmaking");
+            _playersInQueueSameBracket = elementInstance.Q<VisualElement>("VelPlayerQueueBox");
 
             _btnAcceptMatch = elementInstance.Q<Button>("BtnAcceptMatch");
             _btnAcceptMatch.SetEnabled(false);
             _btnAcceptMatch.RegisterCallback<ClickEvent>(OnGameAccepted);
-            
+
             _btnForceAcceptMatch = elementInstance.Q<Button>("BtnForceAcceptMatch");
             _btnForceAcceptMatch.SetEnabled(false);
             _btnForceAcceptMatch.RegisterCallback<ClickEvent>(OnForceMatch);
 
             _lblExtrinsicUpdate = elementInstance.Q<Label>("LblExtrinsicUpdate");
-
-            _playersInQueueSameBracket = elementInstance.Q<VisualElement>("VelPlayersQueue");
-            //_playersInQueueSameBracket.Clear();
-
-            //foreach(var playerSameBracket in Storage.PlayersInSameBracket)
-            //{
-            //    TemplateContainer playerEloInstance = ElementInstance("DemoGame/UI/Elements/PlayerEloElement");
-            //    var opponentEloRating = playerEloInstance.Q<Label>("LblEloRating");
-            //    opponentEloRating.text = playerSameBracket.ToString();
-            //    _playersInQueueSameBracket.Add(playerEloInstance);
-            //}
 
             _playersAccepted = elementInstance.Q<VisualElement>("VelPlayersAccept");
             _playersAccepted.Clear();
@@ -90,8 +79,23 @@ namespace Assets.Polkadot_Unity_SDK.DemoGame.Scripts.ScreenSubState
 
             Network.Client.ExtrinsicManager.ExtrinsicUpdated += OnExtrinsicUpdated;
             Storage.OnGameFound += OnGameFound;
-            Storage.OnForceAcceptMatch += OnForceMatchEnable;
+            Storage.OnForceStartMatch += OnForceMatchEnable;
             Storage.OnGameStarted += OnGameStarted;
+            Storage.OnStorageUpdated += OnPlayerQueueSameBracketChange;
+        }
+
+        private void OnPlayerQueueSameBracketChange(uint blocknumber)
+        {
+            _playersInQueueSameBracket.Clear();
+            Debug.Log($"[{nameof(PlayMatchmakingSubState)}] Player in same bracket = {Storage.PlayersInSameBracket.Count}");
+
+            foreach (var playerSameBracket in Storage.PlayersInSameBracket)
+            {
+                TemplateContainer playerEloInstance = ElementInstance("DemoGame/UI/Elements/PlayerEloElement");
+                var opponentEloRating = playerEloInstance.Q<Label>("LblEloRating");
+                opponentEloRating.text = playerSameBracket.ToString();
+                _playersInQueueSameBracket.Add(playerEloInstance);
+            }
         }
 
         public override void ExitState()
@@ -99,8 +103,9 @@ namespace Assets.Polkadot_Unity_SDK.DemoGame.Scripts.ScreenSubState
             Debug.Log($"[{this.GetType().Name}][SUB] ExitState");
             Network.Client.ExtrinsicManager.ExtrinsicUpdated -= OnExtrinsicUpdated;
             Storage.OnGameFound -= OnGameFound;
-            Storage.OnForceAcceptMatch -= OnForceMatchEnable;
+            Storage.OnForceStartMatch -= OnForceMatchEnable;
             Storage.OnGameStarted -= OnGameStarted;
+            Storage.OnStorageUpdated -= OnPlayerQueueSameBracketChange;
         }
 
         private void initPlayerInformation(TemplateContainer elementInstance)
@@ -141,6 +146,7 @@ namespace Assets.Polkadot_Unity_SDK.DemoGame.Scripts.ScreenSubState
 
         public void OnGameStarted(byte[] gameId)
         {
+            Debug.Log($"[{this.GetType().Name}][SUB] Game started");
             FlowController.ChangeScreenState(DemoGameScreen.PlayScreen);
         }
 

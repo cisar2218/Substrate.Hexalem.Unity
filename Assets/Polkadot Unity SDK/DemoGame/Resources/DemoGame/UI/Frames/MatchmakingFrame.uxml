@@ -16,7 +16,7 @@
             </ui:VisualElement>
         </ui:VisualElement>
         <ui:VisualElement name="VelWaiting" style="flex-grow: 1; flex-shrink: 1; width: auto; height: auto; display: flex; padding-top: 40px; padding-right: 40px; padding-bottom: 40px; padding-left: 40px;">
-            <ui:VisualElement name="VelPlayersAccept" style="flex-grow: 0; flex-direction: row; flex-shrink: 0; height: 20%; align-items: center; justify-content: center; align-self: center; display: flex;">
+            <ui:VisualElement name="VelPlayersAccept" style="flex-grow: 0; flex-direction: row; flex-shrink: 0; height: 20%; align-items: center; justify-content: center; align-self: center; display: none;">
                 <ui:VisualElement name="VelSlotBox" style="flex-grow: 1; flex-direction: column; padding-top: 10px; padding-right: 10px; padding-bottom: 10px; padding-left: 10px;">
                     <ui:VisualElement name="VelContent" style="flex-grow: 0; flex-shrink: 0; height: 200px; width: auto; align-items: center;">
                         <ui:VisualElement name="VelSlot" style="flex-grow: 1; background-image: resource(&apos;DemoGame/Images/slot&apos;); width: 200px; height: 100px; align-items: stretch; justify-content: center; align-self: auto;">
@@ -29,19 +29,9 @@
                 <ui:Instance template="SlotElement" name="SlotElement" />
             </ui:VisualElement>
             <ui:VisualElement name="VelWaitingMatchmaking" style="flex-grow: 0; flex-shrink: 0; height: 70%; flex-direction: column; padding-top: 80px; display: flex;">
-                <ui:VisualElement name="VelPlayerQueueBox" style="flex-grow: 1; flex-direction: row; display: none;">
-                    <ui:VisualElement name="VelPlayer1" style="flex-grow: 1; flex-shrink: 1; width: auto; height: auto; background-image: none; display: flex; transition-timing-function: ease-in-out; transition-delay: 0s; transition-duration: 2s;">
-                        <ui:Instance template="PlayerEloElement" name="PlayerEloElement" />
-                    </ui:VisualElement>
-                    <ui:VisualElement name="VelPlayer2" style="flex-grow: 1; flex-shrink: 1; width: auto; height: auto; background-image: none; display: flex;">
-                        <ui:Instance template="PlayerEloElement" name="PlayerEloElement" />
-                    </ui:VisualElement>
-                    <ui:VisualElement name="VelPlayer2" style="flex-grow: 1; flex-shrink: 1; width: auto; height: auto; background-image: none; display: flex;">
-                        <ui:Instance template="PlayerEloElement" name="PlayerEloElement" />
-                    </ui:VisualElement>
-                </ui:VisualElement>
+                <ui:VisualElement name="VelPlayerQueueBox" style="flex-grow: 1; flex-direction: row; display: flex;" />
                 <ui:VisualElement style="flex-grow: 1; justify-content: center; align-items: center; align-self: auto;">
-                    <ui:Label tabindex="-1" text="... Wait for matchmaking ..." parse-escape-sequences="true" display-tooltip-when-elided="true" name="Label" class="font-comic" />
+                    <ui:Label tabindex="-1" text="... Wait for matchmaking ..." parse-escape-sequences="true" display-tooltip-when-elided="true" name="LabelWaitMatchmaking" class="font-comic" />
                 </ui:VisualElement>
             </ui:VisualElement>
             <ui:VisualElement name="VelExtrinsic" style="flex-grow: 0; flex-shrink: 0; height: 10%;">

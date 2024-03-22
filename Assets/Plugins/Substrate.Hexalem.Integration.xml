@@ -707,6 +707,11 @@
             Substrate network
             </summary>
         </member>
+        <member name="P:Substrate.Integration.SubstrateNetwork.HexalemConstants">
+            <summary>
+            Get Hexalem constant from NetApiExt
+            </summary>
+        </member>
         <member name="M:Substrate.Integration.SubstrateNetwork.GetMatchmakingStateAsync(System.String,System.String,System.Threading.CancellationToken)">
             <summary>
             Get game
@@ -852,6 +857,15 @@
             <param name="token"></param>
             <returns></returns>
         </member>
+        <member name="M:Substrate.Integration.SubstrateNetwork.ForceAcceptMatch(Substrate.NetApi.Model.Types.Account,System.Int32,System.Threading.CancellationToken)">
+            <summary>
+            Force the start of the match
+            </summary>
+            <param name="account"></param>
+            <param name="concurrentTasks"></param>
+            <param name="token"></param>
+            <returns></returns>
+        </member>
         <member name="M:Substrate.Integration.SubstrateNetwork.SudoRootDeleteGameAsync(Substrate.NetApi.Model.Types.Account,System.Byte[],System.Int32,System.Threading.CancellationToken)">
             <summary>
             Root delete game, needs to be called by Sudo.
@@ -860,6 +874,12 @@
             <param name="GameIdBytes">Game Id</param>
             <param name="concurrentTasks">Concurrant tasks of this type allowed</param>
             <param name="token">Cancellation token</param>
+            <returns></returns>
+        </member>
+        <member name="M:Substrate.Integration.SubstrateNetwork.BlocksToAcceptMatchLimit">
+            <summary>
+            Return nb max block to accept the match
+            </summary>
             <returns></returns>
         </member>
         <member name="F:Substrate.Integration.SubstrateNetwork.DECIMALS">
