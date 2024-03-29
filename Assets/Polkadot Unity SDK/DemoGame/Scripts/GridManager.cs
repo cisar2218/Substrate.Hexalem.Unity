@@ -142,7 +142,6 @@ namespace Assets.Scripts
             switch (phase)
             {
                 case TouchPhase.Began:
-                    dragPosition = position;
                     if (!isPointerOverUI && !isDraging)
                     {
                         dragPosition = position;
