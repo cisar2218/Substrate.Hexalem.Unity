@@ -21,6 +21,10 @@ namespace Assets.Scripts
 
         public event SwipeHandler OnSwipeEvent;
 
+        public delegate void DragHandler(Vector3 positionDiff);
+
+        public event DragHandler OnDragEvent;
+
         [SerializeField]
         public GameObject PlayerGrid;
 
@@ -57,6 +61,10 @@ namespace Assets.Scripts
         private Vector2 touchStart;
 
         private Vector2 touchEnd;
+
+        private Vector2 dragPosition;
+
+        private float dragSpeed = 60f;
 
         private bool isSwiping;
 
@@ -126,6 +134,20 @@ namespace Assets.Scripts
                     {
                         ProcessTap(position);
                     }
+                    break;
+            }
+            // camera drag movement
+            switch (phase)
+            {
+                case TouchPhase.Began:
+                    dragPosition = position;
+                    break;
+
+                case TouchPhase.Moved:
+                case TouchPhase.Ended:
+                    var positionDiff = new Vector3(dragPosition.x - position.x, dragPosition.y - position.y, 0.0f);
+                    dragPosition = position;
+                    OnDragEvent?.Invoke(positionDiff / dragSpeed);
                     break;
             }
         }

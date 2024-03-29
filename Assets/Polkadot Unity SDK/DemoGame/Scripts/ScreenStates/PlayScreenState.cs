@@ -162,7 +162,7 @@ namespace Assets.Scripts.ScreenStates
             OnChangedHexaPlayer(Storage.HexaGame.HexaTuples[PlayerIndex].player);
             OnChangedHexaBoard(Storage.HexaGame.HexaTuples[PlayerIndex].board);
 
-            Grid.OnSwipeEvent += OnSwipeEvent;
+            Grid.OnDragEvent += OnDragEvent;
 
             Storage.OnChangedHexaBoard += OnChangedHexaBoard;
             Storage.OnChangedHexaPlayer += OnChangedHexaPlayer;
@@ -181,7 +181,7 @@ namespace Assets.Scripts.ScreenStates
             // remove container
             FlowController.VelContainer.RemoveAt(1);
 
-            Grid.OnSwipeEvent -= OnSwipeEvent;
+            Grid.OnDragEvent -= OnDragEvent;
 
             Storage.OnChangedHexaBoard -= OnChangedHexaBoard;
             Storage.OnChangedHexaPlayer -= OnChangedHexaPlayer;
@@ -193,7 +193,7 @@ namespace Assets.Scripts.ScreenStates
             Storage.OnNextBlocknumber -= OnNextBlockNumber;
         }
 
-        private void OnSwipeEvent(Vector3 direction)
+        private void OnDragEvent(Vector3 direction)
         {
             Grid.MoveCamera(direction);
         }
