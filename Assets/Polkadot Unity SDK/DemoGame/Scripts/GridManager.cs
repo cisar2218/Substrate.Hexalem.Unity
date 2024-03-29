@@ -66,6 +66,8 @@ namespace Assets.Scripts
 
         private float dragSpeed = 60f;
 
+        private bool isDraging = false;
+
         private bool isSwiping;
 
         public float swipeThreshold = 50f; // Minimum distance for a swipe
@@ -141,13 +143,24 @@ namespace Assets.Scripts
             {
                 case TouchPhase.Began:
                     dragPosition = position;
+                    if (!isPointerOverUI && !isDraging)
+                    {
+                        dragPosition = position;
+                        isDraging = true;
+                    }
                     break;
 
                 case TouchPhase.Moved:
+                    if (isDraging)
+                    {
+                        var positionDiff = new Vector3(dragPosition.x - position.x, dragPosition.y - position.y, 0.0f);
+                        dragPosition = position;
+                        OnDragEvent?.Invoke(positionDiff / dragSpeed);
+                    }
+                    break;
+
                 case TouchPhase.Ended:
-                    var positionDiff = new Vector3(dragPosition.x - position.x, dragPosition.y - position.y, 0.0f);
-                    dragPosition = position;
-                    OnDragEvent?.Invoke(positionDiff / dragSpeed);
+                    isDraging = false;
                     break;
             }
         }
